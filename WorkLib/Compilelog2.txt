@@ -1,0 +1,931 @@
+16:55 
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>cls
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>IF "ZET7100" == "ZET7100" goto LABEL_ZET7100_SETUP 
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>CALL JVER.BAT 
+找不到 D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\DEV\ZET7100\*.bin
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>cls
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>CALL nsetting.bat 
+複製了         1 個檔案。
+ + FEATURE_HTYPE_DEV_RE_MAPPING	
+ + FEATURE_NINE_SQUARE_ENABLE	
+ + FEATURE_MCU_LIB_ENABLE	
+ + FEATURE_PROJECT_ZET7100	
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>DEL .\INC\ZetDF.h 
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>COPY .\DEV\ZET7100\ZET_DEFAULT\SETUP.TXT .\SRC\SETUP.TXT 
+複製了         1 個檔案。
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>.\PRJ\GenXML.EXE .\SRC\ZetDF.XML .\SRC\OUT.XML	.\SRC\SETUP.TXT ZET7100     
+############################################
+# GENXML.EXE (V4.9) programmed by JL Juang #    
+# FOR ZET7100 Panel customization          # 
+############################################
+ERROR :  SET FINGER_WEIGHT_HEAVY = 0x005A
+ERROR :  SET INIT_DELTA_DEV = 0x0028
+ERROR :  SET PD_TYPE_RATIOT = 0x02
+ERROR :  SET PD_TYPE_RATIOX = 0x03
+ERROR :  SET PD_TYPE_RATIOY = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOT = 0x02
+ERROR :  SET PD_TYPE_COAXIS_RATIOX = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOY = 0x03
+ERROR :  SET TIME_TO_GREEN_MODE = 0x03
+.\TABLE\F15000_RxSine.bin = FileSize=54, Num=25
+.\TABLE\F15000_RxCoef.bin = FileSize=102, Num=49
+.\TABLE\F15000_TxSine.bin = FileSize=203, Num=200
+.\TABLE\F15000_SgnExt.bin = FileSize=3, Num=1
+FAIL: There are 9 errors
+Press any key to continue...
+#################################################
+#            Zetdf1.exe Parse Setup             #
+#################################################
+ [e] No CheckSum Span Function Enabled  
+ [d] Little Ednian 
+ [o] Set Option at last 6th Byte= 0xFF 
+ [i] Revison file : .\INC\Revision.h 
+ [j] Revison file : .\INC\SubRevision.h 
+ [n] Device name apply TP type : Htype-LPitch 
+ [s] Dataflash TotalPage(128 Byte/Page)=32pages
+#################################################
+#   Data Flash (V1.8) programmed by JL Juang    #
+#################################################
+
+ZetDF.h Successfully generated
+找不到 D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\DEV\ZET7100\ZET_DEFAULT\ZET7100.bin
+複製了         1 個檔案。
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\ZetDF_0291.XML
+移動         1 個檔案。
+移動         1 個檔案。
+移動         1 個檔案。
+##################################################
+#                   COMPILE                      #
+##################################################
+	nCC:  I2c.o
+	nCC:  Isr.o
+	nCC:  Main.o
+	nCC:  Customer.o
+##################################################
+#                 LINK OBJECTS                   #
+##################################################
+The output file is placed ".\BIN\ZET7100.ld"
+   text (code + rodata)	   data	    bss	    dec	    hex	filename
+  37828 (37320 +    508)	   4656	  27496	  69980	  1115c	ZET7100.elf
+###########################################################################
+# BINMERGE.EXE (V0.5) --> PROGRAMMED BY JL JUANG                          #
+# USAGE : BINMerge.EXE [MAIN.BIN] [DATA.BIN] [OUTPUT.BIN] [OFFSET] [DELAY]#
+###########################################################################
+MAIN FILE = .\BIN\JOUT.bin
+DATA FILE = .\PRJ\DB.BIN
+OUT FILE = .\BIN\ZET7100.BIN
+OFFSET  = 0xe000
+Checksum = 0x9CCA
+Successfully Done.
+複製了         1 個檔案。
+##################################################
+#                   SUCCEED                      #
+##################################################
+/e: No such file or directory
++327: No such file or directory
+/e: No such file or directory
++392: No such file or directory
+##################################################
+#        Compile  ROM/SRAM Cost                  #
+##################################################
+Device_Htype-LPitch RomSize  SramSize 
+0  0
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>cls
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>CALL nsetting.bat 
+複製了         1 個檔案。
+ + FEATURE_LTYPE_DEV_RE_MAPPING	
+ + FEATURE_NINE_SQUARE_ENABLE	
+ + FEATURE_MCU_LIB_ENABLE	
+ + FEATURE_PROJECT_ZET7100	
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>DEL .\INC\ZetDF.h 
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>COPY .\DEV\ZET7100\ZET_DEFAULT\SETUP.TXT .\SRC\SETUP.TXT 
+複製了         1 個檔案。
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>.\PRJ\GenXML.EXE .\SRC\ZetDF.XML .\SRC\OUT.XML	.\SRC\SETUP.TXT ZET7100     
+############################################
+# GENXML.EXE (V4.9) programmed by JL Juang #    
+# FOR ZET7100 Panel customization          # 
+############################################
+ERROR :  SET FINGER_WEIGHT_HEAVY = 0x005A
+ERROR :  SET INIT_DELTA_DEV = 0x0028
+ERROR :  SET PD_TYPE_RATIOT = 0x02
+ERROR :  SET PD_TYPE_RATIOX = 0x03
+ERROR :  SET PD_TYPE_RATIOY = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOT = 0x02
+ERROR :  SET PD_TYPE_COAXIS_RATIOX = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOY = 0x03
+ERROR :  SET TIME_TO_GREEN_MODE = 0x03
+.\TABLE\F15000_RxSine.bin = FileSize=54, Num=25
+.\TABLE\F15000_RxCoef.bin = FileSize=102, Num=49
+.\TABLE\F15000_TxSine.bin = FileSize=203, Num=200
+.\TABLE\F15000_SgnExt.bin = FileSize=3, Num=1
+FAIL: There are 9 errors
+Press any key to continue...
+#################################################
+#            Zetdf1.exe Parse Setup             #
+#################################################
+ [e] No CheckSum Span Function Enabled  
+ [d] Little Ednian 
+ [o] Set Option at last 6th Byte= 0xFF 
+ [i] Revison file : .\INC\Revision.h 
+ [j] Revison file : .\INC\SubRevision.h 
+ [n] Device name apply TP type : Ltype-LPitch 
+ [s] Dataflash TotalPage(128 Byte/Page)=32pages
+#################################################
+#   Data Flash (V1.8) programmed by JL Juang    #
+#################################################
+
+ZetDF.h Successfully generated
+找不到 D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\DEV\ZET7100\ZET_DEFAULT\ZET7100.bin
+複製了         1 個檔案。
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\ZetDF_0291.XML
+移動         1 個檔案。
+移動         1 個檔案。
+移動         1 個檔案。
+##################################################
+#                   COMPILE                      #
+##################################################
+	nCC:  I2c.o
+	nCC:  Isr.o
+	nCC:  Main.o
+	nCC:  Customer.o
+##################################################
+#                 LINK OBJECTS                   #
+##################################################
+The output file is placed ".\BIN\ZET7100.ld"
+   text (code + rodata)	   data	    bss	    dec	    hex	filename
+  39144 (38636 +    508)	   4656	  27496	  71296	  11680	ZET7100.elf
+###########################################################################
+# BINMERGE.EXE (V0.5) --> PROGRAMMED BY JL JUANG                          #
+# USAGE : BINMerge.EXE [MAIN.BIN] [DATA.BIN] [OUTPUT.BIN] [OFFSET] [DELAY]#
+###########################################################################
+MAIN FILE = .\BIN\JOUT.bin
+DATA FILE = .\PRJ\DB.BIN
+OUT FILE = .\BIN\ZET7100.BIN
+OFFSET  = 0xe000
+Checksum = 0xBFA2
+Successfully Done.
+複製了         1 個檔案。
+##################################################
+#                   SUCCEED                      #
+##################################################
+/e: No such file or directory
++334: No such file or directory
+/e: No such file or directory
++399: No such file or directory
+##################################################
+#        Compile  ROM/SRAM Cost                  #
+##################################################
+Device_Ltype-LPitch RomSize  SramSize 
+0  0
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>cls
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>CALL nsetting.bat 
+複製了         1 個檔案。
+ + FEATURE_1T2R_ARCHITECTURE	
+ + FEATURE_NINE_SQUARE_ENABLE	
+ + FEATURE_MCU_LIB_ENABLE	
+ + FEATURE_PROJECT_ZET7100	
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>DEL .\INC\ZetDF.h 
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>COPY .\DEV\ZET7100\ZET_DEFAULT\SETUP.TXT .\SRC\SETUP.TXT 
+複製了         1 個檔案。
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>.\PRJ\GenXML.EXE .\SRC\ZetDF.XML .\SRC\OUT.XML	.\SRC\SETUP.TXT ZET7100     
+############################################
+# GENXML.EXE (V4.9) programmed by JL Juang #    
+# FOR ZET7100 Panel customization          # 
+############################################
+ERROR :  SET FINGER_WEIGHT_HEAVY = 0x005A
+ERROR :  SET INIT_DELTA_DEV = 0x0028
+ERROR :  SET PD_TYPE_RATIOT = 0x02
+ERROR :  SET PD_TYPE_RATIOX = 0x03
+ERROR :  SET PD_TYPE_RATIOY = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOT = 0x02
+ERROR :  SET PD_TYPE_COAXIS_RATIOX = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOY = 0x03
+ERROR :  SET TIME_TO_GREEN_MODE = 0x03
+.\TABLE\F15000_RxSine.bin = FileSize=54, Num=25
+.\TABLE\F15000_RxCoef.bin = FileSize=102, Num=49
+.\TABLE\F15000_TxSine.bin = FileSize=203, Num=200
+.\TABLE\F15000_SgnExt.bin = FileSize=3, Num=1
+FAIL: There are 9 errors
+Press any key to continue...
+#################################################
+#            Zetdf1.exe Parse Setup             #
+#################################################
+ [e] No CheckSum Span Function Enabled  
+ [d] Little Ednian 
+ [o] Set Option at last 6th Byte= 0xFF 
+ [i] Revison file : .\INC\Revision.h 
+ [j] Revison file : .\INC\SubRevision.h 
+ [n] Device name apply TP type : 1T2R-LPitch 
+ [s] Dataflash TotalPage(128 Byte/Page)=32pages
+#################################################
+#   Data Flash (V1.8) programmed by JL Juang    #
+#################################################
+
+ZetDF.h Successfully generated
+找不到 D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\DEV\ZET7100\ZET_DEFAULT\ZET7100.bin
+複製了         1 個檔案。
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\ZetDF_0291.XML
+移動         1 個檔案。
+移動         1 個檔案。
+移動         1 個檔案。
+##################################################
+#                   COMPILE                      #
+##################################################
+	nCC:  I2c.o
+	nCC:  Isr.o
+	nCC:  Main.o
+	nCC:  Customer.o
+##################################################
+#                 LINK OBJECTS                   #
+##################################################
+The output file is placed ".\BIN\ZET7100.ld"
+   text (code + rodata)	   data	    bss	    dec	    hex	filename
+  41720 (41212 +    508)	   4656	  27936	  74312	  12248	ZET7100.elf
+###########################################################################
+# BINMERGE.EXE (V0.5) --> PROGRAMMED BY JL JUANG                          #
+# USAGE : BINMerge.EXE [MAIN.BIN] [DATA.BIN] [OUTPUT.BIN] [OFFSET] [DELAY]#
+###########################################################################
+MAIN FILE = .\BIN\JOUT.bin
+DATA FILE = .\PRJ\DB.BIN
+OUT FILE = .\BIN\ZET7100.BIN
+OFFSET  = 0xe000
+Checksum = 0x7065
+Successfully Done.
+複製了         1 個檔案。
+##################################################
+#                   SUCCEED                      #
+##################################################
+/e: No such file or directory
++336: No such file or directory
+/e: No such file or directory
++401: No such file or directory
+##################################################
+#        Compile  ROM/SRAM Cost                  #
+##################################################
+Device_1T2R-LPitch RomSize  SramSize 
+0  0
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>cls
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>CALL nsetting.bat 
+複製了         1 個檔案。
+ + FEATURE_HTYPE_DEV_RE_MAPPING
+ + FEATURE_CLUSTER_ENABLE	
+ + FEATURE_MCU_LIB_ENABLE	
+ + FEATURE_PROJECT_ZET7100	
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>DEL .\INC\ZetDF.h 
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>COPY .\DEV\ZET7100\ZET_DEFAULT\SETUP.TXT .\SRC\SETUP.TXT 
+複製了         1 個檔案。
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>.\PRJ\GenXML.EXE .\SRC\ZetDF.XML .\SRC\OUT.XML	.\SRC\SETUP.TXT ZET7100     
+############################################
+# GENXML.EXE (V4.9) programmed by JL Juang #    
+# FOR ZET7100 Panel customization          # 
+############################################
+ERROR :  SET FINGER_WEIGHT_HEAVY = 0x005A
+ERROR :  SET INIT_DELTA_DEV = 0x0028
+ERROR :  SET PD_TYPE_RATIOT = 0x02
+ERROR :  SET PD_TYPE_RATIOX = 0x03
+ERROR :  SET PD_TYPE_RATIOY = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOT = 0x02
+ERROR :  SET PD_TYPE_COAXIS_RATIOX = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOY = 0x03
+ERROR :  SET TIME_TO_GREEN_MODE = 0x03
+.\TABLE\F15000_RxSine.bin = FileSize=54, Num=25
+.\TABLE\F15000_RxCoef.bin = FileSize=102, Num=49
+.\TABLE\F15000_TxSine.bin = FileSize=203, Num=200
+.\TABLE\F15000_SgnExt.bin = FileSize=3, Num=1
+FAIL: There are 9 errors
+Press any key to continue...
+#################################################
+#            Zetdf1.exe Parse Setup             #
+#################################################
+ [e] No CheckSum Span Function Enabled  
+ [d] Little Ednian 
+ [o] Set Option at last 6th Byte= 0xFF 
+ [i] Revison file : .\INC\Revision.h 
+ [j] Revison file : .\INC\SubRevision.h 
+ [n] Device name apply TP type : Htype-SPitch 
+ [s] Dataflash TotalPage(128 Byte/Page)=32pages
+#################################################
+#   Data Flash (V1.8) programmed by JL Juang    #
+#################################################
+
+ZetDF.h Successfully generated
+找不到 D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\DEV\ZET7100\ZET_DEFAULT\ZET7100.bin
+複製了         1 個檔案。
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\ZetDF_0291.XML
+移動         1 個檔案。
+移動         1 個檔案。
+移動         1 個檔案。
+##################################################
+#                   COMPILE                      #
+##################################################
+	nCC:  I2c.o
+	nCC:  Isr.o
+	nCC:  Main.o
+	nCC:  Customer.o
+##################################################
+#                 LINK OBJECTS                   #
+##################################################
+The output file is placed ".\BIN\ZET7100.ld"
+   text (code + rodata)	   data	    bss	    dec	    hex	filename
+  39408 (38900 +    508)	   4656	  28196	  72260	  11a44	ZET7100.elf
+###########################################################################
+# BINMERGE.EXE (V0.5) --> PROGRAMMED BY JL JUANG                          #
+# USAGE : BINMerge.EXE [MAIN.BIN] [DATA.BIN] [OUTPUT.BIN] [OFFSET] [DELAY]#
+###########################################################################
+MAIN FILE = .\BIN\JOUT.bin
+DATA FILE = .\PRJ\DB.BIN
+OUT FILE = .\BIN\ZET7100.BIN
+OFFSET  = 0xe000
+Checksum = 0x905A
+Successfully Done.
+複製了         1 個檔案。
+##################################################
+#                   SUCCEED                      #
+##################################################
+/e: No such file or directory
++334: No such file or directory
+/e: No such file or directory
++399: No such file or directory
+##################################################
+#        Compile  ROM/SRAM Cost                  #
+##################################################
+Device_Htype-SPitch RomSize  SramSize 
+0  0
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>cls
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>CALL nsetting.bat 
+複製了         1 個檔案。
+ + FEATURE_LTYPE_DEV_RE_MAPPING
+ + FEATURE_CLUSTER_ENABLE	
+ + FEATURE_MCU_LIB_ENABLE	
+ + FEATURE_PROJECT_ZET7100	
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>DEL .\INC\ZetDF.h 
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>COPY .\DEV\ZET7100\ZET_DEFAULT\SETUP.TXT .\SRC\SETUP.TXT 
+複製了         1 個檔案。
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>.\PRJ\GenXML.EXE .\SRC\ZetDF.XML .\SRC\OUT.XML	.\SRC\SETUP.TXT ZET7100     
+############################################
+# GENXML.EXE (V4.9) programmed by JL Juang #    
+# FOR ZET7100 Panel customization          # 
+############################################
+ERROR :  SET FINGER_WEIGHT_HEAVY = 0x005A
+ERROR :  SET INIT_DELTA_DEV = 0x0028
+ERROR :  SET PD_TYPE_RATIOT = 0x02
+ERROR :  SET PD_TYPE_RATIOX = 0x03
+ERROR :  SET PD_TYPE_RATIOY = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOT = 0x02
+ERROR :  SET PD_TYPE_COAXIS_RATIOX = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOY = 0x03
+ERROR :  SET TIME_TO_GREEN_MODE = 0x03
+.\TABLE\F15000_RxSine.bin = FileSize=54, Num=25
+.\TABLE\F15000_RxCoef.bin = FileSize=102, Num=49
+.\TABLE\F15000_TxSine.bin = FileSize=203, Num=200
+.\TABLE\F15000_SgnExt.bin = FileSize=3, Num=1
+FAIL: There are 9 errors
+Press any key to continue...
+#################################################
+#            Zetdf1.exe Parse Setup             #
+#################################################
+ [e] No CheckSum Span Function Enabled  
+ [d] Little Ednian 
+ [o] Set Option at last 6th Byte= 0xFF 
+ [i] Revison file : .\INC\Revision.h 
+ [j] Revison file : .\INC\SubRevision.h 
+ [n] Device name apply TP type : Ltype-SPitch 
+ [s] Dataflash TotalPage(128 Byte/Page)=32pages
+#################################################
+#   Data Flash (V1.8) programmed by JL Juang    #
+#################################################
+
+ZetDF.h Successfully generated
+找不到 D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\DEV\ZET7100\ZET_DEFAULT\ZET7100.bin
+複製了         1 個檔案。
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\ZetDF_0291.XML
+移動         1 個檔案。
+移動         1 個檔案。
+移動         1 個檔案。
+##################################################
+#                   COMPILE                      #
+##################################################
+	nCC:  I2c.o
+	nCC:  Isr.o
+	nCC:  Main.o
+	nCC:  Customer.o
+##################################################
+#                 LINK OBJECTS                   #
+##################################################
+The output file is placed ".\BIN\ZET7100.ld"
+   text (code + rodata)	   data	    bss	    dec	    hex	filename
+  39148 (38640 +    508)	   4656	  28196	  72000	  11940	ZET7100.elf
+###########################################################################
+# BINMERGE.EXE (V0.5) --> PROGRAMMED BY JL JUANG                          #
+# USAGE : BINMerge.EXE [MAIN.BIN] [DATA.BIN] [OUTPUT.BIN] [OFFSET] [DELAY]#
+###########################################################################
+MAIN FILE = .\BIN\JOUT.bin
+DATA FILE = .\PRJ\DB.BIN
+OUT FILE = .\BIN\ZET7100.BIN
+OFFSET  = 0xe000
+Checksum = 0x5623
+Successfully Done.
+複製了         1 個檔案。
+##################################################
+#                   SUCCEED                      #
+##################################################
+/e: No such file or directory
++334: No such file or directory
+/e: No such file or directory
++399: No such file or directory
+##################################################
+#        Compile  ROM/SRAM Cost                  #
+##################################################
+Device_Ltype-SPitch RomSize  SramSize 
+0  0
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>cls
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>CALL nsetting.bat 
+複製了         1 個檔案。
+ + FEATURE_1T2R_ARCHITECTURE
+ + FEATURE_CLUSTER_ENABLE	
+ + FEATURE_MCU_LIB_ENABLE	
+ + FEATURE_PROJECT_ZET7100	
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>DEL .\INC\ZetDF.h 
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>COPY .\DEV\ZET7100\ZET_DEFAULT\SETUP.TXT .\SRC\SETUP.TXT 
+複製了         1 個檔案。
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>.\PRJ\GenXML.EXE .\SRC\ZetDF.XML .\SRC\OUT.XML	.\SRC\SETUP.TXT ZET7100     
+############################################
+# GENXML.EXE (V4.9) programmed by JL Juang #    
+# FOR ZET7100 Panel customization          # 
+############################################
+ERROR :  SET FINGER_WEIGHT_HEAVY = 0x005A
+ERROR :  SET INIT_DELTA_DEV = 0x0028
+ERROR :  SET PD_TYPE_RATIOT = 0x02
+ERROR :  SET PD_TYPE_RATIOX = 0x03
+ERROR :  SET PD_TYPE_RATIOY = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOT = 0x02
+ERROR :  SET PD_TYPE_COAXIS_RATIOX = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOY = 0x03
+ERROR :  SET TIME_TO_GREEN_MODE = 0x03
+.\TABLE\F15000_RxSine.bin = FileSize=54, Num=25
+.\TABLE\F15000_RxCoef.bin = FileSize=102, Num=49
+.\TABLE\F15000_TxSine.bin = FileSize=203, Num=200
+.\TABLE\F15000_SgnExt.bin = FileSize=3, Num=1
+FAIL: There are 9 errors
+Press any key to continue...
+#################################################
+#            Zetdf1.exe Parse Setup             #
+#################################################
+ [e] No CheckSum Span Function Enabled  
+ [d] Little Ednian 
+ [o] Set Option at last 6th Byte= 0xFF 
+ [i] Revison file : .\INC\Revision.h 
+ [j] Revison file : .\INC\SubRevision.h 
+ [n] Device name apply TP type : 1T2R-SPitch 
+ [s] Dataflash TotalPage(128 Byte/Page)=32pages
+#################################################
+#   Data Flash (V1.8) programmed by JL Juang    #
+#################################################
+
+ZetDF.h Successfully generated
+找不到 D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\DEV\ZET7100\ZET_DEFAULT\ZET7100.bin
+複製了         1 個檔案。
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\ZetDF_0291.XML
+移動         1 個檔案。
+移動         1 個檔案。
+移動         1 個檔案。
+##################################################
+#                   COMPILE                      #
+##################################################
+	nCC:  I2c.o
+	nCC:  Isr.o
+	nCC:  Main.o
+	nCC:  Customer.o
+##################################################
+#                 LINK OBJECTS                   #
+##################################################
+The output file is placed ".\BIN\ZET7100.ld"
+   text (code + rodata)	   data	    bss	    dec	    hex	filename
+  43328 (42820 +    508)	   4656	  28636	  76620	  12b4c	ZET7100.elf
+###########################################################################
+# BINMERGE.EXE (V0.5) --> PROGRAMMED BY JL JUANG                          #
+# USAGE : BINMerge.EXE [MAIN.BIN] [DATA.BIN] [OUTPUT.BIN] [OFFSET] [DELAY]#
+###########################################################################
+MAIN FILE = .\BIN\JOUT.bin
+DATA FILE = .\PRJ\DB.BIN
+OUT FILE = .\BIN\ZET7100.BIN
+OFFSET  = 0xe000
+Checksum = 0x0C79
+Successfully Done.
+複製了         1 個檔案。
+##################################################
+#                   SUCCEED                      #
+##################################################
+/e: No such file or directory
++343: No such file or directory
+/e: No such file or directory
++408: No such file or directory
+##################################################
+#        Compile  ROM/SRAM Cost                  #
+##################################################
+Device_1T2R-SPitch RomSize  SramSize 
+0  0
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>cls
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>CALL nsetting.bat 
+複製了         1 個檔案。
+ + FEATURE_FORCE_TOUCH
+ + FEATURE_NINE_SQUARE_ENABLE	
+ + FEATURE_MCU_LIB_ENABLE	
+ + FEATURE_PROJECT_ZET7100	
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>DEL .\INC\ZetDF.h 
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>COPY .\DEV\ZET7100\ZET_DEFAULT\SETUP.TXT .\SRC\SETUP.TXT 
+複製了         1 個檔案。
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>.\PRJ\GenXML.EXE .\SRC\ZetDF.XML .\SRC\OUT.XML	.\SRC\SETUP.TXT ZET7100     
+############################################
+# GENXML.EXE (V4.9) programmed by JL Juang #    
+# FOR ZET7100 Panel customization          # 
+############################################
+ERROR :  SET FINGER_WEIGHT_HEAVY = 0x005A
+ERROR :  SET INIT_DELTA_DEV = 0x0028
+ERROR :  SET PD_TYPE_RATIOT = 0x02
+ERROR :  SET PD_TYPE_RATIOX = 0x03
+ERROR :  SET PD_TYPE_RATIOY = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOT = 0x02
+ERROR :  SET PD_TYPE_COAXIS_RATIOX = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOY = 0x03
+ERROR :  SET TIME_TO_GREEN_MODE = 0x03
+.\TABLE\F15000_RxSine.bin = FileSize=54, Num=25
+.\TABLE\F15000_RxCoef.bin = FileSize=102, Num=49
+.\TABLE\F15000_TxSine.bin = FileSize=203, Num=200
+.\TABLE\F15000_SgnExt.bin = FileSize=3, Num=1
+FAIL: There are 9 errors
+Press any key to continue...
+#################################################
+#            Zetdf1.exe Parse Setup             #
+#################################################
+ [e] No CheckSum Span Function Enabled  
+ [d] Little Ednian 
+ [o] Set Option at last 6th Byte= 0xFF 
+ [i] Revison file : .\INC\Revision.h 
+ [j] Revison file : .\INC\SubRevision.h 
+ [n] Device name apply TP type : F3D-LPitch 
+ [s] Dataflash TotalPage(128 Byte/Page)=32pages
+#################################################
+#   Data Flash (V1.8) programmed by JL Juang    #
+#################################################
+
+ZetDF.h Successfully generated
+找不到 D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\DEV\ZET7100\ZET_DEFAULT\ZET7100.bin
+複製了         1 個檔案。
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\ZetDF_0291.XML
+移動         1 個檔案。
+移動         1 個檔案。
+移動         1 個檔案。
+##################################################
+#                   COMPILE                      #
+##################################################
+	nCC:  I2c.o
+	nCC:  Isr.o
+	nCC:  Main.o
+	nCC:  Customer.o
+##################################################
+#                 LINK OBJECTS                   #
+##################################################
+The output file is placed ".\BIN\ZET7100.ld"
+   text (code + rodata)	   data	    bss	    dec	    hex	filename
+  37816 (37312 +    504)	   4656	  27536	  70008	  11178	ZET7100.elf
+###########################################################################
+# BINMERGE.EXE (V0.5) --> PROGRAMMED BY JL JUANG                          #
+# USAGE : BINMerge.EXE [MAIN.BIN] [DATA.BIN] [OUTPUT.BIN] [OFFSET] [DELAY]#
+###########################################################################
+MAIN FILE = .\BIN\JOUT.bin
+DATA FILE = .\PRJ\DB.BIN
+OUT FILE = .\BIN\ZET7100.BIN
+OFFSET  = 0xe000
+Checksum = 0x696F
+Successfully Done.
+複製了         1 個檔案。
+##################################################
+#                   SUCCEED                      #
+##################################################
+/e: No such file or directory
++329: No such file or directory
+/e: No such file or directory
++394: No such file or directory
+##################################################
+#        Compile  ROM/SRAM Cost                  #
+##################################################
+Device_F3D-LPitch RomSize  SramSize 
+0  0
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>cls
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>CALL nsetting.bat 
+複製了         1 個檔案。
+ + FEATURE_FORCE_TOUCH
+ + FEATURE_CLUSTER_ENABLE	
+ + FEATURE_MCU_LIB_ENABLE	
+ + FEATURE_PROJECT_ZET7100	
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>DEL .\INC\ZetDF.h 
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>COPY .\DEV\ZET7100\ZET_DEFAULT\SETUP.TXT .\SRC\SETUP.TXT 
+複製了         1 個檔案。
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>.\PRJ\GenXML.EXE .\SRC\ZetDF.XML .\SRC\OUT.XML	.\SRC\SETUP.TXT ZET7100     
+############################################
+# GENXML.EXE (V4.9) programmed by JL Juang #    
+# FOR ZET7100 Panel customization          # 
+############################################
+ERROR :  SET FINGER_WEIGHT_HEAVY = 0x005A
+ERROR :  SET INIT_DELTA_DEV = 0x0028
+ERROR :  SET PD_TYPE_RATIOT = 0x02
+ERROR :  SET PD_TYPE_RATIOX = 0x03
+ERROR :  SET PD_TYPE_RATIOY = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOT = 0x02
+ERROR :  SET PD_TYPE_COAXIS_RATIOX = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOY = 0x03
+ERROR :  SET TIME_TO_GREEN_MODE = 0x03
+.\TABLE\F15000_RxSine.bin = FileSize=54, Num=25
+.\TABLE\F15000_RxCoef.bin = FileSize=102, Num=49
+.\TABLE\F15000_TxSine.bin = FileSize=203, Num=200
+.\TABLE\F15000_SgnExt.bin = FileSize=3, Num=1
+FAIL: There are 9 errors
+Press any key to continue...
+#################################################
+#            Zetdf1.exe Parse Setup             #
+#################################################
+ [e] No CheckSum Span Function Enabled  
+ [d] Little Ednian 
+ [o] Set Option at last 6th Byte= 0xFF 
+ [i] Revison file : .\INC\Revision.h 
+ [j] Revison file : .\INC\SubRevision.h 
+ [n] Device name apply TP type : F3D-SPitch 
+ [s] Dataflash TotalPage(128 Byte/Page)=32pages
+#################################################
+#   Data Flash (V1.8) programmed by JL Juang    #
+#################################################
+
+ZetDF.h Successfully generated
+找不到 D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\DEV\ZET7100\ZET_DEFAULT\ZET7100.bin
+複製了         1 個檔案。
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\ZetDF_0291.XML
+移動         1 個檔案。
+移動         1 個檔案。
+移動         1 個檔案。
+##################################################
+#                   COMPILE                      #
+##################################################
+	nCC:  I2c.o
+	nCC:  Isr.o
+	nCC:  Main.o
+	nCC:  Customer.o
+##################################################
+#                 LINK OBJECTS                   #
+##################################################
+The output file is placed ".\BIN\ZET7100.ld"
+   text (code + rodata)	   data	    bss	    dec	    hex	filename
+  39780 (39276 +    504)	   4656	  28236	  72672	  11be0	ZET7100.elf
+###########################################################################
+# BINMERGE.EXE (V0.5) --> PROGRAMMED BY JL JUANG                          #
+# USAGE : BINMerge.EXE [MAIN.BIN] [DATA.BIN] [OUTPUT.BIN] [OFFSET] [DELAY]#
+###########################################################################
+MAIN FILE = .\BIN\JOUT.bin
+DATA FILE = .\PRJ\DB.BIN
+OUT FILE = .\BIN\ZET7100.BIN
+OFFSET  = 0xe000
+Checksum = 0x7896
+Successfully Done.
+複製了         1 個檔案。
+##################################################
+#                   SUCCEED                      #
+##################################################
+/e: No such file or directory
++337: No such file or directory
+/e: No such file or directory
++402: No such file or directory
+##################################################
+#        Compile  ROM/SRAM Cost                  #
+##################################################
+Device_F3D-SPitch RomSize  SramSize 
+0  0
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>cls
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>CALL nsetting.bat 
+複製了         1 個檔案。
+ + FEATURE_FORCE_TOUCH
+ + FEATURE_PRESS_TOUCH
+ + FEATURE_CLUSTER_ENABLE	
+ + FEATURE_MCU_LIB_ENABLE	
+ + FEATURE_PROJECT_ZET7100	
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>DEL .\INC\ZetDF.h 
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>COPY .\DEV\ZET7100\ZET_DEFAULT\SETUP.TXT .\SRC\SETUP.TXT 
+複製了         1 個檔案。
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>.\PRJ\GenXML.EXE .\SRC\ZetDF.XML .\SRC\OUT.XML	.\SRC\SETUP.TXT ZET7100     
+############################################
+# GENXML.EXE (V4.9) programmed by JL Juang #    
+# FOR ZET7100 Panel customization          # 
+############################################
+ERROR :  SET FINGER_WEIGHT_HEAVY = 0x005A
+ERROR :  SET INIT_DELTA_DEV = 0x0028
+ERROR :  SET PD_TYPE_RATIOT = 0x02
+ERROR :  SET PD_TYPE_RATIOX = 0x03
+ERROR :  SET PD_TYPE_RATIOY = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOT = 0x02
+ERROR :  SET PD_TYPE_COAXIS_RATIOX = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOY = 0x03
+ERROR :  SET TIME_TO_GREEN_MODE = 0x03
+.\TABLE\F15000_RxSine.bin = FileSize=54, Num=25
+.\TABLE\F15000_RxCoef.bin = FileSize=102, Num=49
+.\TABLE\F15000_TxSine.bin = FileSize=203, Num=200
+.\TABLE\F15000_SgnExt.bin = FileSize=3, Num=1
+FAIL: There are 9 errors
+Press any key to continue...
+#################################################
+#            Zetdf1.exe Parse Setup             #
+#################################################
+ [e] No CheckSum Span Function Enabled  
+ [d] Little Ednian 
+ [o] Set Option at last 6th Byte= 0xFF 
+ [i] Revison file : .\INC\Revision.h 
+ [j] Revison file : .\INC\SubRevision.h 
+ [n] Device name apply TP type : ForceTouch 
+ [s] Dataflash TotalPage(128 Byte/Page)=32pages
+#################################################
+#   Data Flash (V1.8) programmed by JL Juang    #
+#################################################
+
+ZetDF.h Successfully generated
+找不到 D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\DEV\ZET7100\ZET_DEFAULT\ZET7100.bin
+複製了         1 個檔案。
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\ZetDF_0291.XML
+移動         1 個檔案。
+移動         1 個檔案。
+移動         1 個檔案。
+##################################################
+#                   COMPILE                      #
+##################################################
+	nCC:  I2c.o
+	nCC:  Isr.o
+	nCC:  Main.o
+	nCC:  Customer.o
+##################################################
+#                 LINK OBJECTS                   #
+##################################################
+The output file is placed ".\BIN\ZET7100.ld"
+   text (code + rodata)	   data	    bss	    dec	    hex	filename
+  24096 (23592 +    504)	   4656	  26996	  55748	   d9c4	ZET7100.elf
+###########################################################################
+# BINMERGE.EXE (V0.5) --> PROGRAMMED BY JL JUANG                          #
+# USAGE : BINMerge.EXE [MAIN.BIN] [DATA.BIN] [OUTPUT.BIN] [OFFSET] [DELAY]#
+###########################################################################
+MAIN FILE = .\BIN\JOUT.bin
+DATA FILE = .\PRJ\DB.BIN
+OUT FILE = .\BIN\ZET7100.BIN
+OFFSET  = 0xe000
+Checksum = 0x4B2F
+Successfully Done.
+複製了         1 個檔案。
+##################################################
+#                   SUCCEED                      #
+##################################################
+/e: No such file or directory
++273: No such file or directory
+/e: No such file or directory
++339: No such file or directory
+##################################################
+#        Compile  ROM/SRAM Cost                  #
+##################################################
+Device_ForceTouch RomSize  SramSize 
+0  0
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>cls
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>CALL nsetting.bat 
+複製了         1 個檔案。
+ + FEATURE_1T2R_ARCHITECTURE
+ + FEATURE_FORCE_TOUCH
+ + FEATURE_CUSTOMER_PROTOCOL
+ + FEATURE_CLUSTER_ENABLE	
+ + FEATURE_MCU_LIB_ENABLE	
+ + FEATURE_PROJECT_ZET7100	
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>DEL .\INC\ZetDF.h 
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>COPY .\DEV\ZET7100\ZET_DEFAULT\SETUP.TXT .\SRC\SETUP.TXT 
+複製了         1 個檔案。
+
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>.\PRJ\GenXML.EXE .\SRC\ZetDF.XML .\SRC\OUT.XML	.\SRC\SETUP.TXT ZET7100     
+############################################
+# GENXML.EXE (V4.9) programmed by JL Juang #    
+# FOR ZET7100 Panel customization          # 
+############################################
+ERROR :  SET FINGER_WEIGHT_HEAVY = 0x005A
+ERROR :  SET INIT_DELTA_DEV = 0x0028
+ERROR :  SET PD_TYPE_RATIOT = 0x02
+ERROR :  SET PD_TYPE_RATIOX = 0x03
+ERROR :  SET PD_TYPE_RATIOY = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOT = 0x02
+ERROR :  SET PD_TYPE_COAXIS_RATIOX = 0x03
+ERROR :  SET PD_TYPE_COAXIS_RATIOY = 0x03
+ERROR :  SET TIME_TO_GREEN_MODE = 0x03
+.\TABLE\F15000_RxSine.bin = FileSize=54, Num=25
+.\TABLE\F15000_RxCoef.bin = FileSize=102, Num=49
+.\TABLE\F15000_TxSine.bin = FileSize=203, Num=200
+.\TABLE\F15000_SgnExt.bin = FileSize=3, Num=1
+FAIL: There are 9 errors
+Press any key to continue...
+#################################################
+#            Zetdf1.exe Parse Setup             #
+#################################################
+ [e] No CheckSum Span Function Enabled  
+ [d] Little Ednian 
+ [o] Set Option at last 6th Byte= 0xFF 
+ [i] Revison file : .\INC\Revision.h 
+ [j] Revison file : .\INC\SubRevision.h 
+ [n] Device name apply TP type : 1T2R-SP-C 
+ [s] Dataflash TotalPage(128 Byte/Page)=32pages
+#################################################
+#   Data Flash (V1.8) programmed by JL Juang    #
+#################################################
+
+ZetDF.h Successfully generated
+找不到 D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\DEV\ZET7100\ZET_DEFAULT\ZET7100.bin
+複製了         1 個檔案。
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\ZetDF_0291.XML
+移動         1 個檔案。
+移動         1 個檔案。
+移動         1 個檔案。
+##################################################
+#                   COMPILE                      #
+##################################################
+	nCC:  I2c.o
+	nCC:  Isr.o
+	nCC:  Main.o
+	nCC:  Customer.o
+##################################################
+#                 LINK OBJECTS                   #
+##################################################
+The output file is placed ".\BIN\ZET7100.ld"
+   text (code + rodata)	   data	    bss	    dec	    hex	filename
+  45872 (44896 +    976)	   4656	  19344	  69872	  110f0	ZET7100.elf
+###########################################################################
+# BINMERGE.EXE (V0.5) --> PROGRAMMED BY JL JUANG                          #
+# USAGE : BINMerge.EXE [MAIN.BIN] [DATA.BIN] [OUTPUT.BIN] [OFFSET] [DELAY]#
+###########################################################################
+MAIN FILE = .\BIN\JOUT.bin
+DATA FILE = .\PRJ\DB.BIN
+OUT FILE = .\BIN\ZET7100.BIN
+OFFSET  = 0xe000
+Checksum = 0xA8F8
+Successfully Done.
+複製了         1 個檔案。
+##################################################
+#                   SUCCEED                      #
+##################################################
+/e: No such file or directory
++421: No such file or directory
+/e: No such file or directory
++487: No such file or directory
+##################################################
+#        Compile  ROM/SRAM Cost                  #
+##################################################
+Device_1T2R-SP-C RomSize  SramSize 
+0  0
