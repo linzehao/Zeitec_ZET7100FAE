@@ -66,8 +66,8 @@
 //#define FEATURE_INIT_SCAN_DEBUG                                 ///< (DEFAULT : OFF), This feature shows Init-Scan debugging information
 //#define FEATURE_INIT_MOVING_AVG                                   ///< (DEFAULT : OFF), This feature enables the moving average of init-scan
 #if defined(FEATURE_CLUSTER_ENABLE) && defined(FEATURE_1T2R_ARCHITECTURE)
-//#define FEATURE_WATER_INIT_SCAN
-//#define FEATURE_WATER_INIT_COORD
+#define FEATURE_WATER_INIT_SCAN
+#define FEATURE_WATER_INIT_COORD
 //#define FEATURE_WATER_INIT_SCAN_DEBUG
 #endif
 
@@ -192,7 +192,6 @@
 
 #define FEATURE_DATA_FORMAT_INIT_SCAN_ADBASE                  ///< (DEFAULT : ON), This feature enables the data format Init-Scan ADBASE Data
 #define FEATURE_DATA_FORMAT_INIT_SCAN_DEV                     ///< (DEFAULT : ON), This feature enables the data format Init-Scan Dev Data
-
 
 ///-----------------------------------------------------------------------------------------------------------------------------------------------------------///
 /// 19.  Finger Search algorithm 
@@ -749,8 +748,8 @@
 //#define SPI_FLASH_WR_ENABLE //enable flash read write function
 //#define SPI_API_TEST
 //#define FORCE_SENSOR_PROTOCOL //[Maple] Not support now
-//#define FEATURE_GESTURE_PRO
-//#define FEATURE_GESTURE_PRO_DBG
+#define FEATURE_GESTURE_PRO
+#define FEATURE_GESTURE_PRO_DBG
 #endif
 
 ///-----------------------------------------------------------------------------------------------------------------------------------------------------------///

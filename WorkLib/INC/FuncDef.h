@@ -671,16 +671,12 @@ EXTERN void DFForceScanDev(void);
 #ifdef FEATURE_PRESS_TOUCH 
 EXTERN void DFForceC1C2AdBaseSend(void);
 EXTERN void DFForceC1C2ScanBase(void);
-
 #endif
-
-
 
 ///-------------------------------------------------------------------------------///
 /// 12. Timer
 ///-------------------------------------------------------------------------------///
 EXTERN void TimerIsr();
-
 EXTERN void TimerInit(WORD wTimerPeriod);
 EXTERN void TimerSetup(BYTE bImmediately, WORD wTimerPeriod);
 EXTERN void CounterInit(WORD wTimerPeriod);
@@ -701,8 +697,6 @@ EXTERN void TSSenseGroupTraceToGnd(BYTE bSenseGroupId);
 EXTERN void TSSenseGroupTraceToAdc(BYTE bGroupId ,BYTE bApplyMode);
 EXTERN void TSKeySenseGroupTraceToAdc(void);
 EXTERN void TSTraceModeSet(BYTE iTableIdx, BYTE bMode);
-
-
 
 #ifdef FEATURE_INIT_REGION_SCAN
 EXTERN void TSSenseAllTracePNModeSet(BYTE bRound);
@@ -835,7 +829,6 @@ EXTERN void ALPHover(void);
 #ifdef FEATURE_RAW_DEV_IMPORT
 EXTERN void ImportDevData(void);
 #endif
-
 
 #endif ///< __FUNC_DEF__
 

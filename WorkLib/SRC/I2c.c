@@ -146,7 +146,6 @@ BYTE const code bCustomCmd0700Cnt0Buf[]= {0x25,0xD6,0x00,0x81,0x00,0x00,0x2C,0x5
                                           0x03,0x11,0x00,0x00
                                          };
 
-
 #ifdef FEATURE_BM_NEW
 //Atmel MainBoard
 BYTE const code bCustomCmd5901Cnt0Buf[]= {0x01,0x80,0x66,0xE9,0x25,0x00,0x00,0x00,0x00,0x03,0x04,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x07,0x01, \
@@ -228,7 +227,6 @@ BYTE const code bCustomCmdD801Cnt2Buf[]= {0x07,0x00,0x0B,0x00,0x0D,0x00,0x15,0x0
                                           0x00,0x00,0x00,0x00,0x0C,0x00,0x1B,0x00
                                          };
 
-
 BYTE const code bCustomCmdD801Cnt3Buf[]= {0x0B,0x00,0x04,0x00,0xFB,0xFF,0x06,0x00,0x13,0x00,0x18,0x00,0x1D,0x00,0x10,0x00,0x12,0x00,0x18,0x00, \
                                           0x13,0x00,0x0A,0x00,0x18,0x00,0x15,0x00,0x00,0x00,0x00,0x00,0x11,0x00,0x04,0x00,0x12,0x00,0x01,0x00, \
                                           0xF9,0xFF,0x0F,0x00,0x04,0x00,0x1E,0x00,0x14,0x00,0x13,0x00,0x0D,0x00,0x19,0x00,0x0D,0x00,0x07,0x00, \
@@ -293,11 +291,9 @@ BYTE const code bCustomCmdD801Cnt0Buf[]= {0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x0
                                           0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
                                          };
 
-
 #endif
 
 #endif
-
 
 void I2CDataFormatDataInCheckSub(void)
 {
@@ -548,7 +544,6 @@ void I2CInit(void)
  */
 void I2CDataFormatReset(void)
 {
-
     ///------------------------------------------------------------///
     /// Replace the 0x3C as the reset NULL ID 0x00
     ///------------------------------------------------------------///
@@ -565,7 +560,6 @@ void I2CDataFormatReset(void)
     {
       I2C_INT_HIGH();
     }
-
 }
 
 /**
@@ -626,10 +620,6 @@ void I2CTxCheckEnd()
 			#endif
     }
 }
-
-
-
-
 
 /**
  * @brief  I2CTxNonAck()
@@ -1144,24 +1134,20 @@ void CustomHfunc4Cmd04()
 			}
 }
 void CustomHfunc4Cmd05()
-{
-            
+{  
 		if(CustomerVar.bCustomCmd05Cnt < 255)
     {
 			CustomerVar.bCustomCmd05Cnt++;
 
 			if(CustomerVar.bCustomCmd05Cnt == 1)
-      {
-                   
+      {        
 					BYTE bTmpBuf[] = {0x06};
 					CustomerResponseArray(bTmpBuf,1, RESET_RXIDX);
       }
 			else if(CustomerVar.bCustomCmd05Cnt == 2)
       {
-				
 					BYTE bTmpBuf[] = {0x00};			
 					CustomerResponseArray(bTmpBuf,1, RESET_RXIDX);
-					
       }
 			else if(CustomerVar.bCustomCmd05Cnt==3) 
       {			
@@ -1173,17 +1159,15 @@ void CustomHfunc4Cmd05()
 					BYTE bTmpBuf[] = {0x00};
 					CustomerResponseArray(bTmpBuf,1, RESET_RXIDX);
       }             
-    }
-        
+    }      
 
 		if(ZetVar.bWorkingState==WORKING_STATE_CUSTOMER_NORMAL)
     {
-
        if(CustomerVar.bWakeUpFlag==1)
        {
 					BYTE bTmpBuf[] = {0x00};
 					CustomerResponseArray(bTmpBuf,1, RESET_RXIDX);
-                    CustomerVar.bWakeUpFlag=0;
+          CustomerVar.bWakeUpFlag=0;
        }
 			 else
 			 {
@@ -1191,7 +1175,6 @@ void CustomHfunc4Cmd05()
 					CustomerResponseArray(bTmpBuf,1, RESET_RXIDX);
 			 }
     }
-
 }
 void CustomHfunc4Cmd06()
 {
@@ -1200,8 +1183,7 @@ void CustomHfunc4Cmd06()
 		ZetVar.wI2cTxLen = bTmpSize;
 		ZetVar.pI2CData = (BYTE *)(&CustomerVar.bDoubleBuffer[CustomerVar.bDoubleBufferSendIdx][0]);
 		ZetVar.wI2cRxIdx= 0;						 
-	//	CustomerResponseArray((BYTE *)(&CustomerVar.bDoubleBuffer[CustomerVar.bDoubleBufferSendIdx][0]), bTmpSize, RESET_RXIDX); 
-			
+		//CustomerResponseArray((BYTE *)(&CustomerVar.bDoubleBuffer[CustomerVar.bDoubleBufferSendIdx][0]), bTmpSize, RESET_RXIDX); 		
 }
 
 void CustomHfunc4Cmd09()
@@ -1216,29 +1198,29 @@ void CustomHfunc4Cmd0A()
 }
 void CustomHfunc4Cmd0E()
 {		
-    if(CustomerVar.bCustomCmd0eCnt < 255)
+  if(CustomerVar.bCustomCmd0eCnt < 255)
+	{
+		CustomerVar.bCustomCmd0eCnt++;
+		BYTE bTmpBuf[] = {0x00};			
+		CustomerResponseArray(bTmpBuf,1, RESET_RXIDX);
+		if(CustomerVar.bCustomCmd0eCnt == 11)
 		{
-			CustomerVar.bCustomCmd0eCnt++;
-			BYTE bTmpBuf[] = {0x00};			
+			BYTE bTmpBuf[] = {0x01};			
 			CustomerResponseArray(bTmpBuf,1, RESET_RXIDX);
-			if(CustomerVar.bCustomCmd0eCnt == 11)
-			{
-				BYTE bTmpBuf[] = {0x01};			
-				CustomerResponseArray(bTmpBuf,1, RESET_RXIDX);
-			}
-			else if(CustomerVar.bWakeUpFlag == 0)
-			{
-				CustomerVar.bCustomCmd0eCnt = 12;
-				BYTE bTmpBuf[]= {0x00};
-				CustomerResponseArray(bTmpBuf, 1, RESET_RXIDX);
-			}
-			else if(CustomerVar.bWakeUpFlag == 1)
-			{
-				CustomerVar.bCustomCmd0eCnt = 12;
-				BYTE bTmpBuf[] = {0x01};
-				CustomerResponseArray(bTmpBuf,1, RESET_RXIDX);
-			}
 		}
+		else if(CustomerVar.bWakeUpFlag == 0)
+		{
+			CustomerVar.bCustomCmd0eCnt = 12;
+			BYTE bTmpBuf[]= {0x00};
+			CustomerResponseArray(bTmpBuf, 1, RESET_RXIDX);
+		}
+		else if(CustomerVar.bWakeUpFlag == 1)
+		{
+			CustomerVar.bCustomCmd0eCnt = 12;
+			BYTE bTmpBuf[] = {0x01};
+			CustomerResponseArray(bTmpBuf,1, RESET_RXIDX);
+		}
+	}
 }
 
 void CustomHfunc4Cmd0E01()
@@ -1261,10 +1243,8 @@ void CustomHfunc4Cmd0E00()
 	/// Test Mode Disabled
 	ZetVar.wSysMode &= ~SYS_MODE_TP_TEST_EN;
 	/// Cancel the previous interrupt, if any
-			//		 I2C_INT_HIGH();									
-
+	//	I2C_INT_HIGH();									
 }
-
 
 void CustomHfunc4Cmd15()
 {				   
@@ -1295,36 +1275,34 @@ void CustomHfunc4Cmd22()
 #ifdef SPI_API_TEST
 void CustomHfunc4Cmd2A()
 { 	
+  BYTE bTmpBuf[] = {0x01,0xe0,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x50,0x4c,\
+								0x47,0x30,0x33,0x32,0x37,0x2d,0x30,0x31}; 	
 
-		  BYTE bTmpBuf[] = {0x01,0xe0,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x50,0x4c,\
-										0x47,0x30,0x33,0x32,0x37,0x2d,0x30,0x31}; 	
-		
-      // Testcmd.unionCmd.CmdHF=I2CCmd[bDebugCNT].CmdHF;
-	      SPIFlashRead(0x00,0xD0,0x00,8, &bFlashBuffer[0]);
+  // Testcmd.unionCmd.CmdHF=I2CCmd[bDebugCNT].CmdHF;
+    SPIFlashRead(0x00,0xD0,0x00,8, &bFlashBuffer[0]);
 
-			bTmpBuf[0]=bFlashBuffer[0];  //HIBYTE(wSizeI2CCmd);
-			bTmpBuf[1]=bFlashBuffer[1]; //LOBYTE(wSizeI2CCmd);
-			bTmpBuf[2]=bFlashBuffer[2]; //Testcmd2.unionCmd.addr[0];
-			bTmpBuf[3]=bFlashBuffer[3]; //Testcmd2.unionCmd.addr[1];
-			bTmpBuf[4]=bFlashBuffer[4]; //Testcmd2.Cmdkey[0];
-			bTmpBuf[5]=bFlashBuffer[5]; //Testcmd2.Cmdkey[1];
-			bTmpBuf[6]=bFlashBuffer[6]; //bSizebTestcmd2;
-			bTmpBuf[7]=bFlashBuffer[7]; //Testcmd.unionCmd.addr[0];
-			bTmpBuf[8]=bFlashBuffer[8];
-			
-			bTmpBuf[9]=0xAA; //bSizebTestcmd2Cmdkey;
-			bTmpBuf[10]=CustomerVar.bDebugBuf[10]; //bSizebTestcmd2unionCmd;
-			bTmpBuf[11]=CustomerVar.bDebugBuf[11]; //bSizebTest2cmd;
-      bTmpBuf[12]=CustomerVar.bDebugBuf[12];
-			bTmpBuf[13]= CustomerVar.bDebugBuf[13];
-			bTmpBuf[14]= CustomerVar.bDebugBuf[14];
-			bTmpBuf[15]= CustomerVar.bDebugBuf[15];						
-     
-		  CustomerResponseArray((BYTE *)bTmpBuf,21, RESET_RXIDX);
+	bTmpBuf[0]=bFlashBuffer[0];  //HIBYTE(wSizeI2CCmd);
+	bTmpBuf[1]=bFlashBuffer[1]; //LOBYTE(wSizeI2CCmd);
+	bTmpBuf[2]=bFlashBuffer[2]; //Testcmd2.unionCmd.addr[0];
+	bTmpBuf[3]=bFlashBuffer[3]; //Testcmd2.unionCmd.addr[1];
+	bTmpBuf[4]=bFlashBuffer[4]; //Testcmd2.Cmdkey[0];
+	bTmpBuf[5]=bFlashBuffer[5]; //Testcmd2.Cmdkey[1];
+	bTmpBuf[6]=bFlashBuffer[6]; //bSizebTestcmd2;
+	bTmpBuf[7]=bFlashBuffer[7]; //Testcmd.unionCmd.addr[0];
+	bTmpBuf[8]=bFlashBuffer[8];
+	
+	bTmpBuf[9]=0xAA; //bSizebTestcmd2Cmdkey;
+	bTmpBuf[10]=CustomerVar.bDebugBuf[10]; //bSizebTestcmd2unionCmd;
+	bTmpBuf[11]=CustomerVar.bDebugBuf[11]; //bSizebTest2cmd;
+  bTmpBuf[12]=CustomerVar.bDebugBuf[12];
+	bTmpBuf[13]= CustomerVar.bDebugBuf[13];
+	bTmpBuf[14]= CustomerVar.bDebugBuf[14];
+	bTmpBuf[15]= CustomerVar.bDebugBuf[15];						
+ 
+  CustomerResponseArray((BYTE *)bTmpBuf,21, RESET_RXIDX);
 
-			//CustomerResponseArray((BYTE *)CustomRes4Cmd2A,21, RESET_RXIDX);  
+	//CustomerResponseArray((BYTE *)CustomRes4Cmd2A,21, RESET_RXIDX);  
 }
-
 
 #else
 void CustomHfunc4Cmd2A()
@@ -1365,17 +1343,17 @@ void CustomHfunc4Cmd51()
 }
 void CustomHfunc4CmdEE()
 {
-	 	if((CustomerVar.bCustomCmd00eeCnt==0)||(CustomerVar.bCustomCmd00eeCnt==5))
-	 	{
-			CustomerResponseArray((BYTE *)CustomRes4CmdEE, 24, RESET_RXIDX);
-	 	}
+ 	if((CustomerVar.bCustomCmd00eeCnt==0)||(CustomerVar.bCustomCmd00eeCnt==5))
+ 	{
+		CustomerResponseArray((BYTE *)CustomRes4CmdEE, 24, RESET_RXIDX);
+ 	}
 
-		CustomerVar.bCustomCmd00eeCnt++;
-		//[LM], move from Tx_Isr
-	 	if(CustomerVar.bCustomCmd00eeCnt == 2)
-		{
+	CustomerVar.bCustomCmd00eeCnt++;
+	//[LM], move from Tx_Isr
+ 	if(CustomerVar.bCustomCmd00eeCnt == 2)
+	{
 		CustomerVar.bINTtriggerCnt = 3;
-		}
+	}
 }
 void CustomHfunc4CmdFF00()
 {
@@ -1401,16 +1379,16 @@ void CustomHfunc4CmdFF04()
 
 void CustomHfunc4CmdFFF101()
 {
-        BYTE bTmpByte[8];
-        BYTE bCnt;
-        ZetVar.bWorkingState=ZetVar.bI2CRxBuf[2];
- 
-        CustomerVar.bDebugBuf[5]=ZetVar.bWorkingState;		 
-        for(bCnt=0; bCnt<8; bCnt++)
-        {
-            bTmpByte[bCnt]=CustomerVar.bDebugBuf[bCnt];
-        }
-        CustomerResponseArray(bTmpByte,8, RESET_RXIDX);
+  BYTE bTmpByte[8];
+  BYTE bCnt;
+  ZetVar.bWorkingState=ZetVar.bI2CRxBuf[2];
+
+  CustomerVar.bDebugBuf[5]=ZetVar.bWorkingState;		 
+  for(bCnt=0; bCnt<8; bCnt++)
+  {
+      bTmpByte[bCnt]=CustomerVar.bDebugBuf[bCnt];
+  }
+  CustomerResponseArray(bTmpByte,8, RESET_RXIDX);
 }
 void CustomHfunc4CmdFFF102()
 {
@@ -1427,7 +1405,7 @@ void CustomHfunc4CmdFFFF()
   CustomerVar.bDebugBuf[5]=ZetVar.bWorkingState;
   for(bCnt=0; bCnt<8; bCnt++)
   {
-      bTmpByte[bCnt]=CustomerVar.bDebugBuf[bCnt];
+  	bTmpByte[bCnt]=CustomerVar.bDebugBuf[bCnt];
   }
   CustomerResponseArray(bTmpByte,8, RESET_RXIDX);
 }
@@ -2406,11 +2384,9 @@ void I2CDispatchCustomerCmd()
                 ZetVar.wI2cTxLen = 128;
                 ZetVar.wI2cRxIdx = 0;
                 ZetVar.pI2CData = (BYTE *)(&bCustomCmdD801Cnt1Buf[0]);
-
             }
             else if((CustomerVar.bCustomCmd6801nnCnt%9)==2)
             {
-
                 ZetVar.wI2cTxIdx= 0;
                 ZetVar.wI2cTxLen = 128;
                 ZetVar.wI2cRxIdx = 0;
@@ -2418,7 +2394,6 @@ void I2CDispatchCustomerCmd()
             }
             else if((CustomerVar.bCustomCmd6801nnCnt%9)==3)
             {
-
                 ZetVar.wI2cTxIdx= 0;
                 ZetVar.wI2cTxLen = 128;
                 ZetVar.wI2cRxIdx = 0;
@@ -2426,7 +2401,6 @@ void I2CDispatchCustomerCmd()
             }
             else if((CustomerVar.bCustomCmd6801nnCnt%9)==4)
             {
-
                 ZetVar.wI2cTxIdx= 0;
                 ZetVar.wI2cTxLen = 128;
                 ZetVar.wI2cRxIdx = 0;
@@ -2434,7 +2408,6 @@ void I2CDispatchCustomerCmd()
             }
             else if((CustomerVar.bCustomCmd6801nnCnt%9)==5)
             {
-
                 ZetVar.wI2cTxIdx= 0;
                 ZetVar.wI2cTxLen = 128;
                 ZetVar.wI2cRxIdx = 0;
@@ -2447,7 +2420,6 @@ void I2CDispatchCustomerCmd()
                 ZetVar.wI2cTxLen = 128;
                 ZetVar.wI2cRxIdx = 0;
                 ZetVar.pI2CData = (BYTE *)(&bCustomCmdD801Cnt6Buf[0]);
-
             }
             else if((CustomerVar.bCustomCmd6801nnCnt%9)==7)
             {
@@ -2455,7 +2427,6 @@ void I2CDispatchCustomerCmd()
                 ZetVar.wI2cTxLen = 128;
                 ZetVar.wI2cRxIdx = 0;
                 ZetVar.pI2CData = (BYTE *)(&bCustomCmdD801Cnt7Buf[0]);
-
             }
             else if((CustomerVar.bCustomCmd6801nnCnt%9)==8)
             {
@@ -2463,7 +2434,6 @@ void I2CDispatchCustomerCmd()
                 ZetVar.wI2cTxLen = 128;
                 ZetVar.wI2cRxIdx = 0;
                 ZetVar.pI2CData = (BYTE *)(&bCustomCmdD801Cnt8Buf[0]);
-
             }
             else // if(CustomerVar.bCustomCmd6801nnCnt==9)
             {
@@ -2474,12 +2444,7 @@ void I2CDispatchCustomerCmd()
             }
 
         }
-
-
 #endif
-
-
-
         }
         else if(ZetVar.bI2CCmd == 0xE2) // E2 01, E2 01 0C, E2 01 00 (Wake-up  command)
         {
@@ -2504,7 +2469,6 @@ void I2CDispatchCustomerCmd()
                 }
 
                 //ZetVar.bINTtriggerCnt=0; //11, 13
-
             }
         }
         else if(ZetVar.bI2CCmd == 0xE3) // E3 01, E3 01 05
@@ -2667,14 +2631,8 @@ void I2CDispatchCustomerCmd()
             //   ZetVar.wI2cTxIdx = 0;
             //   ZetVar.wI2cTxLen = 0;
         }
-
-
-
     }
-
 #endif
-
-
 
 #endif
 
@@ -2682,7 +2640,6 @@ void I2CDispatchCustomerCmd()
 #ifdef FORCE_SENSOR_PROTOCOL
 void I2CDispatchCustomerForceSensorCmd()
 {
-
 		if(ZetVar.bI2CCmd == 0x00)
     {
         if(ZetVar.wI2cRxIdx==2 && ZetVar.bI2CRxBuf[1]==0x01)
@@ -2698,7 +2655,6 @@ void I2CDispatchCustomerForceSensorCmd()
 				{
 					   BYTE bTmpByte[]= {0x00,0x04};
 						 CustomerResponseArray(bTmpByte,2, UNCHANGE_IDX);
-
 				}
 				else if(ZetVar.wI2cRxIdx==2 && ZetVar.bI2CRxBuf[1]==0xBB)
 				{
@@ -2716,7 +2672,6 @@ void I2CDispatchCustomerForceSensorCmd()
 						 I2C_INT_LOW();
 				}
 		}
-
 }
 #endif
 
@@ -3031,8 +2986,6 @@ void I2CDispatchCmd()
             ZetVar.wSysMode |= (SYS_MODE_DEEP_SLEEP);
             /// Test Mode Disabled
             ZetVar.wSysMode &= ~SYS_MODE_TP_TEST_EN;
-        
-
 
             /// Cancel the previous interrupt, if any
             I2C_INT_HIGH();
@@ -3194,7 +3147,6 @@ void I2CDispatchCmd()
             ALCheckSumProcess();
             SYSWatchDogEnable();
             DFCheckSumData();
-
         }
 #endif ///< for FEATURE_CHECK_SUM
         else if (ZetVar.bI2CCmd == TPCMD_C0_ADC_CTRL0_SET)
@@ -3241,11 +3193,8 @@ void I2CDispatchCmd()
                 ZetVar.bTimerStatus = (TIMER_TO_GESTURE  | TIMER_RELOAD_FLAG);
 #endif
 
-
-
                 //bDoubleClickState=0;
                 //bGesturePointState=GESTURE_POINT_NONE_STATE;
-
                 //ZetVar.wI2cTxLen = 1;
                 //ZetVar.wI2cTxIdx = 0;
                 //bGesturePointBuffer[0]=0x01;
@@ -3286,7 +3235,6 @@ void I2CDispatchCmd()
         }
         else if (ZetVar.bI2CCmd == 0xD3)
         {
-
             /// The last command bytes
             if(bCmdD3Cnt ==0)
             {
@@ -3304,7 +3252,6 @@ void I2CDispatchCmd()
             bGesturePointBuffer[5]=ZetVar.bIntLowTimeout;
             bGesturePointBuffer[6]=bGesturePointState;
             bGesturePointBuffer[7]=bCmdD3Cnt;
-
 
             ZetVar.wI2cTxIdx=0;
             ZetVar.pI2CData = (BYTE xdata *)(&bGesturePointBuffer[0]);
@@ -3563,8 +3510,6 @@ void SPI_Test(void)
 	SET_BIT(SPI_STATUS,SPI_CSB);  /// CSB go High disable slave
 }
 
-
-
 /**
  * @brief  SPIFlashRead()
  *
@@ -3573,7 +3518,6 @@ void SPI_Test(void)
  * @return NULL
  *
  */
-
 
 void SPIFlashRead(BYTE AddrH,BYTE AddrM,BYTE AddrL, WORD wSize, BYTE *pFlashBuffer)
 {
@@ -3610,7 +3554,6 @@ void SPIFlashRead(BYTE AddrH,BYTE AddrM,BYTE AddrL, WORD wSize, BYTE *pFlashBuff
 //Section Erase, Fixed Erase Address 0x000D00 in flash
 void SPIFlashSE(void)
 {
-
 ///////////  SPI communication start
 		CLR_BIT(SPI_STATUS,SPI_CSB);  /// csb go low, enable slave 
 		SetFlashSIData(FLASH_WREN);   /// command data, FLASH  command
@@ -3624,9 +3567,7 @@ void SPIFlashSE(void)
 		CLR_BIT(SPI_STATUS,SPI_CSB);		/// csb go low, enable slave 
 		SetFlashSIData(FLASH_WRDI);		/// command data, FLASH  command
 		SET_BIT(SPI_STATUS,SPI_CSB);		/// CSB go High disable slave
-
 }
-
 
 /**
  * @brief  SPIFlashWrite()
@@ -3636,7 +3577,6 @@ void SPIFlashSE(void)
  * @return NULL
  *
  */
-
 
 void SPIFlashWrite(BYTE AddrH,BYTE AddrM,BYTE AddrL, WORD wSize, BYTE *pFlashBuffer)
 {
@@ -3651,15 +3591,14 @@ void SPIFlashWrite(BYTE AddrH,BYTE AddrM,BYTE AddrL, WORD wSize, BYTE *pFlashBuf
 	SetFlashSIData(FLASH_WREN);	/// command data, FLASH  command
 	SET_BIT(SPI_STATUS,SPI_CSB);	/// CSB go High disable slave
 
-
 	CLR_BIT(SPI_STATUS,SPI_CSB);	/// csb go low, enable slave 
 	SetFlashSIData(FLASH_PP);	/// command data, FLASH PP command
 	SetFlashAddress(AddrH, AddrM, AddrL);
 	for(i=0;i< wSize;i++)
 	{
-	     bBYTE=*pFlashBuffer;
-	     SetFlashSIData(bBYTE);	
-			 pFlashBuffer++;
+		bBYTE=*pFlashBuffer;
+		SetFlashSIData(bBYTE);	
+		pFlashBuffer++;
 	}	
 	SET_BIT(SPI_STATUS,SPI_CSB);	/// CSB go High disable slave
 
@@ -3668,9 +3607,6 @@ void SPIFlashWrite(BYTE AddrH,BYTE AddrM,BYTE AddrL, WORD wSize, BYTE *pFlashBuf
 	SET_BIT(SPI_STATUS,SPI_CSB);	/// CSB go High disable slave
 
 }
-
-
-
 
 #endif
 

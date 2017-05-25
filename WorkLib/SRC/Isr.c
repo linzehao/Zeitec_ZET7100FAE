@@ -347,7 +347,7 @@ void NDS32ATTR_ISR("ready_nested;id=4") HW4_ISR(int vid, NDS32_CONTEXT * ptr)
   }
   else
   {
-  TimerIsr();
+  	TimerIsr();
   }
   ///--------------------------------------------------------///
   ///  Restore the interrupt
@@ -530,5 +530,4 @@ void NDS32ATTR_EXCEPT("save_all_regs;ready_nested;id=8") SystemCallExceptionHand
 {
   ExceptionHandler(vid, ptr);
 }
-
 

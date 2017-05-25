@@ -192,7 +192,7 @@ void CustomerDataFormat(void)
 
 void CustomerInit(void)
 {  
-	BYTE i = 0;
+	BYTE data i = 0;
 	for(i = 0; i < 8 ; i++)
 	{
 		CustomerVar.bCustomerBuf[i]=0x00;
@@ -265,268 +265,237 @@ void CustomerDataFormat(void)
 	WORD data wValidPoint;
 	WORD data wPosX;
 	WORD data wPosY;
-	PointType  xdata ptLastExePoint;
+	PointType xdata ptLastExePoint;
 	
 	//if(ZetVar.bWorkingState==WORKING_STATE_ZET_CMD_STATE)
 	if(!(ZetVar.bWorkingState==WORKING_STATE_CUSTOMER_NORMAL||ZetVar.bWorkingState==WORKING_STATE_CUSTOMER_INITIAL))
 	{
 		return;
 	}	 
-	 bFingerNum = ZetDF.cFormatCtrl.scDataCtrl.bFingerNum; 
+	bFingerNum = ZetDF.cFormatCtrl.scDataCtrl.bFingerNum; 
 
 	bCNT=0;
 	wValidPoint=0;			
 
-    if(ZetVar.bWorkingState==WORKING_STATE_CUSTOMER_NORMAL)
-		{	   
-       //filled in next buffer
-			 bTmpIndex=(CustomerVar.bDoubleBufferIdx+1)%2;
-       //bTmpIndex=0;
-
-			  for(i=0;i<bFingerNum; i++) 
-				{ 				
-				 	
-					 if(ZetVar.FingerCoordinateRecord[i].bFingerDown == FINGER_DOWN)									  
-						{
-								bCNT++; 	
-								//MSB is 1st bit => Point 0 (i)
-								wValidPoint |= (0x0001L<<(15-i)); 			
-							
-						}
-				} 						 
-
-       CustomerVar.bCustomerReportFingerCNT=bCNT;		
-			 bPacketNumber=0;				 
-			 if(bCNT!=CustomerVar.bCustomerLastReportFingerCNT) //finger number change!!!
-			 {															
-									CustomerVar.bDoubleBuffer[bTmpIndex][1+0*9]=0x17;
-									if(bCNT==0) 
-									{										 
-										 CustomerVar.bDoubleBuffer[bTmpIndex][2+0*9]=0x00;  //All finger-up ==> No touch 
-										 CustomerVar.bDoubleBuffer[bTmpIndex][3+0*9]=0x00;
-									}
-									else
-									{
-										 CustomerVar.bDoubleBuffer[bTmpIndex][2+0*9]=0x80; //finger number change
-										 CustomerVar.bDoubleBuffer[bTmpIndex][3+0*9]=bCNT; 									 
-									}
-									
-									CustomerVar.bDoubleBuffer[bTmpIndex][4+0*9]=0x00;
-									CustomerVar.bDoubleBuffer[bTmpIndex][5+0*9]=0x00;
-									CustomerVar.bDoubleBuffer[bTmpIndex][6+0*9]=0x00;
-									CustomerVar.bDoubleBuffer[bTmpIndex][7+0*9]=0x00;
-									CustomerVar.bDoubleBuffer[bTmpIndex][8+0*9]=0x00;
-									CustomerVar.bDoubleBuffer[bTmpIndex][9+0*9]=0x00;
-									bPacketNumber++;
-			 }
-
-		   if(CustomerVar.bCustomerLastReportFingerCNT>0||bCNT>0)
-			 {	
-				// bTmpIndex=0; // implement single buffer first!!
-		   BYTE bFakeArea[15]=    {0x04,0x05,0x05,0x04,0x08,0x07,0x06,0x07,0x09,0x0A,0x07,0x06,0x07,0x06,0x06};
-			 BYTE bFakePressure[15]={0x23,0x23,0x23,0x23,0x33,0x33,0x33,0x43,0x43,0x43,0x43,0x43,0x33,0x33,0x33};
-				
-				 for(i=0;i<bFingerNum; i++)
-				 {		         
-				     if((((wValidPoint>>(15-i))&0x01)==0x01)||(((CustomerVar.wCustomerLastValidPoint>>(15-i))&0x01)==0x01))
-				     {		   
-                  CustomerVar.bDoubleBuffer[bTmpIndex][1+bPacketNumber*9]=0x19+i;
-                  //0x90 unchange coordinate, 0x91 moving, 0x94 just touch(contact), 0x15 finger-up
-                  if((((CustomerVar.wCustomerLastValidPoint>>(15-i))&0x01)==0x00) && (((wValidPoint>>(15-i))&0x01)==0x01))
-							   	{  
-							   	   CustomerVar.bDoubleBuffer[bTmpIndex][2+bPacketNumber*9]=0x94;  
-                  }
-									else if((((CustomerVar.wCustomerLastValidPoint>>(15-i))&0x01)==0x01) && (((wValidPoint>>(15-i))&0x01)==0x00))
-									{
-                     CustomerVar.bDoubleBuffer[bTmpIndex][2+bPacketNumber*9]=0x15;  
-									}
-									else
-									{
-                       //also need to check Coord. changed!
-                       CoorExePointGet(i, COOR_EXE_IDX_LAST2, &ptLastExePoint);
-											 if(ZetVar.FingerCoordinateRecord[i].ptCoordinate.x !=ptLastExePoint.x || \
-											 	ZetVar.FingerCoordinateRecord[i].ptCoordinate.y !=ptLastExePoint.y)
-											 {
-											    CustomerVar.bDoubleBuffer[bTmpIndex][2+bPacketNumber*9]=0x91;  
-											 }
-											 else
-											 	{
-                             CustomerVar.bDoubleBuffer[bTmpIndex][2+bPacketNumber*9]=0x90;
-                             //ignore same position, don't increase bPacketNumber...                             
-                            // continue;														 
-											 	}
-									}
-
-                  if(ZetDF.cFormatCtrl.scDataCtrl.bXYCoorExchange == TRUE)
-									{
-										wPosX = ZetVar.FingerCoordinateRecord[i].ptCoordinate.y;
-										wPosY = ZetVar.FingerCoordinateRecord[i].ptCoordinate.x;
-									}
-									else
-									{
-										wPosX = ZetVar.FingerCoordinateRecord[i].ptCoordinate.x;
-										wPosY = ZetVar.FingerCoordinateRecord[i].ptCoordinate.y;
-									}
-									
-							   	CustomerVar.bDoubleBuffer[bTmpIndex][3+bPacketNumber*9]=(BYTE)(wPosX&0x00FF); 
-							  	CustomerVar.bDoubleBuffer[bTmpIndex][4+bPacketNumber*9]=(BYTE)(wPosX>>8); 
-							 		CustomerVar.bDoubleBuffer[bTmpIndex][5+bPacketNumber*9]=(BYTE)(wPosY&0x00FF);
-							 		CustomerVar.bDoubleBuffer[bTmpIndex][6+bPacketNumber*9]=(BYTE)(wPosY>>8); 
-							 		CustomerVar.bDoubleBuffer[bTmpIndex][7+bPacketNumber*9]= bFakePressure[CustomerVar.bCustomReportCnt%15]; //0x11;//CustomerVar.bDebugBuf[6]; //0x3D; //0x3E;                  
-									CustomerVar.bDoubleBuffer[bTmpIndex][8+bPacketNumber*9]= bFakeArea[CustomerVar.bCustomReportCnt%15]; //0x04; //CustomerVar.bDebugBuf[7]; // 0x07;	//0x04;  
-                  if(CustomerVar.bCustomReportCnt!=0xFF) {CustomerVar.bCustomReportCnt++;}
-									else  {CustomerVar.bCustomReportCnt=0;}
-
-									CustomerVar.bDoubleBuffer[bTmpIndex][9+bPacketNumber*9]= 0x00;  //0x00;
-							 		bPacketNumber++;		
-								
-				     }
-				 	}        
-				    
-         CustomerVar.bDoubleBuffer[bTmpIndex][0]=bPacketNumber;  //total packet size(58 01 & 59 01 content): 1+9*j
-         if(bPacketNumber!=0) //no point moving or just touch or finger-up
-         	{
-         			CustomerVar.bINTtriggerCnt=0; //force to trigger INT Low
-				 			CustomerVar.bCustomerReSendCNT=CUSTOMER_RESNED_NUM; //resend n times
-         	}
-		   }
-
-			 CustomerVar.wCustomerLastValidPoint=wValidPoint;
-			 CustomerVar.bCustomerLastReportFingerCNT=bCNT;			 
-       
-
-      //move to 58 01 handle
-       if(CustomerVar.bCustomerReSendCNT>0) CustomerVar.bCustomerReSendCNT--;
-			 
-       if(CustomerVar.bCustomerReSendCNT!=0)    
-       {
-					     CustomerVar.bINTtriggerCnt=0; //force to trigger INT Low					     
-       }			
-
-			if(bCNT==0 && CustomerVar.bCustomerLastReportFingerCNT==0 && CustomerVar.bCustomerReSendCNT==0)
+  if(ZetVar.bWorkingState==WORKING_STATE_CUSTOMER_NORMAL)
+	{	   
+		//filled in next buffer
+		bTmpIndex=(CustomerVar.bDoubleBufferIdx+1)%2;
+		//bTmpIndex=0;
+		for(i=0;i<bFingerNum; i++) 
+		{ 						 	
+			if(ZetVar.FingerCoordinateRecord[i].bFingerDown == FINGER_DOWN)									  
 			{
-          CustomerVar.bDoubleBuffer[bTmpIndex][0]=0;  //let 58 01 handle to know no point report needed
-          
-					
-          #if 0 // defined(FEATURE_REAL_KEY) ||defined(FEATURE_VIRTUAL_KEY)					
-					       //handle Key, Key is pressed or just released, trigger a INT LOW
-								//CustomerVar.bCustomerKeyReportFlag=0; //clear after I2C send to host
-								if(ZetVar.KeyCtrl.bKeyValidByte||ZetVar.bKeyLastStatus)
-								{
-								   if(ZetVar.KeyCtrl.bKeyValidByte!=ZetVar.bKeyLastStatus)
-								   {
-										  CustomerVar.bCustomerKeyReportFlag[CustomerVar.bDoubleBufferIdx]=1;
-											CustomerVar.bCustomerKeyValidByte[CustomerVar.bDoubleBufferIdx]=ZetVar.KeyCtrl.bKeyValidByte;   											
-										  CustomerVar.bINTtriggerCnt=0; //force to trigger INT Low					
-								   }
-								}					
-           #endif					
+					bCNT++; 	
+					//MSB is 1st bit => Point 0 (i)
+					wValidPoint |= (0x0001L<<(15-i)); 			
+			}
+		} 						 
+
+		CustomerVar.bCustomerReportFingerCNT=bCNT;		
+		bPacketNumber=0;				 
+		if(bCNT!=CustomerVar.bCustomerLastReportFingerCNT) //finger number change!!!
+		{															
+			CustomerVar.bDoubleBuffer[bTmpIndex][1+0*9]=0x17;
+			if(bCNT==0) 
+			{										 
+				 CustomerVar.bDoubleBuffer[bTmpIndex][2+0*9]=0x00;  //All finger-up ==> No touch 
+				 CustomerVar.bDoubleBuffer[bTmpIndex][3+0*9]=0x00;
+			}
+			else
+			{
+				 CustomerVar.bDoubleBuffer[bTmpIndex][2+0*9]=0x80; //finger number change
+				 CustomerVar.bDoubleBuffer[bTmpIndex][3+0*9]=bCNT; 									 
 			}
 
-			#if defined(FEATURE_REAL_KEY) || defined(FEATURE_VIRTUAL_KEY)					
-					       //handle Key, Key is pressed or just released, trigger a INT LOW
-								//CustomerVar.bCustomerKeyReportFlag=0; //clear after I2C send to host
-								if(ZetVar.KeyCtrl.bKeyValidByte||ZetVar.bKeyLastStatus)
-								{
-								   if(ZetVar.KeyCtrl.bKeyValidByte!=ZetVar.bKeyLastStatus)
-								   {
-										  CustomerVar.bCustomerKeyReportFlag[CustomerVar.bDoubleBufferIdx]=1;
-											CustomerVar.bCustomerKeyValidByte[CustomerVar.bDoubleBufferIdx]=ZetVar.KeyCtrl.bKeyValidByte;   											
-										  CustomerVar.bINTtriggerCnt=0; //force to trigger INT Low					
-								   }
-								}					
-      #endif		
-
-			//change index after filled the next buffer
-			 CustomerVar.bDoubleBufferIdx=bTmpIndex;
+			CustomerVar.bDoubleBuffer[bTmpIndex][4+0*9]=0x00;
+			CustomerVar.bDoubleBuffer[bTmpIndex][5+0*9]=0x00;
+			CustomerVar.bDoubleBuffer[bTmpIndex][6+0*9]=0x00;
+			CustomerVar.bDoubleBuffer[bTmpIndex][7+0*9]=0x00;
+			CustomerVar.bDoubleBuffer[bTmpIndex][8+0*9]=0x00;
+			CustomerVar.bDoubleBuffer[bTmpIndex][9+0*9]=0x00;
+			bPacketNumber++;
 		}
 
-    if(CustomerVar.bINTtriggerCnt==0)
-    {
-        if(I2C_INT()==TRUE) 
-				{
-					I2C_INT_LOW();
-        }
-				
-				CustomerVar.bINTtriggerCnt=0xFF; //Max value means disable
-    }
-    else if(CustomerVar.bINTtriggerCnt!=0xFF&&CustomerVar.bINTtriggerCnt>0)
-    {
-       CustomerVar.bINTtriggerCnt--;
-    }
+		if(CustomerVar.bCustomerLastReportFingerCNT>0||bCNT>0)
+		{	
+			// bTmpIndex=0; // implement single buffer first!!
+			BYTE bFakeArea[15]=    {0x04,0x05,0x05,0x04,0x08,0x07,0x06,0x07,0x09,0x0A,0x07,0x06,0x07,0x06,0x06};
+			BYTE bFakePressure[15]={0x23,0x23,0x23,0x23,0x33,0x33,0x33,0x43,0x43,0x43,0x43,0x43,0x33,0x33,0x33};
 
+			for(i=0;i<bFingerNum; i++)
+			{		         
+				if((((wValidPoint>>(15-i))&0x01)==0x01)||(((CustomerVar.wCustomerLastValidPoint>>(15-i))&0x01)==0x01))
+				{		   
+				    CustomerVar.bDoubleBuffer[bTmpIndex][1+bPacketNumber*9]=0x19+i;
+				    //0x90 unchange coordinate, 0x91 moving, 0x94 just touch(contact), 0x15 finger-up
+				    if((((CustomerVar.wCustomerLastValidPoint>>(15-i))&0x01)==0x00) && (((wValidPoint>>(15-i))&0x01)==0x01))
+				   	{  
+				   	   CustomerVar.bDoubleBuffer[bTmpIndex][2+bPacketNumber*9]=0x94;  
+				    }
+						else if((((CustomerVar.wCustomerLastValidPoint>>(15-i))&0x01)==0x01) && (((wValidPoint>>(15-i))&0x01)==0x00))
+						{
+				       CustomerVar.bDoubleBuffer[bTmpIndex][2+bPacketNumber*9]=0x15;  
+						}
+						else
+						{
+							//also need to check Coord. changed!
+							CoorExePointGet(i, COOR_EXE_IDX_LAST2, &ptLastExePoint);
+							if(ZetVar.FingerCoordinateRecord[i].ptCoordinate.x !=ptLastExePoint.x || \
+							ZetVar.FingerCoordinateRecord[i].ptCoordinate.y !=ptLastExePoint.y)
+							{
+								CustomerVar.bDoubleBuffer[bTmpIndex][2+bPacketNumber*9]=0x91;  
+							}
+							else
+							{
+								CustomerVar.bDoubleBuffer[bTmpIndex][2+bPacketNumber*9]=0x90;
+								//ignore same position, don't increase bPacketNumber...                             
+								// continue;														 
+							}
+						}
+
+				    if(ZetDF.cFormatCtrl.scDataCtrl.bXYCoorExchange == TRUE)
+						{
+							wPosX = ZetVar.FingerCoordinateRecord[i].ptCoordinate.y;
+							wPosY = ZetVar.FingerCoordinateRecord[i].ptCoordinate.x;
+						}
+						else
+						{
+							wPosX = ZetVar.FingerCoordinateRecord[i].ptCoordinate.x;
+							wPosY = ZetVar.FingerCoordinateRecord[i].ptCoordinate.y;
+						}
+						
+				   	CustomerVar.bDoubleBuffer[bTmpIndex][3+bPacketNumber*9]=(BYTE)(wPosX&0x00FF); 
+				  	CustomerVar.bDoubleBuffer[bTmpIndex][4+bPacketNumber*9]=(BYTE)(wPosX>>8); 
+				 		CustomerVar.bDoubleBuffer[bTmpIndex][5+bPacketNumber*9]=(BYTE)(wPosY&0x00FF);
+				 		CustomerVar.bDoubleBuffer[bTmpIndex][6+bPacketNumber*9]=(BYTE)(wPosY>>8); 
+				 		CustomerVar.bDoubleBuffer[bTmpIndex][7+bPacketNumber*9]= bFakePressure[CustomerVar.bCustomReportCnt%15]; //0x11;//CustomerVar.bDebugBuf[6]; //0x3D; //0x3E;                  
+						CustomerVar.bDoubleBuffer[bTmpIndex][8+bPacketNumber*9]= bFakeArea[CustomerVar.bCustomReportCnt%15]; //0x04; //CustomerVar.bDebugBuf[7]; // 0x07;	//0x04;  
+				    if(CustomerVar.bCustomReportCnt!=0xFF) 
+						{
+							CustomerVar.bCustomReportCnt++;
+						}
+						else  
+						{
+							CustomerVar.bCustomReportCnt=0;
+						}
+
+						CustomerVar.bDoubleBuffer[bTmpIndex][9+bPacketNumber*9]= 0x00;  //0x00;
+				 		bPacketNumber++;		
+				}
+			}        
+			    
+			CustomerVar.bDoubleBuffer[bTmpIndex][0]=bPacketNumber;  //total packet size(58 01 & 59 01 content): 1+9*j
+			if(bPacketNumber!=0) //no point moving or just touch or finger-up
+			{
+					CustomerVar.bINTtriggerCnt=0; //force to trigger INT Low
+					CustomerVar.bCustomerReSendCNT=CUSTOMER_RESNED_NUM; //resend n times
+			}
+		}
+
+		CustomerVar.wCustomerLastValidPoint=wValidPoint;
+		CustomerVar.bCustomerLastReportFingerCNT=bCNT;			 
+
+		//move to 58 01 handle
+		if(CustomerVar.bCustomerReSendCNT>0) 
+		{
+			CustomerVar.bCustomerReSendCNT--;
+		}
+		if(CustomerVar.bCustomerReSendCNT!=0)    
+		{
+			CustomerVar.bINTtriggerCnt=0; //force to trigger INT Low					     
+		}			
+
+		if(bCNT==0 && CustomerVar.bCustomerLastReportFingerCNT==0 && CustomerVar.bCustomerReSendCNT==0)
+		{
+    	CustomerVar.bDoubleBuffer[bTmpIndex][0]=0;  //let 58 01 handle to know no point report needed		
+		}
+
+		#if defined(FEATURE_REAL_KEY) || defined(FEATURE_VIRTUAL_KEY)					
+    //handle Key, Key is pressed or just released, trigger a INT LOW
+		//CustomerVar.bCustomerKeyReportFlag=0; //clear after I2C send to host
+		if(ZetVar.KeyCtrl.bKeyValidByte||ZetVar.bKeyLastStatus)
+		{
+		   if(ZetVar.KeyCtrl.bKeyValidByte!=ZetVar.bKeyLastStatus)
+		   {
+				  CustomerVar.bCustomerKeyReportFlag[CustomerVar.bDoubleBufferIdx]=1;
+					CustomerVar.bCustomerKeyValidByte[CustomerVar.bDoubleBufferIdx]=ZetVar.KeyCtrl.bKeyValidByte;   											
+				  CustomerVar.bINTtriggerCnt=0; //force to trigger INT Low					
+		   }
+		}					
+    #endif		
+
+		//change index after filled the next buffer
+		 CustomerVar.bDoubleBufferIdx=bTmpIndex;
+	}
+
+  if(CustomerVar.bINTtriggerCnt==0)
+  {
+    if(I2C_INT()==TRUE) 
+		{
+			I2C_INT_LOW();
+    }
+		
+		CustomerVar.bINTtriggerCnt=0xFF; //Max value means disable
+  }
+  else if(CustomerVar.bINTtriggerCnt!=0xFF&&CustomerVar.bINTtriggerCnt>0)
+  {
+  	CustomerVar.bINTtriggerCnt--;
+  }
 }
 
 void CustomerInit(void)
 {  
-	 CustomerVar.bCustomerBuf[0]=0x00;
-	 CustomerVar.bCustomerBuf[1]=0x00;
-	 CustomerVar.bCustomerBuf[2]=0x00;
-	 CustomerVar.bCustomerBuf[3]=0x00;
-	 CustomerVar.bCustomerBuf[4]=0x00;
-	 CustomerVar.bCustomerBuf[5]=0x00;
-	 CustomerVar.bCustomerBuf[6]=0x00;
-	 CustomerVar.bCustomerBuf[7]=0x00;
+	BYTE data i;
+	for(i = 0; i < 8 ; i++)
+	{
+		CustomerVar.bCustomerBuf[i] = 0x00;
+		CustomerVar.bDebugBuf[i] = 0;
+		CustomerVar.bLastCustomCmdBuf[i] = 0;
+	}
+	CustomerVar.bLastCustomCmdBuf[7]=0xFF; //0;
 
-	 CustomerVar.bWorkingSubState=WORKING_SUBSTATE_CUSTOMER_INITIAL_0;
-	 
-	 CustomerVar.bCustomCmd0000Cnt=0;
-	 //CustomerVar.bCustomCmd0102Cnt=0;
-	 CustomerVar.bCustomCmd0102Cnt=1;
-	 CustomerVar.bCustomCmd5801Cnt=0;
-	 CustomerVar.bCustomCmd5901Cnt=0;
-	 CustomerVar.bCustomCmd6501Cnt=0;
-	 CustomerVar.bCustomCmd6801Cnt=0;
-	 //CustomerVar.bCustomCmdD801Cnt=0;
-	 CustomerVar.bCustomCmd6801nnCnt=0;
-	 
-	 //CustomerVar.bCustomCmdE201Cnt=0;
-	 CustomerVar.bCustomReportCnt=0;
-	 
-	 CustomerVar.bWakeUpFlag=0;
-	 
-	 CustomerVar.bCustomCmd5901WakeupCnt=0;
+	CustomerVar.bWorkingSubState=WORKING_SUBSTATE_CUSTOMER_INITIAL_0;
 
-	 CustomerVar.bDebugBuf[0]=0;
-	 CustomerVar.bDebugBuf[1]=0;
-	 CustomerVar.bDebugBuf[2]=0;
-	 CustomerVar.bDebugBuf[3]=0;
-	 CustomerVar.bDebugBuf[4]=0;
-	 CustomerVar.bDebugBuf[5]=0;
-	 CustomerVar.bDebugBuf[6]=0;
-	 CustomerVar.bDebugBuf[7]=0;
-	 
-	 CustomerVar.bLastCustomCmdBuf[0]=0;
-	 CustomerVar.bLastCustomCmdBuf[1]=0;
-	 CustomerVar.bLastCustomCmdBuf[2]=0;
-	 CustomerVar.bLastCustomCmdBuf[3]=0;
-	 CustomerVar.bLastCustomCmdBuf[4]=0;
-	 CustomerVar.bLastCustomCmdBuf[5]=0;
-	 CustomerVar.bLastCustomCmdBuf[6]=0;
-	 CustomerVar.bLastCustomCmdBuf[7]=0xFF; //0;
-	 
-	 CustomerVar.bI2CKeepSendflag=0;
-	 CustomerVar.bINTtriggerCnt=0xFF;
-	 //trigger to INT LOW at initial stage
-	 //fine-tune INT LOW timing....
-	 //CustomerVar.bINTtriggerCnt=12;
-	 CustomerVar.bINTtriggerCnt=0;
-	 
-	 //CustomerVar.bCustomerReSendCNT=10;
-	 CustomerVar.bCustomerReSendCNT=0;
-	 CustomerVar.bCustomerKeyReportFlag[0]=0;
-	 CustomerVar.bCustomerKeyReportFlag[1]=0;
-	 CustomerVar.bCustomerKeyValidByte[0]=0;
-	 CustomerVar.bCustomerKeyValidByte[1]=0;
-	 
-	 CustomerVar.bCustomerUpgradeFlag=0;
-	 
-	 CustomerVar.bCustomerReportFingerCNT=0;
-	 CustomerVar.bCustomerLastReportFingerCNT=0;
-	 CustomerVar.wCustomerLastValidPoint=0;
-	 
-	 CustomerVar.bTimerINTtrigger=0; 
-	 CustomerVar.bDoubleBufferIdx=0;
+	CustomerVar.bCustomCmd0000Cnt=0;
+	//CustomerVar.bCustomCmd0102Cnt=0;
+	CustomerVar.bCustomCmd0102Cnt=1;
+	CustomerVar.bCustomCmd5801Cnt=0;
+	CustomerVar.bCustomCmd5901Cnt=0;
+	CustomerVar.bCustomCmd6501Cnt=0;
+	CustomerVar.bCustomCmd6801Cnt=0;
+	//CustomerVar.bCustomCmdD801Cnt=0;
+	CustomerVar.bCustomCmd6801nnCnt=0;
+
+	//CustomerVar.bCustomCmdE201Cnt=0;
+	CustomerVar.bCustomReportCnt=0;
+
+	CustomerVar.bWakeUpFlag=0;
+
+	CustomerVar.bCustomCmd5901WakeupCnt=0;
+
+	CustomerVar.bI2CKeepSendflag=0;
+	CustomerVar.bINTtriggerCnt=0xFF;
+	//trigger to INT LOW at initial stage
+	//fine-tune INT LOW timing....
+	//CustomerVar.bINTtriggerCnt=12;
+	CustomerVar.bINTtriggerCnt=0;
+
+	//CustomerVar.bCustomerReSendCNT=10;
+	CustomerVar.bCustomerReSendCNT=0;
+	CustomerVar.bCustomerKeyReportFlag[0]=0;
+	CustomerVar.bCustomerKeyReportFlag[1]=0;
+	CustomerVar.bCustomerKeyValidByte[0]=0;
+	CustomerVar.bCustomerKeyValidByte[1]=0;
+
+	CustomerVar.bCustomerUpgradeFlag=0;
+
+	CustomerVar.bCustomerReportFingerCNT=0;
+	CustomerVar.bCustomerLastReportFingerCNT=0;
+	CustomerVar.wCustomerLastValidPoint=0;
+
+	CustomerVar.bTimerINTtrigger=0; 
+	CustomerVar.bDoubleBufferIdx=0;
 }
 #endif
 

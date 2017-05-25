@@ -58,7 +58,6 @@
   }\
 }\
 
-
 ///-------------------------------------------------------------------------------///
 /// Boolean define
 ///-------------------------------------------------------------------------------///
@@ -101,7 +100,6 @@
 /// XDATA memory mapping
 ///-------------------------------------------------------------------------------///
 
-
 ///-------------------------------------------------------------------------------///
 /// Dummy values
 ///-------------------------------------------------------------------------------///
@@ -140,7 +138,6 @@
 
 #define READ_REG16(REG)                 *((U2 volatile xdata *)(REG))
 #define WRITE_REG16(REG,VALUE)          *((U2 volatile xdata *)(REG))=(U2)(VALUE)
-
 
 #define READ_REG32(REG)                 *((U4 volatile xdata *)(REG))
 #define WRITE_REG32(REG,VALUE)          *((U4 volatile xdata *)(REG))=(U4)(VALUE)
@@ -206,7 +203,6 @@
 	                            GIO2_OUTPUT(); \
 	                          }
 
-
 #ifdef FEATURE_MCU_LIB_ENABLE
 #define GIO0_ON()           {SET_BIT(GPIO_PORT, GPIO_PIN0);} //<<--- nds32le-elf-mculib-v3m  ; nds32le-elf-herlib-v3m -->> {GIO0 = 1;}
 #define GIO0_OFF()          {CLR_BIT(GPIO_PORT, GPIO_PIN0);} //<<--- nds32le-elf-mculib-v3m  ; nds32le-elf-herlib-v3m -->>{GIO0 = 0;}
@@ -244,8 +240,6 @@
 #define 	I2C_INT_HIGH()	          {INTB = 1;}
 #define 	I2C_INT()			            (INTB)
 #endif
-
-
 
 ///-------------------------------------------------------------------------------///
 /// Tmer delay
@@ -350,7 +344,6 @@
 /// GPIO
 ///-------------------------------------------------------------------------------///
 
-
 ///-------------------------------------------------------------------------------///
 /// Data Flash
 ///-------------------------------------------------------------------------------///
@@ -434,7 +427,6 @@
 
 #define BASE_RECAL_ANYWAY				 		(0x00)  ///< ReK even if Finger is touched
 #define BASE_RECAL_WHEN_NO_TOUCH 		(0x01)					
-
 
 #define BASE_TRACK_PERIOD						(20)          
 #define BASE_RECAL_CHECK_PERIOD			(23)
@@ -608,7 +600,6 @@
 #define ZBYTE_PUT_UP		          (0x01)  ///< all ZBYTE.[1:0]
 #define ZBYTE_CONTACT  	          (0x02)  ///< all ZBYTE.[1:0]
 #define ZBYTE_VALID_BIT	          (0x03)  ///< all ZBYTE.[1:0]
-
 
 ///-------------------------------------------------------------------------------///
 /// TP Command
@@ -876,11 +867,7 @@
   #define TP_CMD_FB_TX_DATA_LEN      (FB_BUF_LEN)
   #define TP_CMD_FB_RX_DATA_LEN      (0)  
 
-
-
-
 #define TPCMD_FF_SWITCH_DEBUG_CTRL   (0xFF)  ///< 
-
 
 ///------------------------------------------------///
 /// OPCODE = 0xC1 Commad Mode
@@ -917,26 +904,22 @@
   /// TRAN_TYPE_MIX_DYNAMIC_MUTUALDEV     (0x0D)
 
 #define VENCMD_TP_DETIAL_LEN_QUERY   (3)   ///<
-		#define VENCMD_TP_DETIAL_LEN_QUERY_CMD_LEN			 (2)		
+#define VENCMD_TP_DETIAL_LEN_QUERY_CMD_LEN			 (2)		
 		
-
-
 #define VENCMD_TP_DETIAL_INFO          (4)   ///<
 #define 	TPINFO_BYTE_0 				(0)  ///< Force Touch  Sense Axis Num
 #define 	TPINFO_BYTE_1 				(1)  ///< Force Touch  Drive Axis Num			
 #define 	TPINFO_BYTE_2 				(2)  ///< Normal Touch HW Sense Axis Num
 #define 	TPINFO_BYTE_3 				(3)  ///< Normal Touch HW Drive Axis Num		
-			#define 	VENCMD_TP_DETIAL_LEN_QUERY_BUF_LEN      (TPINFO_BYTE_3+1)
+
+#define 	VENCMD_TP_DETIAL_LEN_QUERY_BUF_LEN      (TPINFO_BYTE_3+1)
 
 #define VENCMD_LOCK_IN_TEST_MODE          (5)   ///<
-
-
 ///-------------------------------------------------------------------------------///
 /// Algorithm Status Bit in ZetVar.wAlgoStatus
 ///-------------------------------------------------------------------------------///
 #define ALGO_SEARCH_NINE_SQUARE     (0)
 #define ALGO_SEARCH_ADV_NINE_SQUARE  (1)
-
 
 ///-------------------------------------------------------------------------------///
 /// Algorithm Status Bit in ZetVar.wAlgoStatus
@@ -959,7 +942,6 @@
 #define ALGO_ENHANCE_DECI_OVER_STEADY		 (0x0001<<13) 						 ///<
 #define ALGO_ENHANCE_DECI_WHEN_SLOW_SCAN	 (0x0001<<14) 						 ///<
 
-
 #define ALGO_FINGER_UP_DEBOUNCE_REPORTING (0x0001<<15) 			 ///< 0:Finger Up Debounce Report is finish
 
 ///-------------------------------------------------------------------------------///
@@ -969,8 +951,6 @@
 #define ALG2_HEAVY_PRESS_SWITCH_DETECTED	(0x0001<<1)           ///< 
 #define ALG2_HEAVY_PRESS_REPORT_FROZEN		(0x0001<<2)           ///< 
 #define ALG2_HEAVY_PRESS_REPORT_FROZEN_LAST	(0x0001<<3)           ///< 
-
-
 
 ///-------------------------------------------------------------------------------///
 /// Algorithm Information
@@ -986,8 +966,6 @@
 #endif
 
 #define I2C_FINGER_BUFFER_NUM  	  	(10)       ///
-
-
 
 #define MAX_COORDINATE_DIFF					(65535)    ///< Max Coordinate differential distance between two frames
 #define MAX_TRACK_NUM								FINGER_MAX
@@ -1013,8 +991,6 @@
 #define COORD_DRIVE_AXIS_REVERSE    (0x01)     ///< Coord start from RIGHT side
 #define COORD_SENSE_AXIS_REVERSE    (0x02)     ///< Coord start from DOWN side
 
-
-
 #define DEBOUNCE_INIT               (0x00)     ///< Finger UP Debounce
 #define DEBOUNCE_REPORT_TH          (0x02)
 #define DEBOUNCE_MAX                (200)
@@ -1023,14 +999,12 @@
 #define TRACK_ID_NONE               (0xFF)
 #define TRACKED_INITIALIZATON       (0x00)
 
-
 /// Finger Down setting
 #define FINGER_UP                   (0x00)   
 #define FINGER_ID_NOT_READY		      (0x01)   ///< The finger id is not allow to track
 #define FINGER_DOWN_INIT            (0x02)   ///< The first finger down, it will not be reported to the host. But, it will be used for tracking  calculation
 #define FINGER_DOWN                 (0x03)   ///< The finger down after FINGER_DOWN_INIT
 #define FINGER_DOWN_HOP             (0x04)   ///< The finger down after FINGER_DOWN_INIT
-
 
 /// Finger Track setting
 #define FINGER_TRACK_ID_DEBOUNCE				(25)
@@ -1042,8 +1016,6 @@
 #define FINGER_TYPE_COORD           (0x02)
 
 #define STEADYCOUNT_MAX             (200)
-
-
 
 /// Cluster Address
 #define EMPTY_SLOT_START 		0
@@ -1067,13 +1039,11 @@
 #define  MERGE_FINGER_POSITIVE_CNT        (20)         ///< 20
 #define  MERGE_FINGER_NEGATIVE_CNT        (0xEC)       ///< -20
 
-
 /// Merge finger state Machine DEBOUNCE
 #define  INIT_EXIST_ROUND    (1)
 #define  INIT_CHECK_MERGR_ROUND    (3)  ///< 3 round to check divide or merge
 
 #define  INIT_CHECK_FORCE_GLUE_ROUND    (4)
-
 
 ///-------------------------------------------------------------------------------///
 /// Zeta Test
@@ -1108,11 +1078,6 @@
 #define I2C_STA_PACKET_HEAD (1<<1) ///< the I2C packet header glag of TX packet
 #define I2C_STA_SRAM_RW_MODE (1<<2) ///< 0:Write mode 1:Read Mode
 
-
-
-
-
-
 ///-------------------------------------------------------------------------------///
 /// Transfer Type
 ///-------------------------------------------------------------------------------///	
@@ -1141,7 +1106,6 @@
 #define TRAN_TYPE_UNKNOWN        	          (TRAN_TYPE_FORCE_C1C2_BASE + 1)  ///< last item add one
 #endif
 
-
 #ifdef REPORT_GESTURE_POINTS_LOG_METHOD
 #define GESTURE_POINT_NONE_STATE 0
 #define GESTURE_POINT_STORING_STATE 1
@@ -1169,11 +1133,7 @@
 
 #define CLICK_RANGE 200
 
-
-
 #endif
-
-
 ///-------------------------------------------------------------------------------///
 /// Focal Data Type
 ///-------------------------------------------------------------------------------///	
@@ -1193,12 +1153,10 @@
 #define GEST_NONE                            (0x00)
 
 /// 2. FINGER
-
 #define FOCAL_PUT_DOWN                       (0x00)
 #define FOCAL_PUT_UP                         (0x40)
 #define FOCAL_PUT_CONTACT                    (0x80)
 #define FOCAL_PUT_RESERVED                   (0xC0)
-
 
 ///-------------------------------------------------------------------------------///
 /// Dev Data Buffer Type
@@ -1260,12 +1218,8 @@
 #define INIT_CMP_MUT_CTRL_CHARGER   							(1<<2)   ///<
 #define INIT_CMP_MUT_CTRL_CHARGER_COAXIS					(1<<3)   ///<
 
-
 #define SEN_DEV_PROC_TYPE                (1<<0)   ///< 0:MA  / 1:advance
 #define DRI_DEV_PROC_TYPE                (1<<1)   ///< 0:MA  / 1:advance
-
-
-
 
 ///-------------------------------------------------------------------------------///
 /// Psudo random
@@ -1285,9 +1239,6 @@
 #define HEAVY_PRESS_ALWAYS_ENABLE             (2)  ///< 2: Enable the heavy press algorithm, always
 
 #define MAX_2X_MUTUAL_GAIN                    (14) ///< Max gain = 7x2 = 14
-
-
-
 
 ///-------------------------------------------------------------------------------///
 ///  RC-Trim
@@ -1324,7 +1275,6 @@
 #define SW_COLLECT_CTRL_CHARGER   										 (1<<2)   ///<
 #define SW_COLLECT_CTRL_CHARGER_COAXIS								 (1<<3)   ///<
 
-
 /// For hardware setup
 #define HW_COLLECT_CTRL_DISABLE                        (0x00)   ///<
 #define HW_COLLECT_CTRL_NORMAL                         (1<<0)   ///<
@@ -1332,8 +1282,6 @@
 #define HW_COLLECT_CTRL_CHARGER   										 (1<<2)   ///<
 #define HW_COLLECT_CTRL_CHARGER_COAXIS								 (1<<3)   ///<
 #define HW_COLLECT_CTRL_KEY														 (1<<4)   ///<
-
-
 
 /// For Mode control
 #define DEV_COLLECT_MODE_DISABLE                  (0x00)   ///< Disable
@@ -1456,10 +1404,8 @@
 #define COORD_LIMIT_REPORT_SLIDE 	(3)	 ///< if (coord > max) or (coord < min) , report the Old coord value
 #define COORD_LIMIT_REPORT_SLIDE_TOUCH_DOWN 	(4)	 ///< if (coord > max) or (coord < min) , report the Old coord value
 
-
 #define SENSE_AXIS   (0) 
 #define DRIVE_AXIS   (1) 
-
 
 ///-------------------------------------------------------------------------------///
 /// Coordinate compensation
@@ -1515,7 +1461,6 @@
 #define COOR_EXE_IDX_LAST2      (EXE_POINT_LEN-2) // 0
 #define COOR_EXE_IDX_LAST       (EXE_POINT_LEN-1) // 1
 
-
 #define REC_DISTANECE_LEN  (4)
 #define DISTANCE_IDX_LAST3      (REC_DISTANECE_LEN-4) // 0
 #define DISTANCE_IDX_LAST2      (REC_DISTANECE_LEN-3) // 1
@@ -1523,7 +1468,6 @@
 #define DISTANCE_IDX_NEW        (REC_DISTANECE_LEN-1) // 3
 
 #define REC_INIT_CNT	  (0)
-
 
 #define SMOOTH_ALG_IIR_FIXED				(0)
 #define SMOOTH_ALG_IIR_DYNAMIC			(1)
@@ -1535,7 +1479,6 @@
 #define KALMAN_MR         (200)
 #define KALMAN_MP_INIT    (10000)
 #define KALMAN_FACTOR     (1000)
-
 
 ///-------------------------------------------------------------------------------///
 /// Sharp Dev Cut
@@ -1581,7 +1524,6 @@
 #define CLUSTER_MIN_SIZE_TH		 			(4) 
 #define CLUSTER_MIN_WEIGHT_TH 			(25) 
 
-
 #define CLUSTER_DEV_CAL_RADIUS_SML	 (0) 
 #define CLUSTER_DEV_CAL_RADIUS_MID	 (1) 
 #define CLUSTER_DEV_CAL_RADIUS_BIG	 (3) 
@@ -1589,9 +1531,6 @@
 #define CLUSTER_DEV_CAL_RADIUS_BIG	 (3) 
 #define CLUSTER_RE_SEARCH_PEAK_TRUE					 (1)
 #define CLUSTER_RE_SEARCH_PEAK_FALSE				 (0)
-
-
-
 
 #define CLUSTER_MIN_DEV 			(20) 
 #define CLUSTER_MAX_DEV 			(90)
@@ -1601,8 +1540,6 @@
 
 #define FINGER_5_COMBINATION_NUMBER 	(10)  ///< C(5 ,2) = 10;
 #define FINGER_10_COMBINATION_NUMBER 	(45)  ///< C(10,2) = 45; 
-
-
 
 ///-------------------------------------------------------------------------------///
 /// For Cluster Coordiante Calculate
@@ -1636,7 +1573,6 @@
 #define MERGE_DEBOUNCE_MAX_NUM			(8)
 #define MERGE_HALF_RANGE						(1)
 
-
 #define MERGE_MAX_NUM								(50)   /// C(10,2) = 45
 #define MERGE_STATE_INITIALIZATION (0)
 #define MERGE_STATE_GLUE 					 (1)
@@ -1660,14 +1596,10 @@
 #define CLUSTER_MERGE_RATIO	 (109)
 #define CLUSTER_DIVID_RATIO	 (35)
 
-
 #define CLUSTER_SIZE_DELTA_RATIO_ORDER	   (7)  /// 2^N  7=1/128
-
 
 #define CLUSTER_PEAK_MERGE_DEBOUNCE_MAX	 (12)
 #define CLUSTER_FAKE_DIVIDE_DEBOUNCE	 (12)
-
-
 
 ///-------------------------------------------------------------------------------///
 ///  Dev % Ratio Control
@@ -1683,14 +1615,12 @@
 
 #define MUT_REK_1NF_FRAME_NUM   	(20)//(3)  ///< the Neg-finger continue Frmae Num to execute Mut Rek
 
-
 #define MUT_REK_NFINGER_NUM   (2)  ///< the Neg-finger num to immediately execute Mut Rek
 #define MUT_REK_MAX_TIMES   	(2)//(3)  ///< the max Mut Rek times , if bigger than this , should 
 #define MUT_REK_DEBOUCNE_NUM  (12) ///< the debounce delay to execute Mut-ReK
 
 #define STOP_CONT_REK_PENDING_ROUND   (1024)
 #define MAX_CONT_REK_TIMES   (5)
-
 
 ///-------------------------------------------------------------------------------///
 ///  Initial PN code 
@@ -1719,8 +1649,6 @@
 ///-------------------------------------------------------------------------------///
 #define  FUN1_SENSE_DEV_PROC_PRIORITY_CTRL  (1<<0) ///<   Sense Axis Process Processing Priority Control
 
-
-
 ///-------------------------------------------------------------------------------///
 ///  Coord extend 
 ///-------------------------------------------------------------------------------///
@@ -1736,13 +1664,11 @@
 #define  TP_TYPE_1T2R_NO_EDGE   (4) ///<  without head Row & last Row
 #define  TP_TYPE_1T2R_REVERSE   (5) ///<  without head Row & last Row
 
-
 #define  TP_TYPE_1T2R_ROW_SHIFT_A (0x66) ///<
 #define  TP_TYPE_1T2R_ROW_SHIFT_B (0x69) ///<
 
 #define  TP_TYPE_1T2R_ROW_F (0x6) ///<
 #define  TP_TYPE_1T2R_ROW_R (0x9) ///<
-
 
 #define  TP_TYPE_TYPE		   (0x0F) ///<  00:normal ,  01:H  , 02:L
 ///-------------------------------------------------------------------------------///
@@ -1769,17 +1695,16 @@
 #define SEN_DEV_PORC_STEP_1T1R  2
 #define SEN_DEV_PORC_STEP_1T2R  1
 
-	/// bR1toR2en But Option
-	#define RATIO_R1R2_EN      		  0x01<<0
-	#define RATIO_NEAR_FAR_EN       0x01<<1
-	#define RATIO_NEAR_NEBIGHBOR    0x01<<2 // 0: Left  1:Right
-  #define RATIO_NEAR_FAR_MA_EN    0x01<<3
-  #define RATIO_NEAR_FAR_2ND_EN   0x01<<4
-	#define RATIO_NEAR_FAR_SHOW_EST    0x01<<5
-	#define RATIO_NEAR_FAR_2ND_REV_DIR    0x01<<6
-  #define DRI_DEV_PORC_EVEN  0	///<  Drive Dev Process exe Even part
-  #define DRI_DEV_PORC_ODD   1	///<  Drive Dev Process exe odd part
-
+/// bR1toR2en But Option
+#define RATIO_R1R2_EN      		  0x01<<0
+#define RATIO_NEAR_FAR_EN       0x01<<1
+#define RATIO_NEAR_NEBIGHBOR    0x01<<2 // 0: Left  1:Right
+#define RATIO_NEAR_FAR_MA_EN    0x01<<3
+#define RATIO_NEAR_FAR_2ND_EN   0x01<<4
+#define RATIO_NEAR_FAR_SHOW_EST    0x01<<5
+#define RATIO_NEAR_FAR_2ND_REV_DIR    0x01<<6
+#define DRI_DEV_PORC_EVEN  0	///<  Drive Dev Process exe Even part
+#define DRI_DEV_PORC_ODD   1	///<  Drive Dev Process exe odd part
 
 ///-------------------------------------------------------------------------------///
 /// Heavy Press Data Flash Ctrl bit
@@ -1788,7 +1713,6 @@
 #define HEAVY_PRESS_CTRL_CHANGE_GAIN_EN (0x01<<1)  ///<
 #define HEAVY_PRESS_CTRL_FIX_PT_EN      (0x01<<2)
 #define HEAVY_PRESS_CTRL_CLR_PT_EN      (0x01<<3)
-
 
 ///-------------------------------------------------------------------------------///
 /// FINGER_UP_ENABLE (bFingerUpEnable) Ctrl bit
@@ -1804,8 +1728,6 @@
 #define KEY_DEV_MODE     					(0)
 #define KEY_AD_MODE     					(1)
 
-
-
 ///-------------------------------------------------------------------------------///
 /// ZET7100 Frequecny Hop Tone ID
 ///-------------------------------------------------------------------------------///
@@ -1815,14 +1737,12 @@
 #define TONE_A   			(0)
 #define TONE_B   			(1)
 
-
 #define HISTORY_SAVE_NUM   	(8)
 
 #define FREQ_HOP_SORT_NUM		(4)	
 
 #define HOP_SCAN_GET_ADDELTA_MODE (0)
 #define HOP_SCAN_GET_ADBASE_MODE (1)
-
 
 #define DYNAMIC_HOP_BASE_IS_READY						(1<<0)		///< for All Frequency-Set ADBase
 #define DYNAMIC_HOP_ROUND_FINISH						(1<<1)		///<
@@ -1832,7 +1752,6 @@
 #define DYNAMIC_HOP_CURRENT_BASE_IS_READY		(1<<5)		///< for Currnent Frequency-Set ADBase
 #define DYNAMIC_HOP_CURRNET_MODE						(1<<6)		///< 1:for Current-Frequency-Set , 0:for Frequency-Hop-Scan Mode
 #define DYNAMIC_HOP_EXECUTE									(1<<7)		///< 1:New FreqID is found , need to execute change Freq & ReK
-
 
 ///-------------------------------------------------------------------------------///
 /// ZET7100 Command Write SRAM Parameter ()
@@ -1847,8 +1766,6 @@
 #define SPARA_PN_CTRL				(7)  ///< SRAM[0x00100007] CMD[0x8007]  
 #define SPARA_TX_CTRL_H			(8)  ///< SRAM[0x00100007] CMD[0x8008]  
 
-
-
 #define SPARA_FORCE_PNCHIPNUM			(0x22)  ///< SRAM[0x00100007] CMD[0x8002]  [4:0]:PnChip num ; [7]:Dual Tone enable
 #define SPARA_FORCE_ADCTRL0				(0x23)  ///< SRAM[0x00100008] CMD[0x8003]  [6:4]:FrontEnd Gain = 0~7 (Small -> Big)
 #define SPARA_FORCE_ADCTRL1				(0x24)  ///< SRAM[0x00100009] CMD[0x8004]  [6:4]:LpFilter Gain = 0~7 (Small -> Big)
@@ -1856,10 +1773,6 @@
 #define SPARA_FORCE_CHGPUMP				(0x26)  ///< SRAM[0x0010000B] CMD[0x8006]  [0  ]:ChargePump 1:Enable , 0:Disable
 #define SPARA_FORCE_PN_CTRL				(0x27)  ///< SRAM[0x00100007] CMD[0x8007]  
 #define SPARA_FORCE_TX_CTRL_H			(0x28)  ///< SRAM[0x00100007] CMD[0x8008]  
-
-
-
-
 
 ///-------------------------------------------------------------------------------///
 /// ZET7100 Finger Merge State Machine

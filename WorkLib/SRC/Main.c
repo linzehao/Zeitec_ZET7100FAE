@@ -925,7 +925,6 @@ void VarInit(void)
 
 	ZetVar.NoReportCnt = LOW_POWER_MODE_NO_REPORT_CNT;
 
-
 	#ifdef FEATURE_COORD_FORCE_IIR_AREA_DEBUG
 	ZetVar.bIIRAreaCnt = 0;
 	#endif
@@ -1087,8 +1086,6 @@ void DebugInformation()
 ///	pSenseTraceId = &ZetDF.cTraceSetup.scPanelSenseAxis.bSen00;	
 	/*BYTE const code *pDriveTraceId; 	
 	pDriveTraceId = &ZetDF.cTraceSetup.scPanelDriveAxis.bDri00;    */ 
-
-
 //*
 	for(i=1;i<=ZetVar.bDriveMaxAlg;i++)
 	{
@@ -1405,7 +1402,7 @@ int main()
 		#endif ///< for FEATURE_GESTURE_WAKEUP	
 
 		#ifdef FEATURE_GESTURE_PRO
-		ZetVar.bReportGestureId = TaskGesturePro(); 
+		//ZetVar.bReportGestureId = TaskGesturePro(); 
 		#endif ///< for FEATURE_GESTURE_PRO	
 
 		///-------------------------------------------------------------------------------///  
