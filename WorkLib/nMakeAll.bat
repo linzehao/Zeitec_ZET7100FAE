@@ -46,16 +46,18 @@ DEL %DEV_PATH%\%PROJECT_NAME%\%PANEL_TYPE%\*.bin
  ::[#] = 9  : Foce Touch+ Large pitch : 		Force-LPitch //FEATURE_PRESS_TOUCH
  ::[#] = 10 : Foce Touch+ Small pitch : 		Force-SPitch
  ::[#] = 11 : 1T2R-type + Small pitch customer : 1T2R-SP-C
+ ::[#] = 12 : 1T2R-type + Small pitch customer reduce : 1T2R-SP-CR
 ::------------------------------------------------------------------
-CALL nMAKE.BAT 1 1
-CALL nMAKE.BAT 1 2
-CALL nMAKE.BAT 1 3 
-CALL nMAKE.BAT 1 4
-CALL nMAKE.BAT 1 5
-CALL nMAKE.BAT 1 6
-CALL nMAKE.BAT 1 7
-CALL nMAKE.BAT 1 8
-CALL nMAKE.BAT 1 9
+::CALL nMAKE.BAT 1 1
+::CALL nMAKE.BAT 1 2
+::CALL nMAKE.BAT 1 3 
+::CALL nMAKE.BAT 1 4
+::CALL nMAKE.BAT 1 5
+::CALL nMAKE.BAT 1 6
+::CALL nMAKE.BAT 1 7
+::CALL nMAKE.BAT 1 8
+::CALL nMAKE.BAT 1 9
 CALL nMAKE.BAT 1 11
+CALL nMAKE.BAT 1 12
 
 ::CLEAN

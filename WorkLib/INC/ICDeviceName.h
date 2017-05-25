@@ -1,1 +1,1 @@
-#define ICDEVICENAME "1T2R-SP-C" 
+#define ICDEVICENAME "1T2R-SP-CR" 

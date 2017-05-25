@@ -3,10 +3,10 @@
 /// ===========================================================================
 ///  Release Version
 /// ===========================================================================
-#define FW_VERSION  (292)
+#define FW_VERSION  (294)
 
-//char *Modified = "Modified";
-//char *Date     = "2017/05/22 16:52:57";
+//char *Modified = "Not modified";
+//char *Date     = "2017/05/25 18:23:12";
 //char *Mixed    = "Not mixed";
 
 

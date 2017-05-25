@@ -12,6 +12,7 @@ IF "%DEF_SEL%" == "8"  goto LABEL_F3D_SMALL_PITCH
 IF "%DEF_SEL%" == "9"  goto LABEL_FORCE_LARGE_PITCH
 IF "%DEF_SEL%" == "10" goto LABEL_FORCE_LARGE_PITCH
 IF "%DEF_SEL%" == "11" goto LABEL_1T2R_SMALL_PITCH_CUSTOMER
+IF "%DEF_SEL%" == "12" goto LABEL_1T2R_SMALL_PITCH_CUSTOMER_REDUCE
 ::=========================================================================
 		ECHO ------------------------------------------------------------------	
 		ECHO Please select the compile option
@@ -27,6 +28,7 @@ IF "%DEF_SEL%" == "11" goto LABEL_1T2R_SMALL_PITCH_CUSTOMER
 		ECHO [#] = 9  : Foce Touch    + Large pitch : 			
 		ECHO [#] = 10 : Foce Touch    + Small pitch : 	
 		ECHO [#] = 11 : 1T2R-type     + Small pitch Customer: 		
+		ECHO [#] = 12 : 1T2R-type     + Small pitch Customer Reduce: 
 		ECHO ------------------------------------------------------------------
   	SET INPUT=
 		SET /P INPUT=Please select target:%=% 
@@ -115,6 +117,30 @@ IF "%DEF_SEL%" == "11" goto LABEL_1T2R_SMALL_PITCH_CUSTOMER
 	ECHO  + %FEATURE%
 
 	SET "FEATURE=FEATURE_CUSTOMER_PROTOCOL"	
+	SET "DEF_TYPE=%DEF_TYPE% -D %FEATURE%"
+	ECHO  + %FEATURE%
+
+	GOTO LABEL_SMALL_PITCH
+
+::=========================================================================	
+:LABEL_1T2R_SMALL_PITCH_CUSTOMER_REDUCE:
+::=========================================================================	
+	SET "DEF_NAME=1T2R-SP-CR"
+	SET "DEF_TYPE=-D FEATURE_NONE"
+
+	SET "FEATURE=FEATURE_1T2R_ARCHITECTURE"	
+	SET "DEF_TYPE=%DEF_TYPE% -D %FEATURE%"
+	ECHO  + %FEATURE%
+
+	SET "FEATURE=FEATURE_FORCE_TOUCH"	
+	SET "DEF_TYPE=%DEF_TYPE% -D %FEATURE%"
+	ECHO  + %FEATURE%
+
+	SET "FEATURE=FEATURE_CUSTOMER_PROTOCOL"	
+	SET "DEF_TYPE=%DEF_TYPE% -D %FEATURE%"
+	ECHO  + %FEATURE%
+
+	SET "FEATURE=FEATURE_REDUCE_CODESIZE"	
 	SET "DEF_TYPE=%DEF_TYPE% -D %FEATURE%"
 	ECHO  + %FEATURE%
 

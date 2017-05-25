@@ -233,7 +233,12 @@ for /f "delims=:" %%a in ('findstr /n "Device_ForceTouch" "%file%"') do (
       )     
      set /a KeyWordCnt=KeyWordCnt+1
 )
-for /f "delims=:" %%a in ('findstr /n "Device_1T2R-SPitch-Customer" "%file%"') do (
+for /f "delims=:" %%a in ('findstr /n "Device_1T2R-SP-C" "%file%"') do (
+      if          not defined LineOfSet11 (set "LineOfSet10=%%a"   
+      )     
+     set /a KeyWordCnt=KeyWordCnt+1
+)
+for /f "delims=:" %%a in ('findstr /n "Device_1T2R-SP-CR" "%file%"') do (
       if          not defined LineOfSet11 (set "LineOfSet11=%%a"   
       )     
      set /a KeyWordCnt=KeyWordCnt+1

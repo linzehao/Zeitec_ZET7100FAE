@@ -86,6 +86,7 @@ set "TargePath=00%DataflashNo%.%DataflashSubNo%"
 @copy ..\%BINpath%\ZET7100_F3D-SPitch.BIN    ZET7100_F3D-SPitch.v0%DataflashNo%.%DataflashSubNo%.bin
 @copy ..\%BINpath%\ZET7100_ForceTouch.BIN    ZET7100_ForceTouch.v0%DataflashNo%.%DataflashSubNo%.bin
 @copy ..\%BINpath%\ZET7100_1T2R-SP-C.BIN    ZET7100_1T2R-SP-C.v0%DataflashNo%.%DataflashSubNo%.bin
+@copy ..\%BINpath%\ZET7100_1T2R-SP-CR.BIN    ZET7100_1T2R-SP-CR.v0%DataflashNo%.%DataflashSubNo%.bin
 @copy ..\%XMLpath%\ZetDF_0%DataflashNo%.XML
 ::@rar a -r ZET7100_v%DataflashNo%_XML.rar *.bin *.XML
 
