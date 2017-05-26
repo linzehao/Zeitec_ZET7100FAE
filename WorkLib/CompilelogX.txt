@@ -1,15 +1,15 @@
- 9:23 
+18:38 
 
-D:\GIT\Zeitec_ZET7100FAE\WorkLib>cls
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>cls
 
-D:\GIT\Zeitec_ZET7100FAE\WorkLib>IF "ZET7100" == "ZET7100" goto LABEL_ZET7100_SETUP 
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>IF "ZET7100" == "ZET7100" goto LABEL_ZET7100_SETUP 
 
-D:\GIT\Zeitec_ZET7100FAE\WorkLib>CALL JVER.BAT 
-找不到 D:\GIT\Zeitec_ZET7100FAE\WorkLib\DEV\ZET7100\*.bin
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>CALL JVER.BAT 
+找不到 D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\DEV\ZET7100\*.bin
 
-D:\GIT\Zeitec_ZET7100FAE\WorkLib>cls
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>cls
 
-D:\GIT\Zeitec_ZET7100FAE\WorkLib>CALL nsetting.bat 
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>CALL nsetting.bat 
 複製了         1 個檔案。
  + FEATURE_1T2R_ARCHITECTURE
  + FEATURE_FORCE_TOUCH
@@ -18,12 +18,12 @@ D:\GIT\Zeitec_ZET7100FAE\WorkLib>CALL nsetting.bat
  + FEATURE_MCU_LIB_ENABLE	
  + FEATURE_PROJECT_ZET7100	
 
-D:\GIT\Zeitec_ZET7100FAE\WorkLib>DEL .\INC\ZetDF.h 
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>DEL .\INC\ZetDF.h 
 
-D:\GIT\Zeitec_ZET7100FAE\WorkLib>COPY .\DEV\ZET7100\ZET_DEFAULT\SETUP.TXT .\SRC\SETUP.TXT 
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>COPY .\DEV\ZET7100\ZET_DEFAULT\SETUP.TXT .\SRC\SETUP.TXT 
 複製了         1 個檔案。
 
-D:\GIT\Zeitec_ZET7100FAE\WorkLib>.\PRJ\GenXML.EXE .\SRC\ZetDF.XML .\SRC\OUT.XML	.\SRC\SETUP.TXT ZET7100     
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>.\PRJ\GenXML.EXE .\SRC\ZetDF.XML .\SRC\OUT.XML	.\SRC\SETUP.TXT ZET7100     
 ############################################
 # GENXML.EXE (V4.9) programmed by JL Juang #    
 # FOR ZET7100 Panel customization          # 
@@ -58,9 +58,9 @@ Press any key to continue...
 #################################################
 
 ZetDF.h Successfully generated
-找不到 D:\GIT\Zeitec_ZET7100FAE\WorkLib\DEV\ZET7100\ZET_DEFAULT\ZET7100.bin
+找不到 D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\DEV\ZET7100\ZET_DEFAULT\ZET7100.bin
 複製了         1 個檔案。
-D:\GIT\Zeitec_ZET7100FAE\WorkLib\ZetDF_0294.XML
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\ZetDF_0294.XML
 移動         1 個檔案。
 移動         1 個檔案。
 移動         1 個檔案。
@@ -101,9 +101,9 @@ Successfully Done.
 Device_1T2R-SP-C RomSize  SramSize 
 0  0
 
-D:\GIT\Zeitec_ZET7100FAE\WorkLib>cls
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>cls
 
-D:\GIT\Zeitec_ZET7100FAE\WorkLib>CALL nsetting.bat 
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>CALL nsetting.bat 
 複製了         1 個檔案。
  + FEATURE_1T2R_ARCHITECTURE
  + FEATURE_FORCE_TOUCH
@@ -113,12 +113,12 @@ D:\GIT\Zeitec_ZET7100FAE\WorkLib>CALL nsetting.bat
  + FEATURE_MCU_LIB_ENABLE	
  + FEATURE_PROJECT_ZET7100	
 
-D:\GIT\Zeitec_ZET7100FAE\WorkLib>DEL .\INC\ZetDF.h 
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>DEL .\INC\ZetDF.h 
 
-D:\GIT\Zeitec_ZET7100FAE\WorkLib>COPY .\DEV\ZET7100\ZET_DEFAULT\SETUP.TXT .\SRC\SETUP.TXT 
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>COPY .\DEV\ZET7100\ZET_DEFAULT\SETUP.TXT .\SRC\SETUP.TXT 
 複製了         1 個檔案。
 
-D:\GIT\Zeitec_ZET7100FAE\WorkLib>.\PRJ\GenXML.EXE .\SRC\ZetDF.XML .\SRC\OUT.XML	.\SRC\SETUP.TXT ZET7100     
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>.\PRJ\GenXML.EXE .\SRC\ZetDF.XML .\SRC\OUT.XML	.\SRC\SETUP.TXT ZET7100     
 ############################################
 # GENXML.EXE (V4.9) programmed by JL Juang #    
 # FOR ZET7100 Panel customization          # 
@@ -153,9 +153,9 @@ Press any key to continue...
 #################################################
 
 ZetDF.h Successfully generated
-找不到 D:\GIT\Zeitec_ZET7100FAE\WorkLib\DEV\ZET7100\ZET_DEFAULT\ZET7100.bin
+找不到 D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\DEV\ZET7100\ZET_DEFAULT\ZET7100.bin
 複製了         1 個檔案。
-D:\GIT\Zeitec_ZET7100FAE\WorkLib\ZetDF_0294.XML
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\ZetDF_0294.XML
 移動         1 個檔案。
 移動         1 個檔案。
 移動         1 個檔案。

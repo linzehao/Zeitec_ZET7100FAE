@@ -1,4 +1,4 @@
-18:38 
+18:33 
 
 D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib>cls
 
@@ -60,7 +60,7 @@ Press any key to continue...
 ZetDF.h Successfully generated
 找不到 D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\DEV\ZET7100\ZET_DEFAULT\ZET7100.bin
 複製了         1 個檔案。
-D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\ZetDF_0294.XML
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\ZetDF_0293.XML
 移動         1 個檔案。
 移動         1 個檔案。
 移動         1 個檔案。
@@ -85,7 +85,7 @@ MAIN FILE = .\BIN\JOUT.bin
 DATA FILE = .\PRJ\DB.BIN
 OUT FILE = .\BIN\ZET7100.BIN
 OFFSET  = 0xe000
-Checksum = 0x0352
+Checksum = 0x0350
 Successfully Done.
 複製了         1 個檔案。
 ##################################################
@@ -155,7 +155,7 @@ Press any key to continue...
 ZetDF.h Successfully generated
 找不到 D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\DEV\ZET7100\ZET_DEFAULT\ZET7100.bin
 複製了         1 個檔案。
-D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\ZetDF_0294.XML
+D:\GIT\zeitec_ZET7100FW_SVN\work\Release\WorkLib\ZetDF_0293.XML
 移動         1 個檔案。
 移動         1 個檔案。
 移動         1 個檔案。
@@ -180,7 +180,7 @@ MAIN FILE = .\BIN\JOUT.bin
 DATA FILE = .\PRJ\DB.BIN
 OUT FILE = .\BIN\ZET7100.BIN
 OFFSET  = 0xe000
-Checksum = 0xC5C3
+Checksum = 0xC5C1
 Successfully Done.
 複製了         1 個檔案。
 ##################################################
