@@ -7,3 +7,4 @@
 
 [2] Rev: 294
 1. Add reduce code bin for customer
+2. Disable waterproof, gesture_pro, hover function for reduce code bin
