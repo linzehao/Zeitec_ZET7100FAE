@@ -750,6 +750,8 @@
 //#define FORCE_SENSOR_PROTOCOL //[Maple] Not support now
 #define FEATURE_GESTURE_PRO
 #define FEATURE_GESTURE_PRO_DBG
+#undef FEATURE_GESTURE_WAKEUP
+#undef REPORT_GESTURE_POINTS_LOG_METHOD
 #endif
 
 ///-----------------------------------------------------------------------------------------------------------------------------------------------------------///

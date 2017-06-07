@@ -1148,6 +1148,8 @@ BYTE bKeyMax;
 	WORD wGestureStratCoordYEnd;	
 	WORD wGestureStratCoordXStart;
 	WORD wGestureStratCoordYStart;
+	BYTE bTimeToDoubleclick;
+	BYTE bUpKey;
 #endif
 	///----------------------------------------------------------------------------------------------------------------------------///
  	///		30. Check Sum
@@ -1554,9 +1556,8 @@ typedef struct CustomerVarSt
   BYTE bCustomerKeyReportFlag;
 	BYTE bCustomerKeyValidByte;
 
-	BYTE bTimerINTtrigger;	
- 
-	
+	BYTE bTimerINTtrigger;
+
 	BYTE bDebugBuf[16]; 
 	//BYTE bDoubleBufferIdx;
 

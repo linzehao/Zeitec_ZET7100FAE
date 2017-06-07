@@ -106,9 +106,9 @@
 				<max>1</max>
 				<description>[FIX]Init Scan Enable</description>
 				<unit>-</unit>
-        <ui group="防水功能(Water)" groupidx="130" idx="1"     name="防水功能開關:0:關閉 1:開啟"  mask="0x01" type="U1" min="0" max="1" default="0" abbrev="INIT_SCAN_EN" show1="1T2R-SPitch">防水功能開關: 0:關閉 1:開啟 </ui>
-        <ui group="防水功能(Water)" groupidx="130" idx="1"     name="防水功能：水模式時之BaeTeack功能 0:關閉 1:開啟"  mask="0x08" type="U1" min="0" max="1" default="0" abbrev="INIT_SCAN_EN" show1="1T2R-SPitch">防水功能開關: 水模式BaeTeack功能 0:關閉 1:開啟 </ui>
-        <ui group="防水功能(Water)" groupidx="130" idx="2"     name="防水功能：水模式時座標計算：0:Mutual 1:Initial"  mask="0x10" type="U1" min="0" max="1" default="0" abbrev="INIT_SCAN_EN" show1="1T2R-SPitch"></ui>
+        <ui group="防水功能(Water)" groupidx="130" idx="1"     name="防水功能開關:0:關閉 1:開啟"  mask="0x01" type="U1" min="0" max="1" default="0" abbrev="INIT_SCAN_EN" show1="1T2R-SPitch" show2="1T2R-SP-C">防水功能開關: 0:關閉 1:開啟 </ui>
+        <ui group="防水功能(Water)" groupidx="130" idx="1"     name="防水功能：水模式時之BaeTeack功能 0:關閉 1:開啟"  mask="0x08" type="U1" min="0" max="1" default="0" abbrev="INIT_SCAN_EN" show1="1T2R-SPitch" show2="1T2R-SP-C">防水功能開關: 水模式BaeTeack功能 0:關閉 1:開啟 </ui>
+        <ui group="防水功能(Water)" groupidx="130" idx="2"     name="防水功能：水模式時座標計算：0:Mutual 1:Initial"  mask="0x10" type="U1" min="0" max="1" default="0" abbrev="INIT_SCAN_EN" show1="1T2R-SPitch" show2="1T2R-SP-C"></ui>
         <!--<ui group="初始掃描(Initial)" groupidx="130" idx="1"     name="初始掃描模式:0:正方波 1:PN編碼"  mask="0x04" type="U1" min="0" max="1" default="1" abbrev="INIT_SCAN_EN">初始掃描模式:0:正方波 1:PN編碼</ui>-->
         <!--<ui group="初始掃描(Initial)" groupidx="130" idx="1"     name="初始掃描模式:PN TX 間格"  mask="0xF0" type="U1" min="0" max="1" default="1" abbrev="INIT_SCAN_EN">初始掃描模式:PN TX 間格通道數(預設0不間格)</ui>-->
 			</item>			
@@ -1111,7 +1111,7 @@
         <max>0xFF</max>
         <description>ADC_CTRL_0 Initial</description>
         <unit>-</unit>				
-        <ui group="防水功能(Water)" groupidx="130" idx="110"  name="[感應]INIT感應模式- 感應增益FrontEnd Gain:0(小)~7(大)"  mask="0x70" type="U1" min="0" max="1" default="0" abbrev="ADC_CTRL0_INIT" ns1="ForceTouch" show1="1T2R-SPitch" ></ui>				
+        <ui group="防水功能(Water)" groupidx="130" idx="110"  name="[感應]INIT感應模式- 感應增益FrontEnd Gain:0(小)~7(大)"  mask="0x70" type="U1" min="0" max="1" default="0" abbrev="ADC_CTRL0_INIT" ns1="ForceTouch" show1="1T2R-SPitch" show2="1T2R-SP-C"></ui>				
       </item>
       <item endian="le" type="H1" name="bInitADCCtrl1" abbrev="REG_AD_CTRL1_INIT">
       	<default>0x20</default>
@@ -1119,7 +1119,7 @@
         <max>0xFF</max>
         <description>ADC_CTRL_1 Reg[0x001B8004]</description>
         <unit>-</unit>
-				<ui group="防水功能(Water)" groupidx="130" idx="120"  name="[感應]INIT感應模式- 感應增益LPF Gain:0(小)~7(大)"  mask="0x70" type="H1" min="0" max="7" default="0x70" abbrev="REG_AD_CTRL1_INIT" ns1="ForceTouch" show1="1T2R-SPitch"></ui>				
+				<ui group="防水功能(Water)" groupidx="130" idx="120"  name="[感應]INIT感應模式- 感應增益LPF Gain:0(小)~7(大)"  mask="0x70" type="H1" min="0" max="7" default="0x70" abbrev="REG_AD_CTRL1_INIT" ns1="ForceTouch" show1="1T2R-SPitch" show2="1T2R-SP-C"></ui>				
       </item>
       <item endian="le" type="U2" name="wInitTxCtrl" abbrev="REG32_TX_CTRL_INIT">
       	<default>0x1100</default>
@@ -1127,7 +1127,7 @@
         <max>0xFFFF</max>
         <description>\n1.TX_CTRL[14:12]=TX_CTRL[10:8] \n2.charger pump off 時,只能設成0~1 \n3.charger pump on, 0~7</description>
         <unit>-</unit>  
-        <ui group="防水功能(Water)" groupidx="130" idx="210"  name="[感應]INIT TX Gain"  mask="0x0700" type="U2" min="0" max="0x07" default="0" abbrev="REG32_TX_CTRL_INIT" ns1="ForceTouch" show1="1T2R-SPitch">\n1.TX_CTRL[14:12]=TX_CTRL[10:8] \n2.charger pump off 時,只能設成0~1 \n3.charger pump on, 0~7</ui>              
+        <ui group="防水功能(Water)" groupidx="130" idx="210"  name="[感應]INIT TX Gain"  mask="0x0700" type="U2" min="0" max="0x07" default="0" abbrev="REG32_TX_CTRL_INIT" ns1="ForceTouch" show1="1T2R-SPitch" show2="1T2R-SP-C">\n1.TX_CTRL[14:12]=TX_CTRL[10:8] \n2.charger pump off 時,只能設成0~1 \n3.charger pump on, 0~7</ui>              
       </item>
       <item endian="le" type="H1" name="bInitPnCtrl" abbrev="REG_PN_CTRL_INIT">
       	<default>0x04</default>
@@ -1135,7 +1135,7 @@
         <max>0xFF</max>
         <description>Reg[0x00192000]</description>
         <unit>-</unit>
-				<ui group="防水功能(Water)" groupidx="130" idx="200"  name="[感應]INIT Sensitivity 0(大)~4(小)"  mask="0x70" type="H1" min="0" max="255" default="0" abbrev="REG_PN_CTRL_INIT" ns1="ForceTouch" show1="1T2R-SPitch">值越小感應量越大</ui>				
+				<ui group="防水功能(Water)" groupidx="130" idx="200"  name="[感應]INIT Sensitivity 0(大)~4(小)"  mask="0x70" type="H1" min="0" max="255" default="0" abbrev="REG_PN_CTRL_INIT" ns1="ForceTouch" show1="1T2R-SPitch" show2="1T2R-SP-C">值越小感應量越大</ui>				
       </item>
       <item endian="le" type="U2" name="wInitWaterTH" abbrev="INIT_TH_WATER">
       	<default>50</default>
@@ -1143,7 +1143,7 @@
         <max>0xFFFF</max>
         <description></description>
         <unit>-</unit>
-				<ui group="防水功能(Water)" groupidx="130" idx="10"  name="INIT偵測TH"  mask="0xFFFF" type="U2" min="0" max="65535" default="0" abbrev="INIT_TH_WATER" ns1="ForceTouch" show1="1T2R-SPitch"></ui>				
+				<ui group="防水功能(Water)" groupidx="130" idx="10"  name="INIT偵測TH"  mask="0xFFFF" type="U2" min="0" max="65535" default="0" abbrev="INIT_TH_WATER" ns1="ForceTouch" show1="1T2R-SPitch" show2="1T2R-SP-C"></ui>				
       </item> 
       <item endian="le" type="U2" name="wMutWaterTH" abbrev="MUT_TH_WATER">
       	<default>50</default>
@@ -1151,7 +1151,7 @@
         <max>0xFFFF</max>
         <description></description>
         <unit>-</unit>
-				<ui group="防水功能(Water)" groupidx="130" idx="11"  name="MUT偵測TH"  mask="0xFFFF" type="U2" min="0" max="65535" default="0" abbrev="MUT_TH_WATER" ns1="ForceTouch" show1="1T2R-SPitch"></ui>				
+				<ui group="防水功能(Water)" groupidx="130" idx="11"  name="MUT偵測TH"  mask="0xFFFF" type="U2" min="0" max="65535" default="0" abbrev="MUT_TH_WATER" ns1="ForceTouch" show1="1T2R-SPitch" show2="1T2R-SP-C"></ui>				
       </item>
       <item endian="le" type="U1" name="bMutWaterTHCntOn" abbrev="MUT_TH_WATER_CNT_ON">
       	<default>20</default>
@@ -1159,7 +1159,7 @@
         <max>0xFF</max>
         <description></description>
         <unit>-</unit>
-				<ui group="防水功能(Water)" groupidx="130" idx="12"  name="MUT偵測TH個數(成立)"  mask="0xFF" type="U1" min="1" max="255" default="0" abbrev="MUT_TH_WATER_CNT_ON" ns1="ForceTouch" show1="1T2R-SPitch"></ui>				
+				<ui group="防水功能(Water)" groupidx="130" idx="12"  name="MUT偵測TH個數(成立)"  mask="0xFF" type="U1" min="1" max="255" default="0" abbrev="MUT_TH_WATER_CNT_ON" ns1="ForceTouch" show1="1T2R-SPitch" show2="1T2R-SP-C"></ui>				
       </item> 
       <item endian="le" type="U1" name="bMutWaterTHCntOff" abbrev="MUT_TH_WATER_CNT_OFF">
       	<default>10</default>
@@ -1167,7 +1167,7 @@
         <max>0xFF</max>
         <description></description>
         <unit>-</unit>
-				<ui group="防水功能(Water)" groupidx="130" idx="12"  name="MUT偵測TH個數(解除)"  mask="0xFF" type="U1" min="1" max="255" default="0" abbrev="MUT_TH_WATER_CNT_OFF" ns1="ForceTouch" show1="1T2R-SPitch"></ui>				
+				<ui group="防水功能(Water)" groupidx="130" idx="12"  name="MUT偵測TH個數(解除)"  mask="0xFF" type="U1" min="1" max="255" default="0" abbrev="MUT_TH_WATER_CNT_OFF" ns1="ForceTouch" show1="1T2R-SPitch" show2="1T2R-SP-C"></ui>				
       </item>     
       <item endian="le" type="U1" name="bMutFingerWaterTHCntOn" abbrev="MUT_FINGER_WATER_CNT_ON">
       	<default>50</default>
@@ -1175,7 +1175,7 @@
         <max>0xFF</max>
         <description></description>
         <unit>-</unit>
-				<ui group="防水功能(Water)" groupidx="130" idx="20"  name="INIT無手指MUT有手指次數(成立)"  mask="0xFF" type="U1" min="0" max="255" default="0" abbrev="MUT_FINGER_WATER_CNT_ON" ns1="ForceTouch" show1="1T2R-SPitch"></ui>				
+				<ui group="防水功能(Water)" groupidx="130" idx="20"  name="INIT無手指MUT有手指次數(成立)"  mask="0xFF" type="U1" min="0" max="255" default="0" abbrev="MUT_FINGER_WATER_CNT_ON" ns1="ForceTouch" show1="1T2R-SPitch" show2="1T2R-SP-C"></ui>				
       </item> 
       <item endian="le" type="U1" name="bMutFingerWaterTHCntOff" abbrev="MUT_FINGER_WATER_CNT_OFF">
       	<default>50</default>
@@ -1183,7 +1183,7 @@
         <max>0xFF</max>
         <description></description>
         <unit>-</unit>
-				<ui group="防水功能(Water)" groupidx="130" idx="20"  name="INIT無手指MUT有手指次數(解除)"  mask="0xFF" type="U1" min="0" max="255" default="0" abbrev="MUT_FINGER_WATER_CNT_OFF" ns1="ForceTouch" show1="1T2R-SPitch"></ui>				
+				<ui group="防水功能(Water)" groupidx="130" idx="20"  name="INIT無手指MUT有手指次數(解除)"  mask="0xFF" type="U1" min="0" max="255" default="0" abbrev="MUT_FINGER_WATER_CNT_OFF" ns1="ForceTouch" show1="1T2R-SPitch" show2="1T2R-SP-C"></ui>				
       </item>
      <item endian="le" type="U1" name="bInitReportDebounce" abbrev="INIT_WATER_REPORT_DEBOUNCE">
       	<default>5</default>
@@ -1191,7 +1191,7 @@
         <max>0xFF</max>
         <description></description>
         <unit>-</unit>
-				<ui group="防水功能(Water)" groupidx="130" idx="10"  name="INIT報點Debounce"  mask="0xFF" type="U1" min="0" max="255" default="5" abbrev="INIT_WATER_REPORT_DEBOUNCE" ns1="ForceTouch" show1="1T2R-SPitch"></ui>				
+				<ui group="防水功能(Water)" groupidx="130" idx="10"  name="INIT報點Debounce"  mask="0xFF" type="U1" min="0" max="255" default="5" abbrev="INIT_WATER_REPORT_DEBOUNCE" ns1="ForceTouch" show1="1T2R-SPitch" show2="1T2R-SP-C"></ui>				
       </item> 
       <item endian="le" type="U2" name="wWaterModeBaseTrackDeb" abbrev="INIT_WATER_BASE_TRACK_DEB">
       	<default>100</default>
@@ -1199,7 +1199,7 @@
         <max>0xFFFF</max>
         <description></description>
         <unit>-</unit>
-				<ui group="防水功能(Water)" groupidx="130" idx="1"  name="防水功能：水模式解除BaseTrack Debounce"  mask="0xFFFF" type="U2" min="0" max="65535" default="100" abbrev="INIT_WATER_BASE_TRACK_DEB" ns1="ForceTouch" show1="1T2R-SPitch"></ui>				
+				<ui group="防水功能(Water)" groupidx="130" idx="1"  name="防水功能：水模式解除BaseTrack Debounce"  mask="0xFFFF" type="U2" min="0" max="65535" default="100" abbrev="INIT_WATER_BASE_TRACK_DEB" ns1="ForceTouch" show1="1T2R-SPitch" show2="1T2R-SP-C"></ui>				
       </item>     
   	</subClass>
   </class>
@@ -4260,7 +4260,7 @@
         <max>0xFFFF</max>
         <description>Finger Schmit Trigger:min-Finger-Dev to set trigger High </description>
         <unit>-</unit>         
-        <ui group="防水功能(Water)" groupidx="130"  idx="30"   name="手指權重值 : 成立值(整叢感應量) "  mask="0xFFFF" type="U2" min="0" max="65535" default="100" abbrev="FINGER_WEIGHT_SCHMIT_ON_WATER" show3="1T2R-SPitch" ></ui>        
+        <ui group="防水功能(Water)" groupidx="130"  idx="30"   name="手指權重值 : 成立值(整叢感應量) "  mask="0xFFFF" type="U2" min="0" max="65535" default="100" abbrev="FINGER_WEIGHT_SCHMIT_ON_WATER" show3="1T2R-SPitch" show2="1T2R-SP-C"></ui>        
       </item>  
       <item endian="le" type="U2" name="wFingerWeightSchmitOffWater" abbrev="FINGER_WEIGHT_SCHMIT_OFF_WATER">
       	<default>50</default>
@@ -4268,7 +4268,7 @@
         <max>0xFFFF</max>
         <description>[DYN] Cluster weight (Normal Mode) </description>
         <unit>-</unit>
-         <ui group="防水功能(Water)" groupidx="130" idx="31"  name="手指權重值 : 解除值(整叢感應量)"  mask="0xFFFF" type="U2" min="0" max="65535" default="50" abbrev="FINGER_WEIGHT_SCHMIT_OFF_WATER"  show3="1T2R-SPitch" ></ui>
+         <ui group="防水功能(Water)" groupidx="130" idx="31"  name="手指權重值 : 解除值(整叢感應量)"  mask="0xFFFF" type="U2" min="0" max="65535" default="50" abbrev="FINGER_WEIGHT_SCHMIT_OFF_WATER"  show3="1T2R-SPitch" show2="1T2R-SP-C"></ui>
 			</item>
 			<item endian="le" type="U2" name="wClusterPeakFingerTHWater" abbrev="CLUSTER_FINGER_TH_WATER">
       	<default>70</default>
@@ -4276,7 +4276,7 @@
         <max>0xFFFF</max>
         <description>[DYN] Finger threshold</description>
         <unit>-</unit>        
-        <ui group="防水功能(Water)" groupidx="130" idx="32"  name="手指感應量 : 叢集波峰值(單格感應量)"  mask="0xFFFF" type="U2" min="0" max="65535" default="40" abbrev="CLUSTER_FINGER_TH_WATER"   show3="1T2R-SPitch">叢集波峰臨界值(Cluster Finger TH)</ui>
+        <ui group="防水功能(Water)" groupidx="130" idx="32"  name="手指感應量 : 叢集波峰值(單格感應量)"  mask="0xFFFF" type="U2" min="0" max="65535" default="40" abbrev="CLUSTER_FINGER_TH_WATER"   show3="1T2R-SPitch" show2="1T2R-SP-C">叢集波峰臨界值(Cluster Finger TH)</ui>
 			</item>
 			<item endian="le" type="U2" name="wClusterDevSchmiOn" abbrev="CLUSTER_DEV_MAX_WATER">
       	<default>90</default>
@@ -4284,7 +4284,7 @@
         <max>0xFF</max>
         <description>[DYN] Cluster weight (Normal Mode) </description>
         <unit>-</unit>
-        <ui group="防水功能(Water)" groupidx="130" idx="33"  name="手指感應量 : 成立值(單格感應量)"  mask="0xFFFF" type="U2" min="0" max="255" default="20" abbrev="CLUSTER_DEV_MAX_WATER"  show3="1T2R-SPitch">手指感應量觸發上限</ui>
+        <ui group="防水功能(Water)" groupidx="130" idx="33"  name="手指感應量 : 成立值(單格感應量)"  mask="0xFFFF" type="U2" min="0" max="255" default="20" abbrev="CLUSTER_DEV_MAX_WATER"  show3="1T2R-SPitch" show2="1T2R-SP-C">手指感應量觸發上限</ui>
 			</item>
 			<item endian="le" type="U2" name="wClusterDevSchmiOff" abbrev="CLUSTER_DEV_MIN_WATER">
       	<default>20</default>
@@ -4292,7 +4292,7 @@
         <max>0xFF</max>
         <description>[DYN] Cluster weight (Normal Mode) </description>
         <unit>-</unit>
-       <ui group="防水功能(Water)" groupidx="130" idx="35"  name="手指感應量 : 解除值(單格感應量)"  mask="0xFFFF" type="U2" min="0" max="255" default="90" abbrev="CLUSTER_DEV_MIN_WATER" show3="1T2R-SPitch" >手指感應量觸發下限</ui>
+       <ui group="防水功能(Water)" groupidx="130" idx="35"  name="手指感應量 : 解除值(單格感應量)"  mask="0xFFFF" type="U2" min="0" max="255" default="90" abbrev="CLUSTER_DEV_MIN_WATER" show3="1T2R-SPitch" show2="1T2R-SP-C">手指感應量觸發下限</ui>
 			</item>
 			<item endian="le" type="U1" name="bFingerNumWater" abbrev="FINGER_NUM_WATER">
       	<default>0</default>
@@ -4300,7 +4300,7 @@
         <max>0xFF</max>
         <description></description>
         <unit>-</unit>
-				<ui group="防水功能(Water)" groupidx="130" idx="2"  name="水模式支援手指數"  mask="0xFF" type="U1" min="0" max="255" default="0" abbrev="FINGER_NUM_WATER" ns1="ForceTouch" show1="1T2R-SPitch"></ui>				
+				<ui group="防水功能(Water)" groupidx="130" idx="2"  name="水模式支援手指數"  mask="0xFF" type="U1" min="0" max="255" default="0" abbrev="FINGER_NUM_WATER" ns1="ForceTouch" show1="1T2R-SPitch" show2="1T2R-SP-C"></ui>				
       </item>
       <item endian="le" type="U1" name="bWaterAreaDriveStart" abbrev="WATER_AREA_DRIVE_AXIS_START">
       	<default>1</default>
@@ -4308,7 +4308,7 @@
         <max>0xFF</max>
         <description></description>
         <unit>-</unit>
-				<ui group="防水功能(Water)" groupidx="130" idx="12"  name="水模式:手指偵測範圍Drive通道起點"  mask="0xFF" type="U1" min="1" max="52" default="0" abbrev="WATER_AREA_DRIVE_AXIS_START" ns1="ForceTouch" show1="1T2R-SPitch"></ui>				
+				<ui group="防水功能(Water)" groupidx="130" idx="12"  name="水模式:手指偵測範圍Drive通道起點"  mask="0xFF" type="U1" min="1" max="52" default="0" abbrev="WATER_AREA_DRIVE_AXIS_START" ns1="ForceTouch" show1="1T2R-SPitch" show2="1T2R-SP-C"></ui>				
       </item>
        <item endian="le" type="U1" name="bWaterAreaSenseStart" abbrev="WATER_AREA_SENSE_AXIS_START">
       	<default>1</default>
@@ -4316,7 +4316,7 @@
         <max>0xFFFF</max>
         <description></description>
         <unit>-</unit>
-				<ui group="防水功能(Water)" groupidx="130" idx="13"  name="水模式:手指偵測範圍Sense通道起點"  mask="0xFF" type="U1" min="0" max="52" default="0" abbrev="WATER_AREA_SENSE_AXIS_START" ns1="ForceTouch" show1="1T2R-SPitch"></ui>				
+				<ui group="防水功能(Water)" groupidx="130" idx="13"  name="水模式:手指偵測範圍Sense通道起點"  mask="0xFF" type="U1" min="0" max="52" default="0" abbrev="WATER_AREA_SENSE_AXIS_START" ns1="ForceTouch" show1="1T2R-SPitch" show2="1T2R-SP-C"></ui>				
       </item>
        <item endian="le" type="U1" name="bWaterAreaDriveEnd" abbrev="WATER_AREA_DRIVE_AXIS_END">
       	<default>10</default>
@@ -4324,7 +4324,7 @@
         <max>0xFFFF</max>
         <description></description>
         <unit>-</unit>
-				<ui group="防水功能(Water)" groupidx="130" idx="14"  name="水模式:手指偵測範圍Drive通道終點"  mask="0xFF" type="U1" min="1" max="52" default="0" abbrev="WATER_AREA_DRIVE_AXIS_END" ns1="ForceTouch" show1="1T2R-SPitch"></ui>				
+				<ui group="防水功能(Water)" groupidx="130" idx="14"  name="水模式:手指偵測範圍Drive通道終點"  mask="0xFF" type="U1" min="1" max="52" default="0" abbrev="WATER_AREA_DRIVE_AXIS_END" ns1="ForceTouch" show1="1T2R-SPitch" show2="1T2R-SP-C"></ui>				
       </item>
      
        <item endian="le" type="U1" name="bWaterAreaSenseEnd" abbrev="WATER_AREA_SENSE_AXIS_END">
@@ -4333,7 +4333,7 @@
         <max>0xFFFF</max>
         <description></description>
         <unit>-</unit>
-				<ui group="防水功能(Water)" groupidx="130" idx="15"  name="水模式:手指偵測範圍Sense通道終點"  mask="0xFF" type="U1" min="1" max="52" default="0" abbrev="WATER_AREA_SENSE_AXIS_END" ns1="ForceTouch" show1="1T2R-SPitch"></ui>				
+				<ui group="防水功能(Water)" groupidx="130" idx="15"  name="水模式:手指偵測範圍Sense通道終點"  mask="0xFF" type="U1" min="1" max="52" default="0" abbrev="WATER_AREA_SENSE_AXIS_END" ns1="ForceTouch" show1="1T2R-SPitch" show2="1T2R-SP-C"></ui>				
       </item>
 		</subClass>
 	</class>
@@ -6849,6 +6849,27 @@
         <unit>-</unit>
         <ui group="懸浮報點(Hover)" groupidx="240" idx="250"  name="懸浮區緩衝"  mask="0xFF" type="U1" min="0" max="255" default="20" abbrev="HOVER_DEBOUNCE"  show1="1T2R-SP-C" show2="1T2R-SPitch">懸浮區緩衝</ui>
 			</item>			
+		</subClass>
+	</class>
+
+	<class type="Gesture" name="cGesture" pageId="8">
+		<subClass type="Gesture" name="scGesture" pageId="8">
+			<item endian="le" type="U1" name="bGestureEn" abbrev="GESTURE_EN">
+				<default>0</default>
+				<min>0</min>
+				<max>0xFF</max>
+				<description></description>
+				<unit>-</unit>
+				<ui group="手勢偵測(Gesture)" groupidx="290" idx="30"  name="手勢開關: 0:關閉 1:開啟"  mask="0xFF" type="U1" min="0" max="255" default="0" abbrev="GESTURE_EN" show1="1T2R-SP-C" show2="1T2R-SP-CR">手勢開關: 0:關閉 1:開啟</ui>
+			</item>		
+			<item endian="le" type="U1" name="bGestureAccuracy" abbrev="GESTURE_ACC">
+				<default>5</default>
+				<min>0</min>
+				<max>0xFF</max>
+				<description></description>
+				<unit>-</unit>
+				<ui group="手勢偵測(Gesture)" groupidx="290" idx="40"  name="手勢偵測精準度"  mask="0xFF" type="U1" min="0" max="255" default="0" abbrev="GESTURE_ACC" show1="1T2R-SP-C" show2="1T2R-SP-CR">手勢偵測準確度，值愈低愈不會誤判，但也愈容易失效</ui>
+			</item>
 		</subClass>
 	</class>
 

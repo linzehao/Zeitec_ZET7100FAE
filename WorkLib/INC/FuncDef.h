@@ -43,7 +43,7 @@ EXTERN void TaskAlgorithm(void);
 EXTERN void TaskGesture(void);
 #endif ///< for FEATURE_GESTURE_WAKEUP
 #ifdef FEATURE_GESTURE_PRO
-EXTERN BYTE TaskGesturePro(void);
+EXTERN BYTE TaskGesturePro(BYTE *bGestureData, WORD wSizeOfData);
 #endif ///< for FEATURE_GESTURE_PRO
 EXTERN void TaskKeyScan(void);
 EXTERN void TaskDataFormat(void);

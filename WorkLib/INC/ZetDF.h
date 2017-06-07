@@ -3337,17 +3337,38 @@ typedef struct PACK ClassHoverReportSt
 }ClassHoverReportType;	///< Total = 8 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #65 => DummyPage8
+///  Data flash SubClass #65 => Gesture
+///-------------------------------------------------------------------------------///
+typedef struct PACK SubClassGestureSt
+{
+	///  1. Abbrev: GESTURE_EN; Default: 0(-); DF Addr: 0426h; SRAM Offset: 03BFh ; SubClass Offset : 0
+	///     
+	U1 bGestureEn;                                             
+	///  2. Abbrev: GESTURE_ACC; Default: 5(-); DF Addr: 0427h; SRAM Offset: 03C0h ; SubClass Offset : 1
+	///     
+	U1 bGestureAccuracy;                                       
+} SubClassGestureType;	///< Total = 2 Bytes
+
+/// =============================================================///
+/// Data flash Class #34 => Gesture
+/// =============================================================///
+typedef struct PACK ClassGestureSt
+{
+	SubClassGestureType scGesture;
+}ClassGestureType;	///< Total = 2 Bytes
+
+///-------------------------------------------------------------------------------///
+///  Data flash SubClass #66 => DummyPage8
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassDummyPage8St
 {
-	///  1. Abbrev: PAGE8_DUMMY_BYTE0; Default: 0xFF(-); DF Addr: 0426h; SRAM Offset: 03BFh ; SubClass Offset : 0
+	///  1. Abbrev: PAGE8_DUMMY_BYTE0; Default: 0xFF(-); DF Addr: 0428h; SRAM Offset: 03C1h ; SubClass Offset : 0
 	///     PAGE 8 : DUMMY BYTE
 	U1 bPage8DummyByte;                                        
 } SubClassDummyPage8Type;	///< Total = 1 Bytes
 
 /// =============================================================///
-/// Data flash Class #34 => DummyPage8
+/// Data flash Class #35 => DummyPage8
 /// =============================================================///
 typedef struct PACK ClassDummyPage8St
 {
@@ -3355,17 +3376,17 @@ typedef struct PACK ClassDummyPage8St
 }ClassDummyPage8Type;	///< Total = 1 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #66 => wRxSineWord0
+///  Data flash SubClass #67 => wRxSineWord0
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClasswRxSineWord0St
 {
-	///  1. Abbrev: RxSine_WORD_0; Default: 0x0000(-); DF Addr: 0480h; SRAM Offset: 03C0h ; SubClass Offset : 0
+	///  1. Abbrev: RxSine_WORD_0; Default: 0x0000(-); DF Addr: 0480h; SRAM Offset: 03C2h ; SubClass Offset : 0
 	///     RX Sine0 Table Word[0]
 	U2 wRxSineWord0;                                           
 } SubClasswRxSineWord0Type;	///< Total = 2 Bytes
 
 /// =============================================================///
-/// Data flash Class #35 => RxSineWord0
+/// Data flash Class #36 => RxSineWord0
 /// =============================================================///
 typedef struct PACK ClassRxSineWord0St
 {
@@ -3373,17 +3394,17 @@ typedef struct PACK ClassRxSineWord0St
 }ClassRxSineWord0Type;	///< Total = 2 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #67 => wRxSineWord64
+///  Data flash SubClass #68 => wRxSineWord64
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClasswRxSineWord64St
 {
-	///  1. Abbrev: RxSine_WORD_64; Default: 0xFFFF(-); DF Addr: 0500h; SRAM Offset: 03C2h ; SubClass Offset : 0
+	///  1. Abbrev: RxSine_WORD_64; Default: 0xFFFF(-); DF Addr: 0500h; SRAM Offset: 03C4h ; SubClass Offset : 0
 	///     RX Sine0 Table Word[64]
 	U2 wRxSineWord64;                                          
 } SubClasswRxSineWord64Type;	///< Total = 2 Bytes
 
 /// =============================================================///
-/// Data flash Class #36 => RxSineWord64
+/// Data flash Class #37 => RxSineWord64
 /// =============================================================///
 typedef struct PACK ClassRxSineWord64St
 {
@@ -3391,17 +3412,17 @@ typedef struct PACK ClassRxSineWord64St
 }ClassRxSineWord64Type;	///< Total = 2 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #68 => wRxSineWord128
+///  Data flash SubClass #69 => wRxSineWord128
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClasswRxSineWord128St
 {
-	///  1. Abbrev: RxSine_WORD_128; Default: 0xFFFF(-); DF Addr: 0580h; SRAM Offset: 03C4h ; SubClass Offset : 0
+	///  1. Abbrev: RxSine_WORD_128; Default: 0xFFFF(-); DF Addr: 0580h; SRAM Offset: 03C6h ; SubClass Offset : 0
 	///     RX Sine0 Table Word[128]
 	U2 wRxSineWord128;                                         
 } SubClasswRxSineWord128Type;	///< Total = 2 Bytes
 
 /// =============================================================///
-/// Data flash Class #37 => RxSineWord128
+/// Data flash Class #38 => RxSineWord128
 /// =============================================================///
 typedef struct PACK ClassRxSineWord128St
 {
@@ -3409,110 +3430,110 @@ typedef struct PACK ClassRxSineWord128St
 }ClassRxSineWord128Type;	///< Total = 2 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #69 => wRxSineWord192
+///  Data flash SubClass #70 => wRxSineWord192
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClasswRxSineWord192St
 {
-	///  1. Abbrev: RxSine_WORD_192; Default: 0x0000(-); DF Addr: 0600h; SRAM Offset: 03C6h ; SubClass Offset : 0
+	///  1. Abbrev: RxSine_WORD_192; Default: 0x0000(-); DF Addr: 0600h; SRAM Offset: 03C8h ; SubClass Offset : 0
 	///     RX Sine0 Table Word[192]
 	U2 wRxSineWord192;                                         
-	///  2. Abbrev: RxSine_WORD_193; Default: 0xFF(-); DF Addr: 0602h; SRAM Offset: 03C8h ; SubClass Offset : 2
+	///  2. Abbrev: RxSine_WORD_193; Default: 0xFF(-); DF Addr: 0602h; SRAM Offset: 03CAh ; SubClass Offset : 2
 	///     RX Sine0 Table Word[193]
 	U2 wRxSineWord193;                                         
-	///  3. Abbrev: RxSine_WORD_194; Default: 0xFF(-); DF Addr: 0604h; SRAM Offset: 03CAh ; SubClass Offset : 4
+	///  3. Abbrev: RxSine_WORD_194; Default: 0xFF(-); DF Addr: 0604h; SRAM Offset: 03CCh ; SubClass Offset : 4
 	///     RX Sine0 Table Word[194]
 	U2 wRxSineWord194;                                         
-	///  4. Abbrev: RxSine_WORD_195; Default: 0xFF(-); DF Addr: 0606h; SRAM Offset: 03CCh ; SubClass Offset : 6
+	///  4. Abbrev: RxSine_WORD_195; Default: 0xFF(-); DF Addr: 0606h; SRAM Offset: 03CEh ; SubClass Offset : 6
 	///     RX Sine0 Table Word[195]
 	U2 wRxSineWord195;                                         
-	///  5. Abbrev: RxSine_WORD_196; Default: 0xFF(-); DF Addr: 0608h; SRAM Offset: 03CEh ; SubClass Offset : 8
+	///  5. Abbrev: RxSine_WORD_196; Default: 0xFF(-); DF Addr: 0608h; SRAM Offset: 03D0h ; SubClass Offset : 8
 	///     RX Sine0 Table Word[196]
 	U2 wRxSineWord196;                                         
-	///  6. Abbrev: RxSine_WORD_197; Default: 0xFF(-); DF Addr: 060Ah; SRAM Offset: 03D0h ; SubClass Offset : 10
+	///  6. Abbrev: RxSine_WORD_197; Default: 0xFF(-); DF Addr: 060Ah; SRAM Offset: 03D2h ; SubClass Offset : 10
 	///     RX Sine0 Table Word[197]
 	U2 wRxSineWord197;                                         
-	///  7. Abbrev: RxSine_WORD_198; Default: 0xFF(-); DF Addr: 060Ch; SRAM Offset: 03D2h ; SubClass Offset : 12
+	///  7. Abbrev: RxSine_WORD_198; Default: 0xFF(-); DF Addr: 060Ch; SRAM Offset: 03D4h ; SubClass Offset : 12
 	///     RX Sine0 Table Word[198]
 	U2 wRxSineWord198;                                         
-	///  8. Abbrev: RxSine_WORD_199; Default: 0xFF(-); DF Addr: 060Eh; SRAM Offset: 03D4h ; SubClass Offset : 14
+	///  8. Abbrev: RxSine_WORD_199; Default: 0xFF(-); DF Addr: 060Eh; SRAM Offset: 03D6h ; SubClass Offset : 14
 	///     RX Sine0 Table Word[199]
 	U2 wRxSineWord199;                                         
-	///  9. Abbrev: RxSine_WORD_200; Default: 0xFF(-); DF Addr: 0610h; SRAM Offset: 03D6h ; SubClass Offset : 16
+	///  9. Abbrev: RxSine_WORD_200; Default: 0xFF(-); DF Addr: 0610h; SRAM Offset: 03D8h ; SubClass Offset : 16
 	///     RX Sine0 Table Word[200]
 	U2 wRxSineWord200;                                         
-	/// 10. Abbrev: RxSine_WORD_201; Default: 0xFF(-); DF Addr: 0612h; SRAM Offset: 03D8h ; SubClass Offset : 18
+	/// 10. Abbrev: RxSine_WORD_201; Default: 0xFF(-); DF Addr: 0612h; SRAM Offset: 03DAh ; SubClass Offset : 18
 	///     RX Sine0 Table Word[201]
 	U2 wRxSineWord201;                                         
-	/// 11. Abbrev: RxSine_WORD_202; Default: 0xFF(-); DF Addr: 0614h; SRAM Offset: 03DAh ; SubClass Offset : 20
+	/// 11. Abbrev: RxSine_WORD_202; Default: 0xFF(-); DF Addr: 0614h; SRAM Offset: 03DCh ; SubClass Offset : 20
 	///     RX Sine0 Table Word[202]
 	U2 wRxSineWord202;                                         
-	/// 12. Abbrev: RxSine_WORD_203; Default: 0xFF(-); DF Addr: 0616h; SRAM Offset: 03DCh ; SubClass Offset : 22
+	/// 12. Abbrev: RxSine_WORD_203; Default: 0xFF(-); DF Addr: 0616h; SRAM Offset: 03DEh ; SubClass Offset : 22
 	///     RX Sine0 Table Word[203]
 	U2 wRxSineWord203;                                         
-	/// 13. Abbrev: RxSine_WORD_204; Default: 0xFF(-); DF Addr: 0618h; SRAM Offset: 03DEh ; SubClass Offset : 24
+	/// 13. Abbrev: RxSine_WORD_204; Default: 0xFF(-); DF Addr: 0618h; SRAM Offset: 03E0h ; SubClass Offset : 24
 	///     RX Sine0 Table Word[204]
 	U2 wRxSineWord204;                                         
-	/// 14. Abbrev: RxSine_WORD_205; Default: 0xFF(-); DF Addr: 061Ah; SRAM Offset: 03E0h ; SubClass Offset : 26
+	/// 14. Abbrev: RxSine_WORD_205; Default: 0xFF(-); DF Addr: 061Ah; SRAM Offset: 03E2h ; SubClass Offset : 26
 	///     RX Sine0 Table Word[205]
 	U2 wRxSineWord205;                                         
-	/// 15. Abbrev: RxSine_WORD_206; Default: 0xFF(-); DF Addr: 061Ch; SRAM Offset: 03E2h ; SubClass Offset : 28
+	/// 15. Abbrev: RxSine_WORD_206; Default: 0xFF(-); DF Addr: 061Ch; SRAM Offset: 03E4h ; SubClass Offset : 28
 	///     RX Sine0 Table Word[206]
 	U2 wRxSineWord206;                                         
-	/// 16. Abbrev: RxSine_WORD_207; Default: 0xFF(-); DF Addr: 061Eh; SRAM Offset: 03E4h ; SubClass Offset : 30
+	/// 16. Abbrev: RxSine_WORD_207; Default: 0xFF(-); DF Addr: 061Eh; SRAM Offset: 03E6h ; SubClass Offset : 30
 	///     RX Sine0 Table Word[207]
 	U2 wRxSineWord207;                                         
-	/// 17. Abbrev: RxSine_WORD_208; Default: 0xFF(-); DF Addr: 0620h; SRAM Offset: 03E6h ; SubClass Offset : 32
+	/// 17. Abbrev: RxSine_WORD_208; Default: 0xFF(-); DF Addr: 0620h; SRAM Offset: 03E8h ; SubClass Offset : 32
 	///     RX Sine0 Table Word[208]
 	U2 wRxSineWord208;                                         
-	/// 18. Abbrev: RxSine_WORD_209; Default: 0xFF(-); DF Addr: 0622h; SRAM Offset: 03E8h ; SubClass Offset : 34
+	/// 18. Abbrev: RxSine_WORD_209; Default: 0xFF(-); DF Addr: 0622h; SRAM Offset: 03EAh ; SubClass Offset : 34
 	///     RX Sine0 Table Word[209]
 	U2 wRxSineWord209;                                         
-	/// 19. Abbrev: RxSine_WORD_210; Default: 0xFF(-); DF Addr: 0624h; SRAM Offset: 03EAh ; SubClass Offset : 36
+	/// 19. Abbrev: RxSine_WORD_210; Default: 0xFF(-); DF Addr: 0624h; SRAM Offset: 03ECh ; SubClass Offset : 36
 	///     RX Sine0 Table Word[210]
 	U2 wRxSineWord210;                                         
-	/// 20. Abbrev: RxSine_WORD_211; Default: 0xFF(-); DF Addr: 0626h; SRAM Offset: 03ECh ; SubClass Offset : 38
+	/// 20. Abbrev: RxSine_WORD_211; Default: 0xFF(-); DF Addr: 0626h; SRAM Offset: 03EEh ; SubClass Offset : 38
 	///     RX Sine0 Table Word[211]
 	U2 wRxSineWord211;                                         
-	/// 21. Abbrev: RxSine_WORD_212; Default: 0xFF(-); DF Addr: 0628h; SRAM Offset: 03EEh ; SubClass Offset : 40
+	/// 21. Abbrev: RxSine_WORD_212; Default: 0xFF(-); DF Addr: 0628h; SRAM Offset: 03F0h ; SubClass Offset : 40
 	///     RX Sine0 Table Word[212]
 	U2 wRxSineWord212;                                         
-	/// 22. Abbrev: RxSine_WORD_213; Default: 0xFF(-); DF Addr: 062Ah; SRAM Offset: 03F0h ; SubClass Offset : 42
+	/// 22. Abbrev: RxSine_WORD_213; Default: 0xFF(-); DF Addr: 062Ah; SRAM Offset: 03F2h ; SubClass Offset : 42
 	///     RX Sine0 Table Word[213]
 	U2 wRxSineWord213;                                         
-	/// 23. Abbrev: RxSine_WORD_214; Default: 0xFF(-); DF Addr: 062Ch; SRAM Offset: 03F2h ; SubClass Offset : 44
+	/// 23. Abbrev: RxSine_WORD_214; Default: 0xFF(-); DF Addr: 062Ch; SRAM Offset: 03F4h ; SubClass Offset : 44
 	///     RX Sine0 Table Word[214]
 	U2 wRxSineWord214;                                         
-	/// 24. Abbrev: RxSine_WORD_215; Default: 0xFF(-); DF Addr: 062Eh; SRAM Offset: 03F4h ; SubClass Offset : 46
+	/// 24. Abbrev: RxSine_WORD_215; Default: 0xFF(-); DF Addr: 062Eh; SRAM Offset: 03F6h ; SubClass Offset : 46
 	///     RX Sine0 Table Word[215]
 	U2 wRxSineWord215;                                         
-	/// 25. Abbrev: RxSine_WORD_216; Default: 0xFF(-); DF Addr: 0630h; SRAM Offset: 03F6h ; SubClass Offset : 48
+	/// 25. Abbrev: RxSine_WORD_216; Default: 0xFF(-); DF Addr: 0630h; SRAM Offset: 03F8h ; SubClass Offset : 48
 	///     RX Sine0 Table Word[216]
 	U2 wRxSineWord216;                                         
-	/// 26. Abbrev: RxSine_WORD_217; Default: 0xFF(-); DF Addr: 0632h; SRAM Offset: 03F8h ; SubClass Offset : 50
+	/// 26. Abbrev: RxSine_WORD_217; Default: 0xFF(-); DF Addr: 0632h; SRAM Offset: 03FAh ; SubClass Offset : 50
 	///     RX Sine0 Table Word[217]
 	U2 wRxSineWord217;                                         
-	/// 27. Abbrev: RxSine_WORD_218; Default: 0xFF(-); DF Addr: 0634h; SRAM Offset: 03FAh ; SubClass Offset : 52
+	/// 27. Abbrev: RxSine_WORD_218; Default: 0xFF(-); DF Addr: 0634h; SRAM Offset: 03FCh ; SubClass Offset : 52
 	///     RX Sine0 Table Word[218]
 	U2 wRxSineWord218;                                         
-	/// 28. Abbrev: RxSine_WORD_219; Default: 0xFF(-); DF Addr: 0636h; SRAM Offset: 03FCh ; SubClass Offset : 54
+	/// 28. Abbrev: RxSine_WORD_219; Default: 0xFF(-); DF Addr: 0636h; SRAM Offset: 03FEh ; SubClass Offset : 54
 	///     RX Sine0 Table Word[219]
 	U2 wRxSineWord219;                                         
-	/// 29. Abbrev: RxSine_WORD_220; Default: 0xFF(-); DF Addr: 0638h; SRAM Offset: 03FEh ; SubClass Offset : 56
+	/// 29. Abbrev: RxSine_WORD_220; Default: 0xFF(-); DF Addr: 0638h; SRAM Offset: 0400h ; SubClass Offset : 56
 	///     RX Sine0 Table Word[220]
 	U2 wRxSineWord220;                                         
-	/// 30. Abbrev: RxSine_WORD_221; Default: 0xFF(-); DF Addr: 063Ah; SRAM Offset: 0400h ; SubClass Offset : 58
+	/// 30. Abbrev: RxSine_WORD_221; Default: 0xFF(-); DF Addr: 063Ah; SRAM Offset: 0402h ; SubClass Offset : 58
 	///     RX Sine0 Table Word[221]
 	U2 wRxSineWord221;                                         
-	/// 31. Abbrev: RxSine_WORD_222; Default: 0xFF(-); DF Addr: 063Ch; SRAM Offset: 0402h ; SubClass Offset : 60
+	/// 31. Abbrev: RxSine_WORD_222; Default: 0xFF(-); DF Addr: 063Ch; SRAM Offset: 0404h ; SubClass Offset : 60
 	///     RX Sine0 Table Word[222]
 	U2 wRxSineWord222;                                         
-	/// 32. Abbrev: RxSine_WORD_223; Default: 0xFF(-); DF Addr: 063Eh; SRAM Offset: 0404h ; SubClass Offset : 62
+	/// 32. Abbrev: RxSine_WORD_223; Default: 0xFF(-); DF Addr: 063Eh; SRAM Offset: 0406h ; SubClass Offset : 62
 	///     RX Sine0 Table Word[223]
 	U2 wRxSineWord223;                                         
 } SubClasswRxSineWord192Type;	///< Total = 64 Bytes
 
 /// =============================================================///
-/// Data flash Class #38 => RxSineWord192
+/// Data flash Class #39 => RxSineWord192
 /// =============================================================///
 typedef struct PACK ClassRxSineWord192St
 {
@@ -3520,17 +3541,17 @@ typedef struct PACK ClassRxSineWord192St
 }ClassRxSineWord192Type;	///< Total = 64 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #70 => RxSineCoeffWord0
+///  Data flash SubClass #71 => RxSineCoeffWord0
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassRxSineCoeffWord0St
 {
-	///  1. Abbrev: RxSineCoef_WORD_00; Default: 0x00C4(-); DF Addr: 0640h; SRAM Offset: 0406h ; SubClass Offset : 0
+	///  1. Abbrev: RxSineCoef_WORD_00; Default: 0x00C4(-); DF Addr: 0640h; SRAM Offset: 0408h ; SubClass Offset : 0
 	///     RX Sine Coef Table Word[00]
 	U2 wRxSineCoefWord00;                                      
 } SubClassRxSineCoeffWord0Type;	///< Total = 2 Bytes
 
 /// =============================================================///
-/// Data flash Class #39 => RxSineCoeffWord0
+/// Data flash Class #40 => RxSineCoeffWord0
 /// =============================================================///
 typedef struct PACK ClassRxSineCoeffWord0St
 {
@@ -3538,17 +3559,17 @@ typedef struct PACK ClassRxSineCoeffWord0St
 }ClassRxSineCoeffWord0Type;	///< Total = 2 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #71 => RxSineCoeffWord32
+///  Data flash SubClass #72 => RxSineCoeffWord32
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassRxSineCoeffWord32St
 {
-	///  1. Abbrev: RxSineCoef_WORD_32; Default: 0x0000(-); DF Addr: 0680h; SRAM Offset: 0408h ; SubClass Offset : 0
+	///  1. Abbrev: RxSineCoef_WORD_32; Default: 0x0000(-); DF Addr: 0680h; SRAM Offset: 040Ah ; SubClass Offset : 0
 	///     RX Sine Coef Table Word[32]
 	U2 wRxSineCoefWord32;                                      
 } SubClassRxSineCoeffWord32Type;	///< Total = 2 Bytes
 
 /// =============================================================///
-/// Data flash Class #40 => RxSineCoeffWord32
+/// Data flash Class #41 => RxSineCoeffWord32
 /// =============================================================///
 typedef struct PACK ClassRxSineCoeffWord32St
 {
@@ -3556,17 +3577,17 @@ typedef struct PACK ClassRxSineCoeffWord32St
 }ClassRxSineCoeffWord32Type;	///< Total = 2 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #72 => RxSineCoeffWord96
+///  Data flash SubClass #73 => RxSineCoeffWord96
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassRxSineCoeffWord96St
 {
-	///  1. Abbrev: RxSineCoef_WORD_96; Default: 0xFFFF(-); DF Addr: 0700h; SRAM Offset: 040Ah ; SubClass Offset : 0
+	///  1. Abbrev: RxSineCoef_WORD_96; Default: 0xFFFF(-); DF Addr: 0700h; SRAM Offset: 040Ch ; SubClass Offset : 0
 	///     RX Sine Coef Table Word[96]
 	U2 wRxSineCoefWord96;                                      
 } SubClassRxSineCoeffWord96Type;	///< Total = 2 Bytes
 
 /// =============================================================///
-/// Data flash Class #41 => RxSineCoeffWord96
+/// Data flash Class #42 => RxSineCoeffWord96
 /// =============================================================///
 typedef struct PACK ClassRxSineCoeffWord96St
 {
@@ -3574,17 +3595,17 @@ typedef struct PACK ClassRxSineCoeffWord96St
 }ClassRxSineCoeffWord96Type;	///< Total = 2 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #73 => RxSineCoeffWord160
+///  Data flash SubClass #74 => RxSineCoeffWord160
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassRxSineCoeffWord160St
 {
-	///  1. Abbrev: RxSineCoef_WORD_160; Default: 0xFFFF(-); DF Addr: 0780h; SRAM Offset: 040Ch ; SubClass Offset : 0
+	///  1. Abbrev: RxSineCoef_WORD_160; Default: 0xFFFF(-); DF Addr: 0780h; SRAM Offset: 040Eh ; SubClass Offset : 0
 	///     RX Sine Coef Table Word[160]
 	U2 wRxSineCoefWord160;                                     
 } SubClassRxSineCoeffWord160Type;	///< Total = 2 Bytes
 
 /// =============================================================///
-/// Data flash Class #42 => RxSineCoeffWord160
+/// Data flash Class #43 => RxSineCoeffWord160
 /// =============================================================///
 typedef struct PACK ClassRxSineCoeffWord160St
 {
@@ -3592,17 +3613,17 @@ typedef struct PACK ClassRxSineCoeffWord160St
 }ClassRxSineCoeffWord160Type;	///< Total = 2 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #74 => RxSineCoeffWord224
+///  Data flash SubClass #75 => RxSineCoeffWord224
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassRxSineCoeffWord224St
 {
-	///  1. Abbrev: RxSineCoef_WORD_224; Default: 0xFFFF(-); DF Addr: 0800h; SRAM Offset: 040Eh ; SubClass Offset : 0
+	///  1. Abbrev: RxSineCoef_WORD_224; Default: 0xFFFF(-); DF Addr: 0800h; SRAM Offset: 0410h ; SubClass Offset : 0
 	///     RX Sine Coef Table Word[224]
 	U2 wRxSineCoefWord224;                                     
 } SubClassRxSineCoeffWord224Type;	///< Total = 2 Bytes
 
 /// =============================================================///
-/// Data flash Class #43 => RxSineCoeffWord224
+/// Data flash Class #44 => RxSineCoeffWord224
 /// =============================================================///
 typedef struct PACK ClassRxSineCoeffWord224St
 {
@@ -3610,17 +3631,17 @@ typedef struct PACK ClassRxSineCoeffWord224St
 }ClassRxSineCoeffWord224Type;	///< Total = 2 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #75 => RxSineCoeffWord288
+///  Data flash SubClass #76 => RxSineCoeffWord288
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassRxSineCoeffWord288St
 {
-	///  1. Abbrev: RxSineCoef_WORD_288; Default: 0xFFFF(-); DF Addr: 0880h; SRAM Offset: 0410h ; SubClass Offset : 0
+	///  1. Abbrev: RxSineCoef_WORD_288; Default: 0xFFFF(-); DF Addr: 0880h; SRAM Offset: 0412h ; SubClass Offset : 0
 	///     RX Sine Coef Table Word[288]
 	U2 wRxSineCoefWord288;                                     
 } SubClassRxSineCoeffWord288Type;	///< Total = 2 Bytes
 
 /// =============================================================///
-/// Data flash Class #44 => RxSineCoeffWord288
+/// Data flash Class #45 => RxSineCoeffWord288
 /// =============================================================///
 typedef struct PACK ClassRxSineCoeffWord288St
 {
@@ -3628,17 +3649,17 @@ typedef struct PACK ClassRxSineCoeffWord288St
 }ClassRxSineCoeffWord288Type;	///< Total = 2 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #76 => RxSineCoeffWord352
+///  Data flash SubClass #77 => RxSineCoeffWord352
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassRxSineCoeffWord352St
 {
-	///  1. Abbrev: RxSineCoef_WORD_352; Default: 0x0000(-); DF Addr: 0900h; SRAM Offset: 0412h ; SubClass Offset : 0
+	///  1. Abbrev: RxSineCoef_WORD_352; Default: 0x0000(-); DF Addr: 0900h; SRAM Offset: 0414h ; SubClass Offset : 0
 	///     RX Sine Coef Table Word[351]
 	U2 wRxSineCoefWord352;                                     
 } SubClassRxSineCoeffWord352Type;	///< Total = 2 Bytes
 
 /// =============================================================///
-/// Data flash Class #45 => RxSineCoeffWord352
+/// Data flash Class #46 => RxSineCoeffWord352
 /// =============================================================///
 typedef struct PACK ClassRxSineCoeffWord352St
 {
@@ -3646,17 +3667,17 @@ typedef struct PACK ClassRxSineCoeffWord352St
 }ClassRxSineCoeffWord352Type;	///< Total = 2 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #77 => TxSineByte0
+///  Data flash SubClass #78 => TxSineByte0
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassTxSineByte0St
 {
-	///  1. Abbrev: TXSINE_BYTE_00; Default: TX Sine Byte[00](-); DF Addr: 0980h; SRAM Offset: 0414h ; SubClass Offset : 0
+	///  1. Abbrev: TXSINE_BYTE_00; Default: TX Sine Byte[00](-); DF Addr: 0980h; SRAM Offset: 0416h ; SubClass Offset : 0
 	///     
 	U1 bTxSineByte00;                                          
 } SubClassTxSineByte0Type;	///< Total = 1 Bytes
 
 /// =============================================================///
-/// Data flash Class #46 => TxSineByte0
+/// Data flash Class #47 => TxSineByte0
 /// =============================================================///
 typedef struct PACK ClassTxSineByte0St
 {
@@ -3664,17 +3685,17 @@ typedef struct PACK ClassTxSineByte0St
 }ClassTxSineByte0Type;	///< Total = 1 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #78 => TxSineByte128
+///  Data flash SubClass #79 => TxSineByte128
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassTxSineByte128St
 {
-	///  1. Abbrev: TXSINE_BYTE_128; Default: 0x6B(-); DF Addr: 0A00h; SRAM Offset: 0415h ; SubClass Offset : 0
+	///  1. Abbrev: TXSINE_BYTE_128; Default: 0x6B(-); DF Addr: 0A00h; SRAM Offset: 0417h ; SubClass Offset : 0
 	///     TX Sine Byte[128]
 	U1 bTxSineByte128;                                         
 } SubClassTxSineByte128Type;	///< Total = 1 Bytes
 
 /// =============================================================///
-/// Data flash Class #47 => TxSineByte128
+/// Data flash Class #48 => TxSineByte128
 /// =============================================================///
 typedef struct PACK ClassTxSineByte128St
 {
@@ -3682,17 +3703,17 @@ typedef struct PACK ClassTxSineByte128St
 }ClassTxSineByte128Type;	///< Total = 1 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #79 => TxSineByte256
+///  Data flash SubClass #80 => TxSineByte256
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassTxSineByte256St
 {
-	///  1. Abbrev: TXSINE_BYTE_256; Default: TX Sine Byte[256](-); DF Addr: 0A80h; SRAM Offset: 0416h ; SubClass Offset : 0
+	///  1. Abbrev: TXSINE_BYTE_256; Default: TX Sine Byte[256](-); DF Addr: 0A80h; SRAM Offset: 0418h ; SubClass Offset : 0
 	///     
 	U1 bTxSineByte256;                                         
 } SubClassTxSineByte256Type;	///< Total = 1 Bytes
 
 /// =============================================================///
-/// Data flash Class #48 => TxSineByte256
+/// Data flash Class #49 => TxSineByte256
 /// =============================================================///
 typedef struct PACK ClassTxSineByte256St
 {
@@ -3700,17 +3721,17 @@ typedef struct PACK ClassTxSineByte256St
 }ClassTxSineByte256Type;	///< Total = 1 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #80 => TxSineByte384
+///  Data flash SubClass #81 => TxSineByte384
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassTxSineByte384St
 {
-	///  1. Abbrev: TXSINE_BYTE_384; Default: TX Sine Byte[384](-); DF Addr: 0B00h; SRAM Offset: 0417h ; SubClass Offset : 0
+	///  1. Abbrev: TXSINE_BYTE_384; Default: TX Sine Byte[384](-); DF Addr: 0B00h; SRAM Offset: 0419h ; SubClass Offset : 0
 	///     
 	U1 bTxSineByte384;                                         
 } SubClassTxSineByte384Type;	///< Total = 1 Bytes
 
 /// =============================================================///
-/// Data flash Class #49 => TxSineByte384
+/// Data flash Class #50 => TxSineByte384
 /// =============================================================///
 typedef struct PACK ClassTxSineByte384St
 {
@@ -3718,17 +3739,17 @@ typedef struct PACK ClassTxSineByte384St
 }ClassTxSineByte384Type;	///< Total = 1 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #81 => TxSineByte512
+///  Data flash SubClass #82 => TxSineByte512
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassTxSineByte512St
 {
-	///  1. Abbrev: TXSINE_BYTE_512; Default: TX Sine Byte[512](-); DF Addr: 0B80h; SRAM Offset: 0418h ; SubClass Offset : 0
+	///  1. Abbrev: TXSINE_BYTE_512; Default: TX Sine Byte[512](-); DF Addr: 0B80h; SRAM Offset: 041Ah ; SubClass Offset : 0
 	///     
 	U1 bTxSineByte512;                                         
 } SubClassTxSineByte512Type;	///< Total = 1 Bytes
 
 /// =============================================================///
-/// Data flash Class #50 => TxSineByte512
+/// Data flash Class #51 => TxSineByte512
 /// =============================================================///
 typedef struct PACK ClassTxSineByte512St
 {
@@ -3736,17 +3757,17 @@ typedef struct PACK ClassTxSineByte512St
 }ClassTxSineByte512Type;	///< Total = 1 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #82 => TxSineByte640
+///  Data flash SubClass #83 => TxSineByte640
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassTxSineByte640St
 {
-	///  1. Abbrev: TXSINE_BYTE_640; Default: TX Sine Byte[640](-); DF Addr: 0C00h; SRAM Offset: 0419h ; SubClass Offset : 0
+	///  1. Abbrev: TXSINE_BYTE_640; Default: TX Sine Byte[640](-); DF Addr: 0C00h; SRAM Offset: 041Bh ; SubClass Offset : 0
 	///     
 	U1 bTxSineByte640;                                         
 } SubClassTxSineByte640Type;	///< Total = 1 Bytes
 
 /// =============================================================///
-/// Data flash Class #51 => TxSineByte640
+/// Data flash Class #52 => TxSineByte640
 /// =============================================================///
 typedef struct PACK ClassTxSineByte640St
 {
@@ -3754,17 +3775,17 @@ typedef struct PACK ClassTxSineByte640St
 }ClassTxSineByte640Type;	///< Total = 1 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #83 => TxSineByte768
+///  Data flash SubClass #84 => TxSineByte768
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassTxSineByte768St
 {
-	///  1. Abbrev: TXSINE_BYTE_768; Default: TX Sine Byte[768](-); DF Addr: 0C80h; SRAM Offset: 041Ah ; SubClass Offset : 0
+	///  1. Abbrev: TXSINE_BYTE_768; Default: TX Sine Byte[768](-); DF Addr: 0C80h; SRAM Offset: 041Ch ; SubClass Offset : 0
 	///     
 	U1 bTxSineByte768;                                         
 } SubClassTxSineByte768Type;	///< Total = 1 Bytes
 
 /// =============================================================///
-/// Data flash Class #52 => TxSineByte768
+/// Data flash Class #53 => TxSineByte768
 /// =============================================================///
 typedef struct PACK ClassTxSineByte768St
 {
@@ -3772,17 +3793,17 @@ typedef struct PACK ClassTxSineByte768St
 }ClassTxSineByte768Type;	///< Total = 1 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #84 => TxSineByte896
+///  Data flash SubClass #85 => TxSineByte896
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassTxSineByte896St
 {
-	///  1. Abbrev: TXSINE_BYTE_896; Default: TX Sine Byte[896](-); DF Addr: 0D00h; SRAM Offset: 041Bh ; SubClass Offset : 0
+	///  1. Abbrev: TXSINE_BYTE_896; Default: TX Sine Byte[896](-); DF Addr: 0D00h; SRAM Offset: 041Dh ; SubClass Offset : 0
 	///     
 	U1 bTxSineByte896;                                         
 } SubClassTxSineByte896Type;	///< Total = 1 Bytes
 
 /// =============================================================///
-/// Data flash Class #53 => TxSineByte896
+/// Data flash Class #54 => TxSineByte896
 /// =============================================================///
 typedef struct PACK ClassTxSineByte896St
 {
@@ -3790,17 +3811,17 @@ typedef struct PACK ClassTxSineByte896St
 }ClassTxSineByte896Type;	///< Total = 1 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #85 => TxSineByte1024
+///  Data flash SubClass #86 => TxSineByte1024
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassTxSineByte1024St
 {
-	///  1. Abbrev: TXSINE_BYTE_1024; Default: TX Sine Byte[1024](-); DF Addr: 0D80h; SRAM Offset: 041Ch ; SubClass Offset : 0
+	///  1. Abbrev: TXSINE_BYTE_1024; Default: TX Sine Byte[1024](-); DF Addr: 0D80h; SRAM Offset: 041Eh ; SubClass Offset : 0
 	///     
 	U1 bTxSineByte1024;                                        
 } SubClassTxSineByte1024Type;	///< Total = 1 Bytes
 
 /// =============================================================///
-/// Data flash Class #54 => TxSineByte1024
+/// Data flash Class #55 => TxSineByte1024
 /// =============================================================///
 typedef struct PACK ClassTxSineByte1024St
 {
@@ -3808,17 +3829,17 @@ typedef struct PACK ClassTxSineByte1024St
 }ClassTxSineByte1024Type;	///< Total = 1 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #86 => TxSineByte1152
+///  Data flash SubClass #87 => TxSineByte1152
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassTxSineByte1152St
 {
-	///  1. Abbrev: TXSINE_BYTE_1152; Default: 0xCC(-); DF Addr: 0E00h; SRAM Offset: 041Dh ; SubClass Offset : 0
+	///  1. Abbrev: TXSINE_BYTE_1152; Default: 0xCC(-); DF Addr: 0E00h; SRAM Offset: 041Fh ; SubClass Offset : 0
 	///     TX Sine Byte[1151]
 	U1 bTxSineByte1152;                                        
 } SubClassTxSineByte1152Type;	///< Total = 1 Bytes
 
 /// =============================================================///
-/// Data flash Class #55 => TxSineByte1152
+/// Data flash Class #56 => TxSineByte1152
 /// =============================================================///
 typedef struct PACK ClassTxSineByte1152St
 {
@@ -3826,17 +3847,17 @@ typedef struct PACK ClassTxSineByte1152St
 }ClassTxSineByte1152Type;	///< Total = 1 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #87 => TxSineByte1280
+///  Data flash SubClass #88 => TxSineByte1280
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassTxSineByte1280St
 {
-	///  1. Abbrev: TXSINE_BYTE_1280; Default: 0xCC(-); DF Addr: 0E80h; SRAM Offset: 041Eh ; SubClass Offset : 0
+	///  1. Abbrev: TXSINE_BYTE_1280; Default: 0xCC(-); DF Addr: 0E80h; SRAM Offset: 0420h ; SubClass Offset : 0
 	///     TX Sine Byte[1280]
 	U1 bTxSineByte1280;                                        
 } SubClassTxSineByte1280Type;	///< Total = 1 Bytes
 
 /// =============================================================///
-/// Data flash Class #56 => TxSineByte1280
+/// Data flash Class #57 => TxSineByte1280
 /// =============================================================///
 typedef struct PACK ClassTxSineByte1280St
 {
@@ -3844,17 +3865,17 @@ typedef struct PACK ClassTxSineByte1280St
 }ClassTxSineByte1280Type;	///< Total = 1 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #88 => TxSineByte1408
+///  Data flash SubClass #89 => TxSineByte1408
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassTxSineByte1408St
 {
-	///  1. Abbrev: TXSINE_BYTE_1408; Default: TX Sine Byte[1408](-); DF Addr: 0F00h; SRAM Offset: 041Fh ; SubClass Offset : 0
+	///  1. Abbrev: TXSINE_BYTE_1408; Default: TX Sine Byte[1408](-); DF Addr: 0F00h; SRAM Offset: 0421h ; SubClass Offset : 0
 	///     
 	U1 bTxSineByte1408;                                        
 } SubClassTxSineByte1408Type;	///< Total = 1 Bytes
 
 /// =============================================================///
-/// Data flash Class #57 => TxSineByte1408
+/// Data flash Class #58 => TxSineByte1408
 /// =============================================================///
 typedef struct PACK ClassTxSineByte1408St
 {
@@ -3862,17 +3883,17 @@ typedef struct PACK ClassTxSineByte1408St
 }ClassTxSineByte1408Type;	///< Total = 1 Bytes
 
 ///-------------------------------------------------------------------------------///
-///  Data flash SubClass #89 => TxSineByte1536
+///  Data flash SubClass #90 => TxSineByte1536
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassTxSineByte1536St
 {
-	///  1. Abbrev: TXSINE_BYTE_1536; Default: TX Sine Byte[1536](-); DF Addr: 0F80h; SRAM Offset: 0420h ; SubClass Offset : 0
+	///  1. Abbrev: TXSINE_BYTE_1536; Default: TX Sine Byte[1536](-); DF Addr: 0F80h; SRAM Offset: 0422h ; SubClass Offset : 0
 	///     
 	U1 bTxSineByte1536;                                        
 } SubClassTxSineByte1536Type;	///< Total = 1 Bytes
 
 /// =============================================================///
-/// Data flash Class #58 => TxSineByte1536
+/// Data flash Class #59 => TxSineByte1536
 /// =============================================================///
 typedef struct PACK ClassTxSineByte1536St
 {
@@ -3947,13 +3968,14 @@ typedef struct PACK GlobalDFVarSt
 	ClassDummyPage7Type  cDummyPage7;
 	BYTE bDummyPage07[47];
 	///-------------------------------------------------------------------------------///
-	/// Data flash PAGE#08 (39 Bytes)
+	/// Data flash PAGE#08 (41 Bytes)
 	///-------------------------------------------------------------------------------///
 	ClassTpCrossTalkFix1Type  cTpCrossTalkFix1;
 	ClassTableLengthType  cTableLength;
 	ClassHoverReportType  cHoverReport;
+	ClassGestureType  cGesture;
 	ClassDummyPage8Type  cDummyPage8;
-	BYTE bDummyPage08[89];
+	BYTE bDummyPage08[87];
 	///-------------------------------------------------------------------------------///
 	/// Data flash PAGE#09 (2 Bytes)
 	///-------------------------------------------------------------------------------///
