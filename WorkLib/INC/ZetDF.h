@@ -3341,10 +3341,10 @@ typedef struct PACK ClassHoverReportSt
 ///-------------------------------------------------------------------------------///
 typedef struct PACK SubClassGestureSt
 {
-	///  1. Abbrev: GESTURE_EN; Default: 0(-); DF Addr: 0426h; SRAM Offset: 03BFh ; SubClass Offset : 0
+	///  1. Abbrev: GESTURE_EN; Default: 1(-); DF Addr: 0426h; SRAM Offset: 03BFh ; SubClass Offset : 0
 	///     
 	U1 bGestureEn;                                             
-	///  2. Abbrev: GESTURE_ACC; Default: 5(-); DF Addr: 0427h; SRAM Offset: 03C0h ; SubClass Offset : 1
+	///  2. Abbrev: GESTURE_ACC; Default: 1(-); DF Addr: 0427h; SRAM Offset: 03C0h ; SubClass Offset : 1
 	///     
 	U1 bGestureAccuracy;                                       
 } SubClassGestureType;	///< Total = 2 Bytes

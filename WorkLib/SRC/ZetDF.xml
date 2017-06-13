@@ -1091,7 +1091,7 @@
         <max>0xFF</max>
         <description>[!!!] Init Scan Drive Axis In-active </description>
         <unit>-</unit>
-        <ui group="防水功能(Water)" groupidx="130" idx="9906"  name="[其它] 發射端閒置通道行為"  mask="0x07" type="U1" min="0" max="7" default="3" abbrev="INIT_DRI_INACT">[其它] 發射端閒置通道行為 : 0:GND 1:VCM 2:DAC2 3:DAC2N 4:HIZ 5:DAC1 6:DAC1N 7:VDD 8:DOUT 9:DIN </ui>
+        <ui group="防水功能(Water)" groupidx="130" idx="9906"  name="[其它] 發射端閒置通道行為"  mask="0x07" type="U1" min="0" max="7" default="3" abbrev="INIT_DRI_INACT" show1="1T2R-SPitch" show2="1T2R-SP-C">[其它] 發射端閒置通道行為 : 0:GND 1:VCM 2:DAC2 3:DAC2N 4:HIZ 5:DAC1 6:DAC1N 7:VDD 8:DOUT 9:DIN </ui>
       </item>  
       <item endian="le" type="U1" name="bInitSenact" abbrev="INIT_SEN_ACT">
       	<default>0x00</default>
@@ -2751,7 +2751,7 @@
         <description>Finger Numbers</description>
         <unit>-</unit>
         <ui group="手指搜尋(LPitch)" groupidx="160" idx="10"  name="支援手指數(Finegr Num Support)"  mask="0x0F" type="U1" min="0" max="10" default="5" abbrev="FINGER_NUM" show1="Ltype-LPitch" show2="Htype-LPitch" show3="1T2R-LPitch" show4="F3D-LPitch">支援手指數(Finegr Num Support) : 最多=10</ui>	 
-        <ui group="手指搜尋(SPitch)" groupidx="160" idx="10"  name="支援手指數(Finegr Num Support)"  mask="0x0F" type="U1" min="0" max="10" default="5" abbrev="FINGER_NUM"  show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="F3D-SPitch" show5="1T2R-SP-C">支援手指數(Finegr Num Support) : 最多=10</ui>	 
+        <ui group="手指搜尋(SPitch)" groupidx="160" idx="10"  name="支援手指數(Finegr Num Support)"  mask="0x0F" type="U1" min="0" max="10" default="5" abbrev="FINGER_NUM"  show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="F3D-SPitch" show5="1T2R-SP-C" show6="1T2R-SP-CR">支援手指數(Finegr Num Support) : 最多=10</ui>	 
 			</item>
       <item endian="le" type="H1" name="bI2CPipeEn" abbrev="I2C_PIPE_EN">
       	<default>0x01</default>
@@ -2818,8 +2818,8 @@
         <max>0xFF</max>
         <description></description>
         <unit>-</unit>
-        <ui group="觸控面板資訊" groupidx="110" idx="15"  name="觸控面板佈局型式:1T2R 奇數條排列順序"  mask="0x0F" type="H1" min="0" max="1" default="0" abbrev="TOUCH_PANEL_TYPE_1T2R"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C"> </ui>        
-        <ui group="觸控面板資訊" groupidx="110" idx="16"  name="觸控面板佈局型式:1T2R 偶數條排列順序"  mask="0xF0" type="H1" min="0" max="1" default="0" abbrev="TOUCH_PANEL_TYPE_1T2R"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C"> </ui>        
+        <ui group="觸控面板資訊" groupidx="110" idx="15"  name="觸控面板佈局型式:1T2R 奇數條排列順序"  mask="0x0F" type="H1" min="0" max="1" default="0" abbrev="TOUCH_PANEL_TYPE_1T2R"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR"> </ui>        
+        <ui group="觸控面板資訊" groupidx="110" idx="16"  name="觸控面板佈局型式:1T2R 偶數條排列順序"  mask="0xF0" type="H1" min="0" max="1" default="0" abbrev="TOUCH_PANEL_TYPE_1T2R"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR"> </ui>        
 			</item>-->		
 			<item endian="le" type="H1" name="bHTypeMidChannel" abbrev="HTYPE_MID_CHANNEL">
       	<default>14</default>
@@ -3403,7 +3403,7 @@
         <max>0xFFFF</max>
         <description>[DYN] Cluster weight (Normal Mode) </description>
         <unit>-</unit>
-        <ui group="手指搜尋(SPitch)" groupidx="161" idx="100"  name="手指權重值 : 解除值(整叢感應量)"  mask="0xFFFF" type="U2" min="0" max="65535" default="40" abbrev="CLUSTER_WEIGHT_NORMAL"  show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="F3D-SPitch" show5="1T2R-SP-C">手指權重值 : 一般模式(Cluster Weight Normal)</ui>
+        <ui group="手指搜尋(SPitch)" groupidx="161" idx="100"  name="手指權重值 : 解除值(整叢感應量)"  mask="0xFFFF" type="U2" min="0" max="65535" default="40" abbrev="CLUSTER_WEIGHT_NORMAL"  show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="F3D-SPitch" show5="1T2R-SP-C" show6="1T2R-SP-CR">手指權重值 : 一般模式(Cluster Weight Normal)</ui>
 			</item>
 			<item endian="le" type="U2" name="wClusterDevMax" abbrev="CLUSTER_DEV_MAX">
       	<default>90</default>
@@ -3411,7 +3411,7 @@
         <max>0xFF</max>
         <description>[DYN] Cluster weight (Normal Mode) </description>
         <unit>-</unit>
-        <ui group="手指搜尋(SPitch)" groupidx="161" idx="200"  name="手指感應量 : 成立值(單格感應量)"  mask="0xFFFF" type="U2" min="0" max="65535" default="20" abbrev="CLUSTER_DEV_MAX"  show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="1T2R-SP-C">手指感應量觸發上限</ui>
+        <ui group="手指搜尋(SPitch)" groupidx="161" idx="200"  name="手指感應量 : 成立值(單格感應量)"  mask="0xFFFF" type="U2" min="0" max="65535" default="20" abbrev="CLUSTER_DEV_MAX"  show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="1T2R-SP-C" show5="1T2R-SP-CR">手指感應量觸發上限</ui>
 			</item>
 			<item endian="le" type="U2" name="wClusterDevMin" abbrev="CLUSTER_DEV_MIN">
       	<default>20</default>
@@ -3419,7 +3419,7 @@
         <max>0xFF</max>
         <description>[DYN] Cluster weight (Normal Mode) </description>
         <unit>-</unit>
-        <ui group="手指搜尋(SPitch)" groupidx="161" idx="210"  name="手指感應量 : 解除值(單格感應量)"  mask="0xFFFF" type="U2" min="0" max="65535" default="90" abbrev="CLUSTER_DEV_MIN"  show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="F3D-SPitch" show5="1T2R-SP-C">手指感應量觸發下限</ui>
+        <ui group="手指搜尋(SPitch)" groupidx="161" idx="210"  name="手指感應量 : 解除值(單格感應量)"  mask="0xFFFF" type="U2" min="0" max="65535" default="90" abbrev="CLUSTER_DEV_MIN"  show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="F3D-SPitch" show5="1T2R-SP-C" show6="1T2R-SP-CR">手指感應量觸發下限</ui>
 			</item>	
 			<item endian="le" type="U1" name="bClusterWeightDivider" abbrev="CLUSTER_WEIGHT_AVG_RATO">
       	<default>9</default>
@@ -3427,7 +3427,7 @@
         <max>0xFF</max>
         <description></description>
         <unit>-</unit>
-        <ui group="手指搜尋(SPitch)" groupidx="161" idx="230"  name="手指微抖消噪程度"  mask="0x0F" type="U1" min="0" max="15" default="9" abbrev="CLUSTER_WEIGHT_AVG_RATO"  show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="F3D-SPitch" show5="1T2R-SP-C">微抖消噪程度(0~15) , 感應量扣除量/(2^n) </ui>        
+        <ui group="手指搜尋(SPitch)" groupidx="161" idx="230"  name="手指微抖消噪程度"  mask="0x0F" type="U1" min="0" max="15" default="9" abbrev="CLUSTER_WEIGHT_AVG_RATO"  show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="F3D-SPitch" show5="1T2R-SP-C" show6="1T2R-SP-CR">微抖消噪程度(0~15) , 感應量扣除量/(2^n) </ui>        
 			</item>	
 			<item endian="le" type="U1" name="bClusterPeakVellyDivdeRatio" abbrev="CLUSTER_PEAK_VELLY_DIVD_RATIO">
       	<default>35</default>
@@ -3435,7 +3435,7 @@
         <max>0xFF</max>
         <description></description>
         <unit>-</unit>
-        <ui group="手指搜尋(SPitch)" groupidx="161" idx="300"  name="手指叢集拆離比例%(當波谷值低於波峰值*n%的門檻時，拆解此叢集)"  mask="0xFF" type="U1" min="0" max="100" default="35" abbrev="CLUSTER_PEAK_VELLY_DIVD_RATIO"  show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="F3D-SPitch" show5="1T2R-SP-C">0%~100% </ui>        
+        <ui group="手指搜尋(SPitch)" groupidx="161" idx="300"  name="手指叢集拆離比例%(當波谷值低於波峰值*n%的門檻時，拆解此叢集)"  mask="0xFF" type="U1" min="0" max="100" default="35" abbrev="CLUSTER_PEAK_VELLY_DIVD_RATIO"  show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="F3D-SPitch" show5="1T2R-SP-C" show6="1T2R-SP-CR">0%~100% </ui>        
 			</item>		
       <item endian="le" type="U1" name="bClusterPeakVellyMergeRatio" abbrev="CLUSTER_PEAK_VELLY_MERG_RATIO">
       	<default>85</default>
@@ -3443,7 +3443,7 @@
         <max>0xFF</max>
         <description></description>
         <unit>-</unit>
-        <ui group="手指搜尋(SPitch)" groupidx="161" idx="301"  name="手指叢集合併比例%(當波谷值超過波峰值*n%的門檻時，合併此叢集)"  mask="0xFF" type="U1" min="0" max="100" default="85" abbrev="CLUSTER_PEAK_VELLY_MERG_RATIO"  show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="F3D-SPitch" show5="1T2R-SP-C">0%~100% </ui>        
+        <ui group="手指搜尋(SPitch)" groupidx="161" idx="301"  name="手指叢集合併比例%(當波谷值超過波峰值*n%的門檻時，合併此叢集)"  mask="0xFF" type="U1" min="0" max="100" default="85" abbrev="CLUSTER_PEAK_VELLY_MERG_RATIO"  show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="F3D-SPitch" show5="1T2R-SP-C" show6="1T2R-SP-CR">0%~100% </ui>        
 			</item>				
 			<item endian="le" type="U1" name="bClusterSizeChangeDecRatio" abbrev="CLUSTER_SIZE_DELTA_DEC_RATIO">
       	<default>70</default>
@@ -3465,7 +3465,7 @@
         <max>0x7FFF</max>
         <description></description>
         <unit>-</unit>
-        <ui group="手指搜尋(SPitch)" groupidx="161" idx="501" name="手指負感應量值" mask="0x7FFF" type="U2" min="0" max="32767" default="220" abbrev="CLUSTER_NEG_DEV_FINGER_TH"  show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="F3D-SPitch" show5="1T2R-SP-C">互容負DEV 兩指對角，看周圍負DEV，把最大的負DEV*2設為此值</ui>
+        <ui group="手指搜尋(SPitch)" groupidx="161" idx="501" name="手指負感應量值" mask="0x7FFF" type="U2" min="0" max="32767" default="220" abbrev="CLUSTER_NEG_DEV_FINGER_TH"  show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="F3D-SPitch" show5="1T2R-SP-C" show6="1T2R-SP-CR">互容負DEV 兩指對角，看周圍負DEV，把最大的負DEV*2設為此值</ui>
 				<ui group="手指搜尋(LPitch)" groupidx="160" idx="110" name="手指負感應量值" mask="0x7FFF" type="U2" min="0" max="32767" default="220" abbrev="CLUSTER_NEG_DEV_FINGER_TH"  show1="Ltype-LPitch" show2="Htype-LPitch" show3="1T2R-LPitch" show4="F3D-LPitch">互容負DEV 兩指對角，看周圍負DEV，把最大的負DEV*2設為此值</ui>
 			</item>				     							     
 		</subClass>
@@ -3479,13 +3479,13 @@
         <max>0xFF</max>
         <description></description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="1000"  name="Mutual(1T2R) : 奇偶連動降低開關"    mask="0x01" type="U1" min="0" max="1" default="128" abbrev="R1TOR2_EN"   show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">奇偶連動降低開關，需搭配調適奇偶連動降低Ratio，以增加線性度</ui>   
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="1200"  name="Mutual(1T2R) : 遠近連動自動降低開關"  mask="0x08" type="U1" min="0" max="1" default="0" abbrev="R1TOR2_EN"   show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動自動降低開關，以減少誤報點機率，遠近連動第一級消除演算法，自動估算連動值並消除，可待配下面手動消除比例增加部分trace的消除量</ui>   
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="1500"  name="Mutual(1T2R) : 遠近連動自動降低手動比例調整開關"  mask="0x02" type="U1" min="0" max="1" default="0" abbrev="R1TOR2_EN"   show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動自動降低手動比例調整開關，以減少誤報點機率，需搭配調適下面之各trace比例</ui>   
-        <!--<ui group="感應量扣除值(DevCut)" groupidx="260" idx="1501"  name="Mutual(1T2R) : 遠近連動鄰兵來源 : 0=左 , 1=右"  mask="0x04" type="U1" min="0" max="1" default="0" abbrev="R1TOR2_EN"   show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動鄰兵來源 : 0=左 , 1=右</ui>-->
-        <!--<ui group="感應量扣除值(DevCut)" groupidx="260" idx="1502"  name="Mutual(1T2R) : 遠近連動手動降低Debug模式開關"  mask="0x20" type="U1" min="0" max="1" default="0" abbrev="R1TOR2_EN"   show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動手動降低Debug模式開關 \n 1: 開啟Debug模式，固件會估算出消躁量顯示於D畫面最上及最下的raw，其中最上方raw屬於even，最下方raw屬於odd \n 0: 關閉，調適完成後關閉，才會進行消躁</ui>-->  
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="3601"  name="Mutual(1T2R) : 遠近連動手動補強降低開關 (for 遠端感應量回勾)"  mask="0x10" type="U1" min="0" max="1" default="0" abbrev="R1TOR2_EN"   show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動手動補強降低開關，以減少誤報點機率，補強第一級消躁的不足及部分屏特有的感應量回勾問題 \n 注意此功能可能多砍感應量造成線性度變差，故預設應為關閉，僅在需要時才開啟 \n 開啟後須注意TP的遠端位置及P介面中MUT DEV畫面的對應關係，並透過R1TOR2_EN[6]設置</ui>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="3602"  name="Mutual(1T2R) : 遠近連動手動補強降低遠端位置設定 (0: 上方，1: 下方)"  mask="0x40" type="U1" min="0" max="1" default="0" abbrev="R1TOR2_EN"   show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動手動補強降低遠端位置設置，告知固件遠端位置為D介面之MUT DEV畫面的上方還是下方(注意是在"原點位置"設置為"左上"的前提下) \n 0: 上方 \n 1: 下方 \n 注意勿設反，否則線性度很差且補不回來</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="1000"  name="Mutual(1T2R) : 奇偶連動降低開關"    mask="0x01" type="U1" min="0" max="1" default="128" abbrev="R1TOR2_EN"   show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" show5="1T2R-SP-CR" ns1="ForceTouch">奇偶連動降低開關，需搭配調適奇偶連動降低Ratio，以增加線性度</ui>   
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="1200"  name="Mutual(1T2R) : 遠近連動自動降低開關"  mask="0x08" type="U1" min="0" max="1" default="0" abbrev="R1TOR2_EN"   show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" show5="1T2R-SP-CR" ns1="ForceTouch">遠近連動自動降低開關，以減少誤報點機率，遠近連動第一級消除演算法，自動估算連動值並消除，可待配下面手動消除比例增加部分trace的消除量</ui>   
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="1500"  name="Mutual(1T2R) : 遠近連動自動降低手動比例調整開關"  mask="0x02" type="U1" min="0" max="1" default="0" abbrev="R1TOR2_EN"   show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動自動降低手動比例調整開關，以減少誤報點機率，需搭配調適下面之各trace比例</ui>   
+        <!--<ui group="感應量扣除值(DevCut)" groupidx="260" idx="1501"  name="Mutual(1T2R) : 遠近連動鄰兵來源 : 0=左 , 1=右"  mask="0x04" type="U1" min="0" max="1" default="0" abbrev="R1TOR2_EN"   show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動鄰兵來源 : 0=左 , 1=右</ui>-->
+        <!--<ui group="感應量扣除值(DevCut)" groupidx="260" idx="1502"  name="Mutual(1T2R) : 遠近連動手動降低Debug模式開關"  mask="0x20" type="U1" min="0" max="1" default="0" abbrev="R1TOR2_EN"   show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動手動降低Debug模式開關 \n 1: 開啟Debug模式，固件會估算出消躁量顯示於D畫面最上及最下的raw，其中最上方raw屬於even，最下方raw屬於odd \n 0: 關閉，調適完成後關閉，才會進行消躁</ui>-->  
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="3601"  name="Mutual(1T2R) : 遠近連動手動補強降低開關 (for 遠端感應量回勾)"  mask="0x10" type="U1" min="0" max="1" default="0" abbrev="R1TOR2_EN"   show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動手動補強降低開關，以減少誤報點機率，補強第一級消躁的不足及部分屏特有的感應量回勾問題 \n 注意此功能可能多砍感應量造成線性度變差，故預設應為關閉，僅在需要時才開啟 \n 開啟後須注意TP的遠端位置及P介面中MUT DEV畫面的對應關係，並透過R1TOR2_EN[6]設置</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="3602"  name="Mutual(1T2R) : 遠近連動手動補強降低遠端位置設定 (0: 上方，1: 下方)"  mask="0x40" type="U1" min="0" max="1" default="0" abbrev="R1TOR2_EN"   show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動手動補強降低遠端位置設置，告知固件遠端位置為D介面之MUT DEV畫面的上方還是下方(注意是在"原點位置"設置為"左上"的前提下) \n 0: 上方 \n 1: 下方 \n 注意勿設反，否則線性度很差且補不回來</ui>
       </item>
       <item type="U1" name="bR1toR2RatioOdd2Even" abbrev="R1TOR2_RATIO_O2E">
       	<default>64</default>
@@ -3493,7 +3493,7 @@
         <max>0xFF</max>
         <description></description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="1002"  name="Mutual(1T2R) : 奇偶連動降低Ratio-Odd(灰格) to Even(藍格)"  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="R1TOR2_RATIO_O2E"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">Mutual : 連動降低 - Odd(灰格) to Even(藍格),DevEven=DevEven-DevOdd*p% , 消除比例p=(R1TOR2_RATIO_O2E)/64 \n Dev[n],n=1~DriveMax</ui>    
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="1002"  name="Mutual(1T2R) : 奇偶連動降低Ratio-Odd(灰格) to Even(藍格)"  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="R1TOR2_RATIO_O2E"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">Mutual : 連動降低 - Odd(灰格) to Even(藍格),DevEven=DevEven-DevOdd*p% , 消除比例p=(R1TOR2_RATIO_O2E)/64 \n Dev[n],n=1~DriveMax</ui>    
       </item>
        <item type="U1" name="bR1toR2RatioEven2Odd" abbrev="R1TOR2_RATIO_E2O">
       	<default>64</default>
@@ -3501,7 +3501,7 @@
         <max>0xFF</max>
         <description></description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="1001"  name="Mutual(1T2R) : 奇偶連動降低Ratio-Even(藍格) to Odd(灰格)"  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="R1TOR2_RATIO_E2O"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">Mutual : 連動降低 - Even(藍格) to Odd(灰格),DevOdd=DevOdd-DevEven*p% , 消除比例p=(R1TOR2_RATIO_E2O)/64 \n Dev[n],n=1~DriveMax</ui>   
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="1001"  name="Mutual(1T2R) : 奇偶連動降低Ratio-Even(藍格) to Odd(灰格)"  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="R1TOR2_RATIO_E2O"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">Mutual : 連動降低 - Even(藍格) to Odd(灰格),DevOdd=DevOdd-DevEven*p% , 消除比例p=(R1TOR2_RATIO_E2O)/64 \n Dev[n],n=1~DriveMax</ui>   
       </item>       
   	 </subClass>
   	 <subClass type="NearToFar" name="scNearToFar">
@@ -3648,7 +3648,7 @@
         <max>0xFF</max>
         <description></description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2001"  name="Mutual(1T2R) : 遠近連動降低Ratio-奇(Even to Odd)"  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_E2O"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch"></ui>    
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2001"  name="Mutual(1T2R) : 遠近連動降低Ratio-奇(Even to Odd)"  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_E2O"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch"></ui>    
       </item>
       <item type="U1" name="bNFRatioOddToEven" abbrev="NEAR_FAR_RATIO_O2E">
       	<default>64</default>
@@ -3656,7 +3656,7 @@
         <max>0xFF</max>
         <description></description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2002"  name="Mutual(1T2R) : 遠近連動降低Ratio-偶(Odd to Even)"  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_O2E"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch"></ui>    
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2002"  name="Mutual(1T2R) : 遠近連動降低Ratio-偶(Odd to Even)"  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_O2E"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch"></ui>    
       </item>
       <item type="U1" name="bNFRatioNebighbor" abbrev="NEAR_FAR_RATIO_NEBIGHBOR">
       	<default>64</default>
@@ -3664,7 +3664,7 @@
         <max>0xFF</max>
         <description></description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2003"  name="Mutual(1T2R) : 遠近連動鄰兵Ratio"  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_NEBIGHBOR"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch"></ui>    
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2003"  name="Mutual(1T2R) : 遠近連動鄰兵Ratio"  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_NEBIGHBOR"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch"></ui>    
       </item>-->
     	
       <item type="U1" name="bNFRatio00" abbrev="NEAR_FAR_RATIO_DEV00">
@@ -3673,7 +3673,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[0] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2500"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev00 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV00"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 00 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2500"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev00 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV00"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 00 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>	
       </item>
       <item type="U1" name="bNFRatio01" abbrev="NEAR_FAR_RATIO_DEV01">
       	<default>64</default>
@@ -3681,7 +3681,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[1] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2501"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev01 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV01"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 01 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2501"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev01 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV01"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 01 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
       </item>
       <item type="U1" name="bNFRatio02" abbrev="NEAR_FAR_RATIO_DEV02">
       	<default>64</default>
@@ -3689,7 +3689,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[2] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2502"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev02 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV02"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 02 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2502"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev02 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV02"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 02 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>	
       </item>  
       <item type="U1" name="bNFRatio03" abbrev="NEAR_FAR_RATIO_DEV03">
       	<default>64</default>
@@ -3697,7 +3697,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[3] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2503"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev03 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV03"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 03 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2503"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev03 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV03"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 03 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
       </item>  
       <item type="U1" name="bNFRatio04" abbrev="NEAR_FAR_RATIO_DEV04">
       	<default>64</default>
@@ -3705,7 +3705,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[4] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2504"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev04 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV04"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 04 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2504"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev04 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV04"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 04 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>	
       </item>   
       <item type="U1" name="bNFRatio05" abbrev="NEAR_FAR_RATIO_DEV05">
       	<default>64</default>
@@ -3713,7 +3713,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[5] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2505"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev05 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV05"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 05 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2505"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev05 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV05"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 05 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
       </item>    
       <item type="U1" name="bNFRatio06" abbrev="NEAR_FAR_RATIO_DEV06">
       	<default>64</default>
@@ -3721,7 +3721,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[6] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2506"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev06 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV06"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 06 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2506"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev06 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV06"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 06 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>	
       </item>    
       <item type="U1" name="bNFRatio07" abbrev="NEAR_FAR_RATIO_DEV07">
       	<default>64</default>
@@ -3729,7 +3729,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[7] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2507"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev07 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV07"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 07 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2507"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev07 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV07"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 07 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
       </item> 
       	<item type="U1" name="bNFRatio08" abbrev="NEAR_FAR_RATIO_DEV08">
       	<default>64</default>
@@ -3737,7 +3737,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[8] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>   
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2508"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev08 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV08"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 08 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>	  
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2508"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev08 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV08"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 08 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>	  
       </item>
       <item type="U1" name="bNFRatio09" abbrev="NEAR_FAR_RATIO_DEV09">
       	<default>64</default>
@@ -3745,7 +3745,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[9] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>   
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2509"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev09 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV09"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 09 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>  
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2509"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev09 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV09"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 09 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>  
       </item>
       <item type="U1" name="bNFRatio10" abbrev="NEAR_FAR_RATIO_DEV10">
       	<default>64</default>
@@ -3753,7 +3753,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[10] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2510"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev10 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV10"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 10 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2510"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev10 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV10"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 10 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>	
       </item>
       <item type="U1" name="bNFRatio11" abbrev="NEAR_FAR_RATIO_DEV11">
       	<default>64</default>
@@ -3761,7 +3761,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[11] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2511"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev11 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV11"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 11 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2511"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev11 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV11"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 11 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
       </item>
       <item type="U1" name="bNFRatio12" abbrev="NEAR_FAR_RATIO_DEV12">
       	<default>64</default>
@@ -3769,7 +3769,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[12] Ratio : Raw Dev * N/64</description>
         <unit>-</unit> 
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2512"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev12 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV12"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 12 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2512"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev12 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV12"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 12 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>	
       </item>
       <item type="U1" name="bNFRatio13" abbrev="NEAR_FAR_RATIO_DEV13">
       	<default>64</default>
@@ -3777,7 +3777,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[13] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2513"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev13 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV13"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 13 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2513"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev13 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV13"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 13 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
       </item>  
       	<item type="U1" name="bNFRatio14" abbrev="NEAR_FAR_RATIO_DEV14">
       	<default>64</default>
@@ -3785,7 +3785,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[14] Ratio : Raw Dev * N/64</description>
         <unit>-</unit> 
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2514"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev14 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV14"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 14 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>   
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2514"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev14 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV14"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 14 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>   
       </item>
       <item type="U1" name="bNFRatio15" abbrev="NEAR_FAR_RATIO_DEV15">
       	<default>64</default>
@@ -3793,7 +3793,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[15] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2515"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev15 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV15"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 15 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2515"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev15 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV15"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 15 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
       </item>
       	<item type="U1" name="bNFRatio16" abbrev="NEAR_FAR_RATIO_DEV16">
       	<default>64</default>
@@ -3801,7 +3801,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[16] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>  
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2516"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev16 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV16"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 16 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2516"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev16 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV16"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 16 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
       </item>
       <item type="U1" name="bNFRatio17" abbrev="NEAR_FAR_RATIO_DEV17">
       	<default>64</default>
@@ -3809,7 +3809,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[17] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2517"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev17 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV17"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 17 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2517"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev17 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV17"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 17 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
       </item>  
       <item type="U1" name="bNFRatio18" abbrev="NEAR_FAR_RATIO_DEV18">
       	<default>64</default>
@@ -3817,7 +3817,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[18] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>  
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2518"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev18 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV18"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 18 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>   
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2518"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev18 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV18"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 18 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>   
       </item>
       <item type="U1" name="bNFRatio19" abbrev="NEAR_FAR_RATIO_DEV19">
       	<default>64</default>
@@ -3825,7 +3825,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[19] Ratio : Raw Dev * N/64</description>
         <unit>-</unit> 
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2519"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev19 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV19"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 19 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>    
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2519"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev19 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV19"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 19 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>    
       </item>
       <item type="U1" name="bNFRatio20" abbrev="NEAR_FAR_RATIO_DEV20">
       	<default>64</default>
@@ -3833,7 +3833,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[20] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2520"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev20 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV20"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 20 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2520"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev20 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV20"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 20 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
       </item>
       <item type="U1" name="bNFRatio21" abbrev="NEAR_FAR_RATIO_DEV21">
       	<default>64</default>
@@ -3841,7 +3841,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[21] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2521"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev21 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV21"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 21 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2521"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev21 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV21"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 21 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
       </item>
       <item type="U1" name="bNFRatio22" abbrev="NEAR_FAR_RATIO_DEV22">
       	<default>64</default>
@@ -3849,7 +3849,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[22] Ratio : Raw Dev * N/64</description>
         <unit>-</unit> 
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2522"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev22 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV22"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 22 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2522"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev22 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV22"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 22 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
       </item>
       <item type="U1" name="bNFRatio23" abbrev="NEAR_FAR_RATIO_DEV23">
       	<default>64</default>
@@ -3857,7 +3857,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[23] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2523"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev23 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV23"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 23 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2523"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev23 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV23"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 23 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
       </item>
       <item type="U1" name="bNFRatio24" abbrev="NEAR_FAR_RATIO_DEV24">
       	<default>64</default>
@@ -3865,7 +3865,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[24] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>  
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2524"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev24 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV24"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 24 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>  
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2524"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev24 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV24"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 24 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>  
       </item>
       <item type="U1" name="bNFRatio25" abbrev="NEAR_FAR_RATIO_DEV25">
       	<default>64</default>
@@ -3873,7 +3873,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[25] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2525"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev25 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV25"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 25 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2525"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev25 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV25"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 25 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
       </item> 
       <item type="U1" name="bNFRatio26" abbrev="NEAR_FAR_RATIO_DEV26">
       	<default>64</default>
@@ -3881,7 +3881,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[26] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>  
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2526"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev26 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV26"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 26 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2526"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev26 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV26"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 26 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
       </item>
       <item type="U1" name="bNFRatio27" abbrev="NEAR_FAR_RATIO_DEV27">
       	<default>64</default>
@@ -3889,7 +3889,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[27] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2527"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev27 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV27"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 27 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2527"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev27 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV27"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 27 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
       </item> 
       <item type="U1" name="bNFRatio28" abbrev="NEAR_FAR_RATIO_DEV28">
       	<default>64</default>
@@ -3897,7 +3897,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[28] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2528"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev28 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV28"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 28 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>     
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2528"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev28 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV28"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 28 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>     
       </item>
       <item type="U1" name="bNFRatio29" abbrev="NEAR_FAR_RATIO_DEV29">
       	<default>64</default>
@@ -3905,7 +3905,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[29] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>   
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2529"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev29 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV29"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 29 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>  
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2529"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev29 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV29"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 29 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>  
       </item> 
       <item type="U1" name="bNFRatio30" abbrev="NEAR_FAR_RATIO_DEV30">
       	<default>64</default>
@@ -3913,7 +3913,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[30] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2530"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev30 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV30"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 30 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2530"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev30 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV30"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 30 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>
       </item>
 	    <item type="U1" name="bNFRatio31" abbrev="NEAR_FAR_RATIO_DEV31">
       	<default>64</default>
@@ -3921,7 +3921,7 @@
         <max>255</max>
         <description>Drive Near Far Dev[31] Ratio : Raw Dev * N/64</description>
         <unit>-</unit>  
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2531"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev31 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV31"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 31 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>   
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2531"  name="Mutual(1T2R) : 遠近連動降低比例手動調整:Dev31 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_DEV31"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動降低比例手動調整 (n/64)，手動調整自動降低值的比例，需搭配開啟遠近連動自動降低及手動降低開關\n 控制trace 31 (D介面Mutual Dev畫面從上往下算) \n 降低量 = 自動降低量 * 手動調整比例</ui>   
       </item>
   	 </subClass>
   </class>
@@ -3941,7 +3941,7 @@
         <max>0xFFFF</max>
         <description>[DYN] Finger threshold</description>
         <unit>-</unit>        
-        <ui group="手指搜尋(SPitch)" groupidx="161" idx="101"  name="手指感應量 : 叢集波峰值(單格感應量)"  mask="0xFFFF" type="U2" min="0" max="65535" default="40" abbrev="CLUSTER_FINGER_TH"   show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="1T2R-SP-C">叢集波峰臨界值(Cluster Finger TH)</ui>
+        <ui group="手指搜尋(SPitch)" groupidx="161" idx="101"  name="手指感應量 : 叢集波峰值(單格感應量)"  mask="0xFFFF" type="U2" min="0" max="65535" default="40" abbrev="CLUSTER_FINGER_TH"   show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="1T2R-SP-C" show5="1T2R-SP-CR">叢集波峰臨界值(Cluster Finger TH)</ui>
 			</item>
 			<item endian="le" type="U1" name="bFingerSlop" abbrev="FINGER_SLOP">
       	<default>0x14</default>
@@ -4231,7 +4231,7 @@
         <description>Finger Schmit Trigger:min-Finger-Dev to set trigger High </description>
         <unit>-</unit> 
         <ui group="手指搜尋(LPitch)" groupidx="160" idx="92"  name="手指觸發值 :全區域同軸(Finger Schmit Weight CoAxis) "  mask="0xFFFF" type="U2" min="0" max="65535" default="0" abbrev="FINGER_WEIGHT_SCHMIT_COAXIS" show1="Ltype-LPitch" show2="Htype-LPitch" show3="1T2R-LPitch" show4="F3D-LPitch">同軸時，手指觸發成立權重臨界值 (Finger Schmit Weight), \n 開始報點前需滿足之Weight </ui>
-        <ui group="手指搜尋(SPitch)" groupidx="161" idx="51"   name="手指權重值 : 成立值(整叢感應量)(同軸) "  mask="0xFFFF" type="U2" min="0" max="65535" default="0" abbrev="FINGER_WEIGHT_SCHMIT_COAXIS" show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="F3D-SPitch" show5="1T2R-SP-C">同軸時，手指觸發成立權重臨界值 (Finger Schmit Weight), \n 開始報點前需滿足之Weight </ui>        
+        <ui group="手指搜尋(SPitch)" groupidx="161" idx="51"   name="手指權重值 : 成立值(整叢感應量)(同軸) "  mask="0xFFFF" type="U2" min="0" max="65535" default="0" abbrev="FINGER_WEIGHT_SCHMIT_COAXIS" show1="Ltype-SPitch" show2="Htype-SPitch" show3="1T2R-SPitch" show4="F3D-SPitch" show5="1T2R-SP-C" show6="1T2R-SP-CR">同軸時，手指觸發成立權重臨界值 (Finger Schmit Weight), \n 開始報點前需滿足之Weight </ui>        
       </item>
 		</subClass>
 		<subClass type="Border" name="scBorder">
@@ -6344,7 +6344,7 @@
         <max>255</max>
         <description>Drive Axis 00 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2010"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 00 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION00"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 00 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2010"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 00 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION00"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 00 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri01" abbrev="NEAR_FAR_RATIO_CONTRIBUTION01">
        <default>64</default>
@@ -6352,7 +6352,7 @@
         <max>255</max>
         <description>Drive Axis 01 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2011"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 01 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION01"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 01 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2011"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 01 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION01"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 01 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri02" abbrev="NEAR_FAR_RATIO_CONTRIBUTION02">
        <default>64</default>
@@ -6360,7 +6360,7 @@
         <max>255</max>
         <description>Drive Axis 02 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2012"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 02 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION02"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 02 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2012"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 02 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION02"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 02 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri03" abbrev="NEAR_FAR_RATIO_CONTRIBUTION03">
        <default>64</default>
@@ -6368,7 +6368,7 @@
         <max>255</max>
         <description>Drive Axis 03 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2013"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 03 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION03"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 03 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2013"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 03 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION03"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 03 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri04" abbrev="NEAR_FAR_RATIO_CONTRIBUTION04">
        <default>64</default>
@@ -6376,7 +6376,7 @@
         <max>255</max>
         <description>Drive Axis 04 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2014"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 04 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION04"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 04 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2014"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 04 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION04"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 04 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri05" abbrev="NEAR_FAR_RATIO_CONTRIBUTION05">
        <default>64</default>
@@ -6384,7 +6384,7 @@
         <max>255</max>
         <description>Drive Axis 05 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2015"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 05 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION05"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 05 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2015"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 05 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION05"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 05 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri06" abbrev="NEAR_FAR_RATIO_CONTRIBUTION06">
        <default>64</default>
@@ -6392,7 +6392,7 @@
         <max>255</max>
         <description>Drive Axis 06 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2016"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 06 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION06"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 06 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2016"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 06 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION06"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 06 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri07" abbrev="NEAR_FAR_RATIO_CONTRIBUTION07">
        <default>64</default>
@@ -6400,7 +6400,7 @@
         <max>255</max>
         <description>Drive Axis 07 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2017"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 07 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION07"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 07 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2017"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 07 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION07"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 07 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri08" abbrev="NEAR_FAR_RATIO_CONTRIBUTION08">
        <default>64</default>
@@ -6408,7 +6408,7 @@
         <max>255</max>
         <description>Drive Axis 08 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2018"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 08 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION08"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 08 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2018"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 08 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION08"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 08 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri09" abbrev="NEAR_FAR_RATIO_CONTRIBUTION09">
        <default>64</default>
@@ -6416,7 +6416,7 @@
         <max>255</max>
         <description>Drive Axis 09 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2019"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 09 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION09"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 09 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2019"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 09 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION09"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 09 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri10" abbrev="NEAR_FAR_RATIO_CONTRIBUTION10">
        <default>64</default>
@@ -6424,7 +6424,7 @@
         <max>255</max>
         <description>Drive Axis 10 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2020"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 10 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION10"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 10 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2020"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 10 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION10"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 10 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri11" abbrev="NEAR_FAR_RATIO_CONTRIBUTION11">
        <default>64</default>
@@ -6432,7 +6432,7 @@
         <max>255</max>
         <description>Drive Axis 11 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2021"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 11 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION11"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 11 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2021"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 11 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION11"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 11 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri12" abbrev="NEAR_FAR_RATIO_CONTRIBUTION12">
        <default>64</default>
@@ -6440,7 +6440,7 @@
         <max>255</max>
         <description>Drive Axis 12 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2022"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 12 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION12"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 12 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2022"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 12 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION12"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 12 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri13" abbrev="NEAR_FAR_RATIO_CONTRIBUTION13">
        <default>64</default>
@@ -6448,7 +6448,7 @@
         <max>255</max>
         <description>Drive Axis 13 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2023"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 13 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION13"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 13 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2023"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 13 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION13"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 13 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri14" abbrev="NEAR_FAR_RATIO_CONTRIBUTION14">
        <default>64</default>
@@ -6456,7 +6456,7 @@
         <max>255</max>
         <description>Drive Axis 14 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2024"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 14 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION14"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 14 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2024"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 14 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION14"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 14 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri15" abbrev="NEAR_FAR_RATIO_CONTRIBUTION15">
        <default>64</default>
@@ -6464,7 +6464,7 @@
         <max>255</max>
         <description>Drive Axis 15 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2025"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 15 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION15"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 15 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2025"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 15 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION15"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 15 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri16" abbrev="NEAR_FAR_RATIO_CONTRIBUTION16">
        <default>64</default>
@@ -6472,7 +6472,7 @@
         <max>255</max>
         <description>Drive Axis 16 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2026"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 16 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION16"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 16 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2026"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 16 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION16"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 16 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri17" abbrev="NEAR_FAR_RATIO_CONTRIBUTION17">
        <default>64</default>
@@ -6480,7 +6480,7 @@
         <max>255</max>
         <description>Drive Axis 17 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2027"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 17 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION17"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 17 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2027"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 17 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION17"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 17 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri18" abbrev="NEAR_FAR_RATIO_CONTRIBUTION18">
        <default>64</default>
@@ -6488,7 +6488,7 @@
         <max>255</max>
         <description>Drive Axis 18 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2028"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 18 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION18"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 18 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2028"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 18 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION18"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 18 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri19" abbrev="NEAR_FAR_RATIO_CONTRIBUTION19">
        <default>64</default>
@@ -6496,7 +6496,7 @@
         <max>255</max>
         <description>Drive Axis 19 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2029"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 19 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION19"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 19 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2029"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 19 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION19"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 19 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri20" abbrev="NEAR_FAR_RATIO_CONTRIBUTION20">
        <default>64</default>
@@ -6504,7 +6504,7 @@
         <max>255</max>
         <description>Drive Axis 20 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2030"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 20 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION20"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 20 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2030"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 20 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION20"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 20 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri21" abbrev="NEAR_FAR_RATIO_CONTRIBUTION21">
        <default>64</default>
@@ -6512,7 +6512,7 @@
         <max>255</max>
         <description>Drive Axis 21 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2031"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 21 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION21"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 21 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2031"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 21 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION21"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 21 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri22" abbrev="NEAR_FAR_RATIO_CONTRIBUTION22">
        <default>64</default>
@@ -6520,7 +6520,7 @@
         <max>255</max>
         <description>Drive Axis 22 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2032"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 22 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION22"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 22 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2032"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 22 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION22"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 22 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri23" abbrev="NEAR_FAR_RATIO_CONTRIBUTION23">
        <default>64</default>
@@ -6528,7 +6528,7 @@
         <max>255</max>
         <description>Drive Axis 23 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2033"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 23 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION23"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 23 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2033"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 23 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION23"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 23 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri24" abbrev="NEAR_FAR_RATIO_CONTRIBUTION24">
        <default>64</default>
@@ -6536,7 +6536,7 @@
         <max>255</max>
         <description>Drive Axis 24 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2034"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 24 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION24"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 24 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2034"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 24 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION24"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 24 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri25" abbrev="NEAR_FAR_RATIO_CONTRIBUTION25">
        <default>64</default>
@@ -6544,7 +6544,7 @@
         <max>255</max>
         <description>Drive Axis 25 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2035"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 25 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION25"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 25 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2035"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 25 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION25"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 25 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri26" abbrev="NEAR_FAR_RATIO_CONTRIBUTION26">
        <default>64</default>
@@ -6552,7 +6552,7 @@
         <max>255</max>
         <description>Drive Axis 26 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2036"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 26 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION26"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 26 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2036"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 26 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION26"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 26 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri27" abbrev="NEAR_FAR_RATIO_CONTRIBUTION27">
        <default>64</default>
@@ -6560,7 +6560,7 @@
         <max>255</max>
         <description>Drive Axis 27 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2037"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 27 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION27"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 27 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2037"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 27 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION27"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 27 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri28" abbrev="NEAR_FAR_RATIO_CONTRIBUTION28">
        <default>64</default>
@@ -6568,7 +6568,7 @@
         <max>255</max>
         <description>Drive Axis 28 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2038"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 28 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION28"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 28 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2038"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 28 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION28"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 28 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri29" abbrev="NEAR_FAR_RATIO_CONTRIBUTION29">
        <default>64</default>
@@ -6576,7 +6576,7 @@
         <max>255</max>
         <description>Drive Axis 29 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2039"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 29 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION29"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 29 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2039"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 29 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION29"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 29 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri30" abbrev="NEAR_FAR_RATIO_CONTRIBUTION30">
        <default>64</default>
@@ -6584,7 +6584,7 @@
         <max>255</max>
         <description>Drive Axis 30 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2040"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 30 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION30"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 30 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2040"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 30 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION30"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 30 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>
       <item type="U1" name="bNFRatioContri31" abbrev="NEAR_FAR_RATIO_CONTRIBUTION31">
        <default>64</default>
@@ -6592,7 +6592,7 @@
         <max>255</max>
         <description>Drive Axis 31 Near Far Effect Contribution Ratio : N/64</description>
         <unit>-</unit>
-        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2041"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 31 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION31"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" ns1="ForceTouch">遠近連動貢獻比例:Trace 31 (n/64)，以同RX中最遠端的那條當分母</ui>	
+        <ui group="感應量扣除值(DevCut)" groupidx="260" idx="2041"  name="Mutual(1T2R) : 遠近連動貢獻比例:Trace 31 (n/64) "  mask="0xFF" type="U1" min="0" max="255" default="64" abbrev="NEAR_FAR_RATIO_CONTRIBUTION31"  show1="1T2R-LPitch" show2="1T2R-SPitch" show3="1T2R-SP-C" show4="1T2R-SP-CR" ns1="ForceTouch">遠近連動貢獻比例:Trace 31 (n/64)，以同RX中最遠端的那條當分母</ui>	
       </item>-->
     </subClass>
 
@@ -6815,7 +6815,7 @@
 				<max>0xFF</max>
 				<description></description>
 				<unit>-</unit>
-				<ui group="懸浮報點(Hover)" groupidx="240" idx="40"  name="懸浮報點開關:0:關閉 1:開啟"  mask="0xFF" type="U1" min="0" max="255" default="0" abbrev="HOVER_REPORT_EN" ns1="ForceTouch">懸浮報點開關:0:關閉 1:開啟</ui>
+				<ui group="懸浮報點(Hover)" groupidx="240" idx="40"  name="懸浮報點開關:0:關閉 1:開啟"  mask="0xFF" type="U1" min="0" max="255" default="0" abbrev="HOVER_REPORT_EN" show1="1T2R-SP-C" show2="1T2R-SPitch">懸浮報點開關:0:關閉 1:開啟</ui>
 			</item>
 			<item endian="le" type="U2" name="wFingerWeightSchmit_2" abbrev="FINGER_WEIGHT_SCHMIT_2">
       	<default>5DC</default>
@@ -6855,15 +6855,15 @@
 	<class type="Gesture" name="cGesture" pageId="8">
 		<subClass type="Gesture" name="scGesture" pageId="8">
 			<item endian="le" type="U1" name="bGestureEn" abbrev="GESTURE_EN">
-				<default>0</default>
+				<default>1</default>
 				<min>0</min>
 				<max>0xFF</max>
 				<description></description>
 				<unit>-</unit>
-				<ui group="手勢偵測(Gesture)" groupidx="290" idx="30"  name="手勢開關: 0:關閉 1:開啟"  mask="0xFF" type="U1" min="0" max="255" default="0" abbrev="GESTURE_EN" show1="1T2R-SP-C" show2="1T2R-SP-CR">手勢開關: 0:關閉 1:開啟</ui>
+				<ui group="手勢偵測(Gesture)" groupidx="290" idx="30"  name="手勢開關: 0:關閉 1:開啟 2:Debug"  mask="0xFF" type="U1" min="0" max="255" default="0" abbrev="GESTURE_EN" show1="1T2R-SP-C" show2="1T2R-SP-CR">手勢開關: 0:關閉 1:開啟 2:Debug</ui>
 			</item>		
 			<item endian="le" type="U1" name="bGestureAccuracy" abbrev="GESTURE_ACC">
-				<default>5</default>
+				<default>1</default>
 				<min>0</min>
 				<max>0xFF</max>
 				<description></description>

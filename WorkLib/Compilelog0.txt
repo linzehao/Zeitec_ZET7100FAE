@@ -1,4 +1,4 @@
-13:56 
+14:17 
 
 D:\GIT\Zeitec_ZET7100FAE\WorkLib>cls
 
@@ -60,7 +60,7 @@ Press any key to continue...
 ZetDF.h Successfully generated
 找不到 D:\GIT\Zeitec_ZET7100FAE\WorkLib\DEV\ZET7100\ZET_DEFAULT\ZET7100.bin
 複製了         1 個檔案。
-D:\GIT\Zeitec_ZET7100FAE\WorkLib\ZetDF_0296.XML
+D:\GIT\Zeitec_ZET7100FAE\WorkLib\ZetDF_0297.XML
 移動         1 個檔案。
 移動         1 個檔案。
 移動         1 個檔案。
@@ -76,7 +76,7 @@ D:\GIT\Zeitec_ZET7100FAE\WorkLib\ZetDF_0296.XML
 ##################################################
 The output file is placed ".\BIN\ZET7100.ld"
    text (code + rodata)	   data	    bss	    dec	    hex	filename
-  47660 (46684 +    976)	   5704	  18804	  72168	  119e8	ZET7100.elf
+  48064 (47088 +    976)	   4656	  18812	  71532	  1176c	ZET7100.elf
 ###########################################################################
 # BINMERGE.EXE (V0.5) --> PROGRAMMED BY JL JUANG                          #
 # USAGE : BINMerge.EXE [MAIN.BIN] [DATA.BIN] [OUTPUT.BIN] [OFFSET] [DELAY]#
@@ -85,16 +85,16 @@ MAIN FILE = .\BIN\JOUT.bin
 DATA FILE = .\PRJ\DB.BIN
 OUT FILE = .\BIN\ZET7100.BIN
 OFFSET  = 0xe000
-Checksum = 0x0144
+Checksum = 0x2809
 Successfully Done.
 複製了         1 個檔案。
 ##################################################
 #                   SUCCEED                      #
 ##################################################
 /e: No such file or directory
-+427: No such file or directory
++426: No such file or directory
 /e: No such file or directory
-+483: No such file or directory
++481: No such file or directory
 ##################################################
 #        Compile  ROM/SRAM Cost                  #
 ##################################################
@@ -155,7 +155,7 @@ Press any key to continue...
 ZetDF.h Successfully generated
 找不到 D:\GIT\Zeitec_ZET7100FAE\WorkLib\DEV\ZET7100\ZET_DEFAULT\ZET7100.bin
 複製了         1 個檔案。
-D:\GIT\Zeitec_ZET7100FAE\WorkLib\ZetDF_0296.XML
+D:\GIT\Zeitec_ZET7100FAE\WorkLib\ZetDF_0297.XML
 移動         1 個檔案。
 移動         1 個檔案。
 移動         1 個檔案。
@@ -171,7 +171,7 @@ D:\GIT\Zeitec_ZET7100FAE\WorkLib\ZetDF_0296.XML
 ##################################################
 The output file is placed ".\BIN\ZET7100.ld"
    text (code + rodata)	   data	    bss	    dec	    hex	filename
-  44176 (43200 +    976)	   4656	  18728	  67560	  107e8	ZET7100.elf
+  45476 (44500 +    976)	   4656	  18800	  68932	  10d44	ZET7100.elf
 ###########################################################################
 # BINMERGE.EXE (V0.5) --> PROGRAMMED BY JL JUANG                          #
 # USAGE : BINMerge.EXE [MAIN.BIN] [DATA.BIN] [OUTPUT.BIN] [OFFSET] [DELAY]#
@@ -180,16 +180,16 @@ MAIN FILE = .\BIN\JOUT.bin
 DATA FILE = .\PRJ\DB.BIN
 OUT FILE = .\BIN\ZET7100.BIN
 OFFSET  = 0xe000
-Checksum = 0x180C
+Checksum = 0x470E
 Successfully Done.
 複製了         1 個檔案。
 ##################################################
 #                   SUCCEED                      #
 ##################################################
 /e: No such file or directory
-+418: No such file or directory
++420: No such file or directory
 /e: No such file or directory
-+473: No such file or directory
++475: No such file or directory
 ##################################################
 #        Compile  ROM/SRAM Cost                  #
 ##################################################

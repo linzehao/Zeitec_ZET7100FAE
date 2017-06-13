@@ -15,3 +15,7 @@
 3. Disable origin gesture ( wakeup and double click ) when customer
 4. Move gesture algorithm to lib
 
+[4] Rev: 297
+1.	Refine gesture algorithm
+2.	Support < > W M ^ gesture
+3.	Refine XML for customer reduce

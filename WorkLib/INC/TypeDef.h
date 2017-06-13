@@ -1141,6 +1141,7 @@ BYTE bKeyMax;
 	BYTE bVector[MAX_GESTURE_MAX];
 	BYTE bReportGestureId;
 	BYTE bGestureId;
+	BYTE bDirection[8];
 	BYTE bGestureStatus2;
 	BYTE bGestureCount2;
 	BYTE bMultiFinger;

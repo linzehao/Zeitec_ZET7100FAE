@@ -89,7 +89,7 @@ WORD volatile data wLastCoordinateY;
 WORD volatile data wNoiseMax;
 #endif
 
-#ifdef FEATURE_GESTURE_PRO
+#ifdef FEATURE_LEVENSHTEIN
 // Gesture data 1. ID 2. Size 3.Data
 // [Gesture] 0x20:left 0x21:right 0x22:up 0x23:down 0x30:O 0x54:V
 // [Special] 11:Double click 98:multi-figuer up 99:multi-figuer down
@@ -157,7 +157,7 @@ static BYTE data bGestureData[] =
 0x54, 0x17, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 
 0xFF
 };
-#endif // FEATURE_GESTURE_PRO
+#endif // FEATURE_LEVENSHTEIN
 
 /**
  * @brief CommandVarInit
@@ -1475,9 +1475,13 @@ int main()
 		#endif ///< for FEATURE_GESTURE_WAKEUP	
 
 		#ifdef FEATURE_GESTURE_PRO
-		if(ZetDF.cGesture.scGesture.bGestureEn == 1)
+		if(ZetDF.cGesture.scGesture.bGestureEn != 0)
 		{
+#ifdef FEATURE_LEVENSHTEIN		
 			ZetVar.bReportGestureId = TaskGesturePro(bGestureData,sizeof(bGestureData)); 
+#else
+			ZetVar.bReportGestureId = TaskGesturePro(); 
+#endif
 		}
 		#endif ///< for FEATURE_GESTURE_PRO	
 
