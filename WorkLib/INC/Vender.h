@@ -743,8 +743,10 @@
 ///-----------------------------------------------------------------------------------------------------------------------------------------------------------///
 //#define FEATURE_CUSTOMER_PROTOCOL 
 #ifdef FEATURE_CUSTOMER_PROTOCOL
-// #define FEATURE_BM_NEW
-#define NEW_I2C_PARSING_FLOW  //Synaptics protocol(Sony Template), else Atmel protocol(Mi3 Template)
+///#define IC_MELFAS
+//#define IC_Synopsys
+//#define IC_ST
+#define IC_Synopsys//R9s
 //#define SPI_FLASH_WR_ENABLE //enable flash read write function
 //#define SPI_API_TEST
 //#define FORCE_SENSOR_PROTOCOL //[Maple] Not support now
