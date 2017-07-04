@@ -1504,7 +1504,7 @@ BYTE bKeyMax;
 
 #ifdef FEATURE_CUSTOMER_PROTOCOL
 
-#ifdef NEW_I2C_PARSING_FLOW
+#ifdef IC_MELFAS 
 
 typedef struct PACK I2CCmdStructure
 {
@@ -1517,85 +1517,54 @@ typedef struct PACK I2CCmdStructure
 typedef struct CustomerVarSt
 {
 	BYTE bCustomerBuf[CUSTOMER_BUF_LEN]; 
- // BYTE bWorkingState;
 	BYTE bWorkingSubState;
-
-	BYTE bCustomCmd0000Cnt;
-  BYTE bCustomCmd0102Cnt;
-	BYTE bCustomCmd5801Cnt;
-	BYTE bCustomCmd5901Cnt;
-
-	BYTE bCustomCmd00eeCnt;
-	BYTE bCustomCmd05Cnt;
-	BYTE bCustomCmd04Cnt;
-	BYTE bCustomCmd03Cnt;
-	BYTE bCustomCmd1eCnt;
-	BYTE bCustomCmd0eCnt;
-	BYTE bCustomCmd6501Cnt;
-	BYTE bCustomCmd6801Cnt;
-	BYTE bCustomCmd6801nnCnt;
 	
 	BYTE bI2CKeepSendflag;
-	//BYTE bCustomCmdD801Cnt;
-
-	BYTE bCustomCmd5901WakeupCnt;
-	//BYTE bCustomCmdE201Cnt;
-
-  BYTE bCustomReportCnt; 
-
-	BYTE bWakeUpFlag;
-	BYTE bCustomerUpgradeFlag;
-
-
+	BYTE FingerupINTflag;
+	
+  	BYTE bCustomReportCnt; 
 	BYTE bLastCustomCmdBuf[8]; 
 	BYTE bINTtriggerCnt;
 	BYTE bCustomerReSendCNT;	
-  BYTE bCustomerReportFingerCNT;
+  	BYTE bCustomerReportFingerCNT;
 	BYTE bCustomerLastReportFingerCNT;
-  WORD wCustomerLastValidPoint;
-
-  BYTE bCustomerKeyReportFlag;
+  	WORD wCustomerLastValidPoint;
+  	BYTE bCustomerKeyReportFlag;
 	BYTE bCustomerKeyValidByte;
 
-	BYTE bTimerINTtrigger;
-
+	BYTE bTimerINTtrigger;	
+	
 	BYTE bDebugBuf[16]; 
-	//BYTE bDoubleBufferIdx;
 
 	BYTE bDoubleBufferStoreIdx;
 	BYTE bDoubleBufferSendIdx;
-
-  BYTE bDoubleBuffer[2][80];
-	BYTE bcntBuffer[2][2];
+  	BYTE bDoubleBuffer[40];
+	BYTE bcntBuffer[2];
 }CustomerVarType;
 
+#endif
+#ifdef IC_ST
 
-#else
+typedef struct PACK I2CCmdStructure
+{
+  BYTE const code *Cmdkey;
+	//BYTE CmdSize;
+  void (*CmdHF)(); 
+} I2CCmdType;
 
 
 typedef struct CustomerVarSt
 {
 	BYTE bCustomerBuf[CUSTOMER_BUF_LEN]; 
- // BYTE bWorkingState;
 	BYTE bWorkingSubState;
-
-	BYTE bCustomCmd0000Cnt;
-  BYTE bCustomCmd0102Cnt;
-	BYTE bCustomCmd5801Cnt;
-	BYTE bCustomCmd5901Cnt;
-
-	BYTE bCustomCmd6501Cnt;
-	BYTE bCustomCmd6801Cnt;
-	BYTE bCustomCmd6801nnCnt;
 	
 	BYTE bI2CKeepSendflag;
-	//BYTE bCustomCmdD801Cnt;
-
-	BYTE bCustomCmd5901WakeupCnt;
-	//BYTE bCustomCmdE201Cnt;
-
-  BYTE bCustomReportCnt; 
-
+	BYTE FingerupINTflag;
+	BYTE bHoverFlag;
+	BYTE bCustomCmd85Cnt;
+	BYTE bCustomCmd86Cnt;
+	BYTE bCustomCmdB60045;
+  	BYTE bCustomReportCnt; 
 	BYTE bWakeUpFlag;
 	BYTE bCustomerUpgradeFlag;
 
@@ -1603,19 +1572,113 @@ typedef struct CustomerVarSt
 	BYTE bLastCustomCmdBuf[8]; 
 	BYTE bINTtriggerCnt;
 	BYTE bCustomerReSendCNT;	
-  BYTE bCustomerReportFingerCNT;
+  	BYTE bCustomerReportFingerCNT;
 	BYTE bCustomerLastReportFingerCNT;
-  WORD wCustomerLastValidPoint;
+  	WORD wCustomerLastValidPoint;
+  	BYTE bCustomerKeyReportFlag;
+	BYTE bCustomerKeyValidByte;
 
 	BYTE bTimerINTtrigger;	
- 	
-	BYTE bDebugBuf[16]; 
+ 
 	
-	BYTE bDoubleBufferIdx;
-	BYTE bDoubleBuffer[2][91];
-  BYTE bCustomerKeyReportFlag[2];
-	BYTE bCustomerKeyValidByte[2];
+	BYTE bDebugBuf[16]; 
+	BYTE bHoverBuffer[8];
+  	BYTE bDoubleBuffer[40];
+	BYTE bcntBuffer[2];
+#ifdef FEATURE_FAKE_FORCE_TOUCH   
+	WORD wLastNormalizedSum[MAX_CLUSTER_SUPPORT];
+#endif	
 }CustomerVarType;
+
+#endif
+#ifdef IC_Synopsys 
+
+typedef struct PACK I2CCmdStructure
+{
+  BYTE const code *Cmdkey;
+	//BYTE CmdSize;
+  void (*CmdHF)(); 
+} I2CCmdType;
+
+
+typedef struct CustomerVarSt
+{
+	BYTE bCustomerBuf[CUSTOMER_BUF_LEN]; 
+	BYTE bWorkingSubState;
+	BYTE bCustomCmd05Cnt;	
+	WORD WCustomCmd07Cnt;
+	BYTE bCustomCmd46Cnt;
+	BYTE bCustomCmd25Cnt;
+	BYTE bCustomCmd08Cnt;
+	BYTE bTimeToDoubleclick;
+	BYTE bDoubleclick;
+	BYTE bUpKey;
+	BOOL bGestureFlag;
+  	BYTE bCustomReportCnt; 
+	BYTE bI2CKeepSendflag;
+	BYTE FingerupINTflag;
+	BYTE bLastCustomCmdBuf[8]; 
+	BYTE bINTtriggerCnt;
+	BYTE bGestureINTtriggerCnt;
+	BYTE bCustomerReSendCNT;	
+  	BYTE bCustomerReportFingerCNT;
+	BYTE bCustomerLastReportFingerCNT;
+  	WORD wCustomerLastValidPoint;
+  	BYTE bCustomerKeyReportFlag;
+	BYTE bCustomerKeyValidByte;
+	BYTE bGestureId;
+  	BYTE bGestureBuffer[50];
+	BYTE bTimerINTtrigger;		
+	BYTE bDebugBuf[16]; 
+	BYTE bHoverBuffer[8];
+  	BYTE bDoubleBuffer[80];
+	BYTE bcntBuffer[2];
+#ifdef FEATURE_FAKE_FORCE_TOUCH   
+	WORD wLastNormalizedSum[MAX_CLUSTER_SUPPORT];
+#endif	
+}CustomerVarType;
+
+#endif
+
+#ifdef IC_CY8CTMA448 
+
+typedef struct PACK I2CCmdStructure
+{
+  BYTE const code *Cmdkey;
+	//BYTE CmdSize;
+  void (*CmdHF)(); 
+} I2CCmdType;
+
+
+typedef struct CustomerVarSt
+{
+	BYTE bCustomerBuf[CUSTOMER_BUF_LEN]; 
+	BYTE bWorkingSubState;
+  	BYTE bCustomCmd0100Cnt;
+	BYTE bCustomCmd0400Cnt;
+	BYTE bCustomReportCnt; 
+	BYTE bI2CKeepSendflag;
+	BYTE bLastCustomCmdBuf[8]; 
+	BYTE bINTtriggerCnt;
+	BYTE bNomalDataKey;
+	WORD wTimeToNormal;
+	BYTE bGestureINTtriggerCnt;
+	BYTE bCustomerReSendCNT;	
+  	BYTE bCustomerReportFingerCNT;
+	BYTE bCustomerLastReportFingerCNT;
+  	WORD wCustomerLastValidPoint;
+  	BYTE bCustomerKeyReportFlag;
+	BYTE bCustomerKeyValidByte;
+	BYTE bTimerINTtrigger;		
+	BYTE bDebugBuf[16]; 
+	BYTE bHoverBuffer[8];
+  	BYTE bDoubleBuffer[80];
+	BYTE bcntBuffer[2];
+#ifdef FEATURE_FAKE_FORCE_TOUCH   
+	WORD wLastNormalizedSum[MAX_CLUSTER_SUPPORT];
+#endif	
+}CustomerVarType;
+
 #endif
 
 #ifdef FORCE_SENSOR_PROTOCOL
