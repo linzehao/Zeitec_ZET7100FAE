@@ -1477,11 +1477,30 @@ int main()
 		#ifdef FEATURE_GESTURE_PRO
 		if(ZetDF.cGesture.scGesture.bGestureEn != 0)
 		{
+			if(ZetVar.bWorkingState==WORKING_STATE_CUSTOMER_GESTURE)
+			{
+				if((ZetVar.bReportGestureId == 0)||(ZetVar.bReportGestureId == 0xff))
+				{
 #ifdef FEATURE_LEVENSHTEIN		
-			ZetVar.bReportGestureId = TaskGesturePro(bGestureData,sizeof(bGestureData)); 
+				ZetVar.bReportGestureId = TaskGesturePro(bGestureData,sizeof(bGestureData)); 
 #else
-			ZetVar.bReportGestureId = TaskGesturePro(); 
+				ZetVar.bReportGestureId = TaskGesturePro(); 
 #endif
+				}
+				if((ZetVar.bReportGestureId > 0)&&(ZetVar.bReportGestureId != 0xff))
+				{
+					if(CustomerVar.bGestureKeyINT == TRUE)
+					{
+						I2C_INT_LOW();
+					}
+					CustomerVar.bGestureKeyINT = FALSE;
+				}
+				else 
+				{
+					CustomerVar.bGestureKeyINT = TRUE;
+					ZetVar.bReportGestureId = 0;
+				}
+			}
 		}
 		#endif ///< for FEATURE_GESTURE_PRO	
 
@@ -1504,8 +1523,8 @@ int main()
     /// 9. TASK#9 : Data Transfer1
     ///-------------------------------------------------------------------------------/// 
 		TaskDataFormat();
-		#ifdef FEATURE_CUSTOMER_PROTOCOL	 
-	  CustomerDataFormat();
+		#ifdef FEATURE_CUSTOMER_PROTOCOL
+		CustomerDataFormat();
 		#endif		
     #ifdef FORCE_SENSOR_PROTOCOL	 
 		CustomerForceSensorDataFormat();
