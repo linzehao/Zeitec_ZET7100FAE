@@ -42,7 +42,8 @@ void CustomerDataFormat(void)
 	{
 	  	for(i=0;i<bFingerNum; i++) 
 		{ 					
-			if(ZetVar.FingerCoordinateRecord[i].bFingerDown == FINGER_DOWN)									  
+			
+			if((ZetVar.FingerCoordinateRecord[i].bFingerDown == FINGER_DOWN)&&(!(ZetVar.FingerCoordinateRecord[i].wFingerStatus & FINGER_STATUS_FORCE_NO_FINGER_CHECK)))
 			{
 				bCNT++; 	
 				w1 = 0x0001<< i;
@@ -248,7 +249,7 @@ void CustomerDataFormat(void)
 	{
 	  for(i=0;i<bFingerNum; i++)
 		{
-			if(ZetVar.FingerCoordinateRecord[i].bFingerDown == FINGER_DOWN)
+		  if((ZetVar.FingerCoordinateRecord[i].bFingerDown == FINGER_DOWN)&&(!(ZetVar.FingerCoordinateRecord[i].wFingerStatus & FINGER_STATUS_FORCE_NO_FINGER_CHECK)))
 			{
 				bCNT++;
 				w1 = 0x0001<< i;
@@ -487,11 +488,6 @@ void CustomerDataFormat(void)
 		#if 1
 		if(CustomerVar.bINTtriggerCnt==0)   
 		{  
-			I2C_INT_HIGH(); 			
-			DELAY_30US_NOP();
-			DELAY_30US_NOP();
-			DELAY_30US_NOP();
-			I2C_INT_LOW();
 			CustomerVar.bINTtriggerCnt=0xFF; //Max value means disable	  
 		} 	
 		else if(CustomerVar.bINTtriggerCnt!=0xFF&&CustomerVar.bINTtriggerCnt>0)  
@@ -510,7 +506,7 @@ void CustomerDataFormat(void)
 	{
 	  for(i=0;i<bFingerNum; i++) 
 		{ 					
-			if(ZetVar.FingerCoordinateRecord[i].bFingerDown == FINGER_DOWN)									  
+		  if((ZetVar.FingerCoordinateRecord[i].bFingerDown == FINGER_DOWN)&&(!(ZetVar.FingerCoordinateRecord[i].wFingerStatus & FINGER_STATUS_FORCE_NO_FINGER_CHECK)))
 			{
 				bCNT++; 	
 				w1 = 0x0001<< i;
